@@ -5,8 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import pi.enset.entities.Enseignant;
-import pi.enset.entities.User;
-import pi.enset.repository.UserRepository;
+import pi.enset.repository.EnseignantRepository;
 
 @SpringBootApplication
 public class PiApplication {
@@ -15,7 +14,7 @@ public class PiApplication {
 		SpringApplication.run(PiApplication.class, args);
 	}
 	@Bean
-	CommandLineRunner lineRunner(UserRepository userRepository){
+	CommandLineRunner lineRunner(EnseignantRepository userRepository){
 		return args->{
 			Enseignant enseignant=new Enseignant();
 			enseignant.setNom("ELYoussfi");
