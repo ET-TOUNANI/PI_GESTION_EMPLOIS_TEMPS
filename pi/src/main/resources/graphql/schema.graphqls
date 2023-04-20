@@ -2,7 +2,7 @@ type Query{
     findDepartements : [Departement],
     findDepartement(id:Float):Departement
     findEnseignants : [Enseignant],
-    findEnseignant(id:String):Enseignant
+    findEnseignant(id:Float):Enseignant
 }
 type Mutation {
     addDepartement(departement: DepartementDTO) : Departement,
