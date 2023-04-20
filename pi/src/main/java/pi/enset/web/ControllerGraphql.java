@@ -17,15 +17,18 @@ import pi.enset.services.IEnseignantService;
 import java.util.List;
 
 @Controller
-@AllArgsConstructor
 public class ControllerGraphql {
     // don't forget to add your service here
-    private IDepartementService departementService;
-    private IEnseignantService enseignantService;
+    private final IDepartementService departementService;
+    private final IEnseignantService enseignantService;
     // don't forget to custemize your mapper here
-    private GeneralMapper<Enseignant, EnseignantDTO> mapperEnseignant;
-    private GeneralMapper<Departement, DepartementDTO> mapperDepartement;
+    private final GeneralMapper<Enseignant, EnseignantDTO> mapperEnseignant=new GeneralMapper<>(EnseignantDTO.class,Enseignant.class);
+    private final GeneralMapper<Departement, DepartementDTO> mapperDepartement=new GeneralMapper<>(DepartementDTO.class,Departement.class);
 
+    public ControllerGraphql(IDepartementService departementService, IEnseignantService enseignantService) {
+        this.departementService = departementService;
+        this.enseignantService = enseignantService;
+    }
     //**************** Departement *****************
     @QueryMapping
     public List<Departement> findDepartements() {

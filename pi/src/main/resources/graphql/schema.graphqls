@@ -1,6 +1,6 @@
 type Query{
     findDepartements : [Departement],
-    findDepartement(id:String):Departement
+    findDepartement(id:Float):Departement
     findEnseignants : [Enseignant],
     findEnseignant(id:String):Enseignant
 }
