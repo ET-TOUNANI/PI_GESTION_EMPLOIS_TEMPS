@@ -15,7 +15,8 @@ import java.util.Collection;
 @AllArgsConstructor
 @Builder
 public class Filiere {
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String libelle;
     private int nombreSem;

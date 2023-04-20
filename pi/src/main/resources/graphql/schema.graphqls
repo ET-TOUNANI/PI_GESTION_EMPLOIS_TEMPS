@@ -1,0 +1,42 @@
+type Query{
+    findDepartements : [Departement],
+    findDepartement(id:String):Departement
+    findEnseignants : [Enseignant],
+    findEnseignant(id:String):Enseignant
+}
+type Mutation {
+    addDepartement(departement: DepartementDTO) : Departement,
+    updateDepartement(id:Float,departement: DepartementDTO):Departement,
+    deleteDepartement(id:Float):String,
+    addEnseignant(enseignant: EnseignantDTO) : Enseignant,
+    updateEnseignant(id:Float,enseignant: EnseignantDTO):Enseignant,
+    deleteEnseignant(id:Float):String,
+}
+type Enseignant{
+    id :ID,
+    nom : String,
+    civilite: String,
+    prenom: String,
+    tel: String,
+    email: String,
+    login: String,
+    password: String,
+    specialite: String
+}
+type Departement{
+    id :ID,
+    libelle:String
+}
+input DepartementDTO{
+    libelle:String
+}
+input EnseignantDTO{
+    nom : String,
+    civilite: String,
+    prenom: String,
+    tel: String,
+    email: String,
+    login: String,
+    password: String,
+    specialite: String
+}

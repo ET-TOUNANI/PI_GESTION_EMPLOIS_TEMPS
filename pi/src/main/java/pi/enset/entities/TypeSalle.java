@@ -15,7 +15,8 @@ import java.util.Collection;
 @AllArgsConstructor
 @Builder
 public class TypeSalle {
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String libelle; // mini-amphi , amphi theatre ...
     private int capacite;
@@ -23,5 +24,5 @@ public class TypeSalle {
 
     @OneToMany(mappedBy = "typeSalle")
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
-    private Collection<Salle>salles;
+    private Collection<Salle> salles;
 }

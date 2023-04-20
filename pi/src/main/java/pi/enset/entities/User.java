@@ -1,11 +1,8 @@
 package pi.enset.entities;
 
-import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import pi.enset.entities.enums.Role;
 
 //@Entity
 @Data

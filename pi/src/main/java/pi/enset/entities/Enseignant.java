@@ -12,10 +12,14 @@ import java.util.Collection;
 
 
 @Entity
-@Data @NoArgsConstructor @AllArgsConstructor @Builder
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 //@DiscriminatorValue("ENSEIGNANT")
 public class Enseignant {
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String civilite;
     private String nom;
@@ -25,16 +29,16 @@ public class Enseignant {
     @Column(unique = true)
     private String login;
     private String password;
-    private  String specialite;
+    private String specialite;
     @OneToMany(mappedBy = "enseignant")
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
-    private Collection<NonDisponibilite>nonDisponibilites;
+    private Collection<NonDisponibilite> nonDisponibilites;
 
     @OneToMany(mappedBy = "enseignant")
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private Collection<Seance> seances;
 
-    @ManyToMany(fetch = FetchType.EAGER,mappedBy = "enseignants")
-    private Collection<ElementDeModule>elementDeModules=new ArrayList<>();
+    @ManyToMany(fetch = FetchType.EAGER, mappedBy = "enseignants")
+    private Collection<ElementDeModule> elementDeModules = new ArrayList<>();
 
 }

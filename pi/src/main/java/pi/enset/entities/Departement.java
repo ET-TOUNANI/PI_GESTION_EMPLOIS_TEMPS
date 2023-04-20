@@ -15,10 +15,11 @@ import java.util.Collection;
 @AllArgsConstructor
 @Builder
 public class Departement {
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String libelle;
     @OneToMany(mappedBy = "departement")
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
-    private Collection<Filiere>filieres;
+    private Collection<Filiere> filieres;
 }

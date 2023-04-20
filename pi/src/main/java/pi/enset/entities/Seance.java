@@ -15,7 +15,8 @@ import java.sql.Time;
 @AllArgsConstructor
 @Builder
 public class Seance {
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Enumerated(EnumType.STRING)
     private JourDeLaSemaine jour;

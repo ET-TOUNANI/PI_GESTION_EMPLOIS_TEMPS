@@ -15,12 +15,13 @@ import java.util.Collection;
 @AllArgsConstructor
 @Builder
 public class Salle {
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private int numSalle;
     @OneToMany(mappedBy = "salle")
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
-    private Collection<Seance>seances;
+    private Collection<Seance> seances;
     @ManyToOne
     private TypeSalle typeSalle;
 }

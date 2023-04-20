@@ -5,7 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import pi.enset.entities.enums.*;
+import pi.enset.entities.enums.JourDeLaSemaine;
 
 import java.util.List;
 
@@ -15,7 +15,8 @@ import java.util.List;
 @AllArgsConstructor
 @Builder
 public class NonDisponibilite {
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @ElementCollection(targetClass = JourDeLaSemaine.class)
     @Enumerated(EnumType.STRING)
