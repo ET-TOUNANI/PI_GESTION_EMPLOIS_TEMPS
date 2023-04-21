@@ -10,8 +10,13 @@ public class GeneralMapper<F,T> {
     private final Class<F> targetF;
 
     public GeneralMapper(
+<<<<<<< HEAD
             @Value("#{T(java.lang.Object).Class}") Class<T> target,
             @Value("#{T(java.lang.Object).Class}") Class<F> targetF) {
+=======
+                        @Value("#{T(java.lang.Object).Class}") Class<T> target,
+                        @Value("#{T(java.lang.Object).Class}") Class<F> targetF) {
+>>>>>>> d47801b397487acc5b35bf0f7853f2b97a87ccb5
         this.targetF = targetF;
         this.targetT = target;
     }
@@ -37,4 +42,8 @@ public class GeneralMapper<F,T> {
         BeanUtils.copyProperties(from, to);
         return to;
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> d47801b397487acc5b35bf0f7853f2b97a87ccb5

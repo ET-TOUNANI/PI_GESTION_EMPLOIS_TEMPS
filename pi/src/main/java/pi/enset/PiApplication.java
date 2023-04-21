@@ -7,12 +7,21 @@ import org.springframework.context.annotation.Bean;
 import pi.enset.entities.*;
 import pi.enset.entities.enums.NumeroSemester;
 import pi.enset.repository.*;
+import pi.enset.entities.Departement;
+import pi.enset.entities.Enseignant;
+import pi.enset.entities.Semestre;
+import pi.enset.entities.TypeSalle;
+import pi.enset.entities.enums.NumeroSemester;
+import pi.enset.repository.DepartementRepostitory;
+import pi.enset.repository.EnseignantRepository;
+import pi.enset.repository.SemestreRepository;
+import pi.enset.repository.TypeSalleRepository;
 
 import java.util.Date;
 
 @SpringBootApplication
 public class PiApplication {
-
+    private SemestreRepository semestreRepository;
     public static void main(String[] args) {
         SpringApplication.run(PiApplication.class, args);
     }
