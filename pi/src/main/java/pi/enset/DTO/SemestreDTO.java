@@ -1,5 +1,8 @@
 package pi.enset.DTO;
+<<<<<<< HEAD
+=======
 
+>>>>>>> d47801b397487acc5b35bf0f7853f2b97a87ccb5
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import jakarta.persistence.Temporal;

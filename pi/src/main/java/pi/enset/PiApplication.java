@@ -4,6 +4,9 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import pi.enset.entities.*;
+import pi.enset.entities.enums.NumeroSemester;
+import pi.enset.repository.*;
 import pi.enset.entities.Departement;
 import pi.enset.entities.Enseignant;
 import pi.enset.entities.Semestre;
@@ -24,7 +27,12 @@ public class PiApplication {
     }
 
     @Bean
-    CommandLineRunner lineRunner(EnseignantRepository userRepository, DepartementRepostitory departementRepostitory, TypeSalleRepository typeSalleRepository, SemestreRepository semestreRepository ) {
+    CommandLineRunner lineRunner(EnseignantRepository userRepository,
+                                 DepartementRepostitory departementRepostitory,
+                                 ClasseRepository classeRepository,
+                                 ElementModuleRepository elementModuleRepository,
+                                 SemestreRepository semestreRepository,
+                                 TypeSalleRepository typeSalleRepository) {
         return args -> {
             // add some data to test
             Enseignant enseignant = new Enseignant();
@@ -50,6 +58,35 @@ public class PiApplication {
                     .libelle("economie")
                     .build();
             departementRepostitory.save(d3);
+            //*******************************
+            Classe classe1 = Classe.builder()
+                    .libelle("BDCC 2").
+                    nbrEleves(42).build();
+            classeRepository.save(classe1);
+            Classe classe2 = Classe.builder()
+                    .libelle("GLSID 2").
+                    nbrEleves(39).build();
+            classeRepository.save(classe2);
+            Classe classe3 = Classe.builder()
+                    .libelle("GIL 2").
+                    nbrEleves(30).build();
+            classeRepository.save(classe3);
+            //*******************************
+            ElementDeModule elementDeModule1 = new ElementDeModule();
+            elementDeModule1.setLibelle("Architecture distribuée J2EE");
+            elementDeModule1.setVolumeHoraire(32);
+            elementModuleRepository.save(elementDeModule1);
+            //**********************************************//
+            ElementDeModule elementDeModule2 = new ElementDeModule();
+            elementDeModule2.setLibelle("Middlewares");
+            elementDeModule2.setVolumeHoraire(24);
+            elementModuleRepository.save(elementDeModule2);
+            //**********************************************//
+            ElementDeModule elementDeModule3 = new ElementDeModule();
+            elementDeModule3.setLibelle("Initiation à l'entreprenariat ");
+            elementDeModule3.setVolumeHoraire(26);
+            elementModuleRepository.save(elementDeModule3);
+            //*******************************
             Semestre s1=Semestre.builder()
                     .anneeUniv("2022-2023")
                     .num(NumeroSemester.S1)
@@ -69,6 +106,7 @@ public class PiApplication {
                     .libelle("tp")
                     .equipement(" reseaux , routeurs")
                     .build();
+            //**********************************//
             typeSalleRepository.save(typeSalle1);
             TypeSalle typeSalle2= TypeSalle.builder()
                     .capacite(50)
