@@ -24,6 +24,9 @@ import pi.enset.services.IDepartementService;
 import pi.enset.services.IEnseignantService;
 import pi.enset.services.ISemestreService;
 import pi.enset.services.ITypeSalleService;
+<<<<<<< HEAD
+>>>>>>> d47801b397487acc5b35bf0f7853f2b97a87ccb5
+=======
 >>>>>>> d47801b397487acc5b35bf0f7853f2b97a87ccb5
 
 import javax.swing.text.Element;
@@ -50,6 +53,9 @@ private ISemestreService semestreService;
     // don't forget to custemize your mapper here
     private GeneralMapper<Semestre, SemestreDTO> mapperSemestre=new GeneralMapper<>(SemestreDTO.class,Semestre.class);
     private GeneralMapper<TypeSalle, TypeSalleDTO> mapperTypeSalle=new GeneralMapper<>(TypeSalleDTO.class,TypeSalle.class);
+<<<<<<< HEAD
+>>>>>>> d47801b397487acc5b35bf0f7853f2b97a87ccb5
+=======
 >>>>>>> d47801b397487acc5b35bf0f7853f2b97a87ccb5
     private final GeneralMapper<Enseignant, EnseignantDTO> mapperEnseignant=new GeneralMapper<>(EnseignantDTO.class,Enseignant.class);
     private final GeneralMapper<Departement, DepartementDTO> mapperDepartement=new GeneralMapper<>(DepartementDTO.class,Departement.class);
@@ -177,6 +183,7 @@ private ISemestreService semestreService;
     }
     //**************** put your methodes below *****************
 <<<<<<< HEAD
+<<<<<<< HEAD
     //**************** Classe *****************
     @QueryMapping
     public List<Classe>  findClasses() {
@@ -185,6 +192,12 @@ private ISemestreService semestreService;
 =======
     // add all this methodes to the file schema.graphqls
     // and after test it using this http://localhost:8082/graphiql?path=/graphql
+=======
+    // add all this methodes to the file schema.graphqls
+    // and after test it using this http://localhost:8082/graphiql?path=/graphql
+
+}
+>>>>>>> d47801b397487acc5b35bf0f7853f2b97a87ccb5
 
 }
 >>>>>>> d47801b397487acc5b35bf0f7853f2b97a87ccb5

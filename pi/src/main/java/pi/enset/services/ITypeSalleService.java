@@ -18,6 +18,9 @@ public interface ITypeSalleService {
 
     TypeSalle updateTypeSalle(Long id, TypeSalle typeSalle);
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> d47801b397487acc5b35bf0f7853f2b97a87ccb5
 }
 =======
 }

@@ -11,8 +11,13 @@ public class GeneralMapper<F,T> {
 
     public GeneralMapper(
 <<<<<<< HEAD
+<<<<<<< HEAD
             @Value("#{T(java.lang.Object).Class}") Class<T> target,
             @Value("#{T(java.lang.Object).Class}") Class<F> targetF) {
+=======
+                        @Value("#{T(java.lang.Object).Class}") Class<T> target,
+                        @Value("#{T(java.lang.Object).Class}") Class<F> targetF) {
+>>>>>>> d47801b397487acc5b35bf0f7853f2b97a87ccb5
 =======
                         @Value("#{T(java.lang.Object).Class}") Class<T> target,
                         @Value("#{T(java.lang.Object).Class}") Class<F> targetF) {
@@ -43,6 +48,9 @@ public class GeneralMapper<F,T> {
         return to;
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> d47801b397487acc5b35bf0f7853f2b97a87ccb5
 }
 =======
 }
