@@ -1,12 +1,13 @@
 type Query{
     findDepartements : [Departement],
-    findDepartement(id:String):Departement
+    findDepartement(id:Float):Departement
     findEnseignants : [Enseignant],
-    findEnseignant(id:String):Enseignant
+    findEnseignant(id:Float):Enseignant
     findSemestres : [Semestre],
-    findSemestre(id:String):Semestre
+    findSemestre(id:Float):Semestre
     findTypeSalles : [TypeSalle],
-    findTypeSalle(id:String):TypeSalle
+    findTypeSalle(id:Float):TypeSalle
+
 }
 type Mutation {
     addDepartement(departement: DepartementDTO) : Departement,

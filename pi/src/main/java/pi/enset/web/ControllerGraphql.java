@@ -23,19 +23,23 @@ import pi.enset.services.ITypeSalleService;
 import java.util.List;
 
 @Controller
-@AllArgsConstructor
 public class ControllerGraphql {
     // don't forget to add your service here
-    private IDepartementService departementService;
-    private IEnseignantService enseignantService;
-    private ISemestreService semestreService;
-    private ITypeSalleService typeSalleService;
-    // don't forget to custemize your mapper here
-    private GeneralMapper<Enseignant, EnseignantDTO> mapperEnseignant;
-    private GeneralMapper<Departement, DepartementDTO> mapperDepartement;
-    private GeneralMapper<Semestre, SemestreDTO> mapperSemestre;
-    private GeneralMapper<TypeSalle, TypeSalleDTO> mapperTypeSalle;
 
+private ISemestreService semestreService;
+    private ITypeSalleService typeSalleService;
+    private final IDepartementService departementService;
+    private final IEnseignantService enseignantService;
+    // don't forget to custemize your mapper here
+    private GeneralMapper<Semestre, SemestreDTO> mapperSemestre=new GeneralMapper<>(SemestreDTO.class,Semestre.class);
+    private GeneralMapper<TypeSalle, TypeSalleDTO> mapperTypeSalle=new GeneralMapper<>(TypeSalleDTO.class,TypeSalle.class);
+    private final GeneralMapper<Enseignant, EnseignantDTO> mapperEnseignant=new GeneralMapper<>(EnseignantDTO.class,Enseignant.class);
+    private final GeneralMapper<Departement, DepartementDTO> mapperDepartement=new GeneralMapper<>(DepartementDTO.class,Departement.class);
+
+    public ControllerGraphql(IDepartementService departementService, IEnseignantService enseignantService) {
+        this.departementService = departementService;
+        this.enseignantService = enseignantService;
+    }
     //**************** Departement *****************
     @QueryMapping
     public List<Departement> findDepartements() {
