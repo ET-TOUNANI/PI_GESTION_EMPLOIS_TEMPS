@@ -1,30 +1,22 @@
 type Query{
+
     findDepartements : [Departement],
     findDepartement(id:Float):Departement
+
     findEnseignants : [Enseignant],
     findEnseignant(id:Float):Enseignant
-<<<<<<< HEAD
-<<<<<<< HEAD
+
     findClasses : [Classe],
     findClasse(id:Float):Classe
+
     findElementsDeModule : [ElementDeModule],
     findElementDeModule(id:Float):ElementDeModule
-    findSemestres : [Semestre],
-    findSemestre(id:String):Semestre
-    findTypeSalles : [TypeSalle],
-    findTypeSalle(id:String):TypeSalle
-=======
-=======
->>>>>>> d47801b397487acc5b35bf0f7853f2b97a87ccb5
+
     findSemestres : [Semestre],
     findSemestre(id:Float):Semestre
+
     findTypeSalles : [TypeSalle],
     findTypeSalle(id:Float):TypeSalle
-
-<<<<<<< HEAD
->>>>>>> d47801b397487acc5b35bf0f7853f2b97a87ccb5
-=======
->>>>>>> d47801b397487acc5b35bf0f7853f2b97a87ccb5
 }
 type Mutation {
     addDepartement(departement: DepartementDTO) : Departement,
@@ -33,18 +25,12 @@ type Mutation {
     addEnseignant(enseignant: EnseignantDTO) : Enseignant,
     updateEnseignant(id:Float,enseignant: EnseignantDTO):Enseignant,
     deleteEnseignant(id:Float):String,
-<<<<<<< HEAD
-<<<<<<< HEAD
     addClasse (classe: ClasseDTO) : Classe,
     updateClasse(id:Float, classe: ClasseDTO):Classe,
     deleteClasse(id:Float):String,
     addElementDeModule(elementdemodule: ElementDeModuleDTO) : ElementDeModule,
     updateElementDeModule(id:Float, elementdemodule: ElementDeModuleDTO):ElementDeModule,
     deleteElementDeModule(id:Float):String,
-=======
->>>>>>> d47801b397487acc5b35bf0f7853f2b97a87ccb5
-=======
->>>>>>> d47801b397487acc5b35bf0f7853f2b97a87ccb5
     addSemestre(semestre: SemestreDTO) : Semestre,
     updateSemestre(id:Float,semestre: SemestreDTO):Semestre,
     deleteSemestre(id:Float):String,
@@ -67,8 +53,6 @@ type Departement{
     id :ID,
     libelle:String
 }
-<<<<<<< HEAD
-<<<<<<< HEAD
 type Classe{
     id :ID,
     libelle : String,
@@ -79,24 +63,13 @@ type ElementDeModule{
     libelle : String,
     volumeHoraire: Int
 }
-=======
->>>>>>> d47801b397487acc5b35bf0f7853f2b97a87ccb5
-=======
->>>>>>> d47801b397487acc5b35bf0f7853f2b97a87ccb5
+
 type Semestre{
     id :ID,
     dateDebut : String,
     dateFin : String,
     num : String,
-<<<<<<< HEAD
-<<<<<<< HEAD
     anneeUniv : String
-=======
-   anneeUniv : String
->>>>>>> d47801b397487acc5b35bf0f7853f2b97a87ccb5
-=======
-   anneeUniv : String
->>>>>>> d47801b397487acc5b35bf0f7853f2b97a87ccb5
 }
 type TypeSalle{
     id : ID,
@@ -104,26 +77,9 @@ type TypeSalle{
     capacite: Int,
     equipement : String
 }
-<<<<<<< HEAD
-<<<<<<< HEAD
 
-=======
->>>>>>> d47801b397487acc5b35bf0f7853f2b97a87ccb5
-=======
->>>>>>> d47801b397487acc5b35bf0f7853f2b97a87ccb5
 input DepartementDTO{
     libelle:String
-}
-input SemestreDTO{
-    dateDebut : String,
-    dateFin : String,
-    num : String,
-    anneeUniv : String
-}
-input TypeSalleDTO{
-    libelle : String,
-    capacite: Int,
-    equipement : String
 }
 input EnseignantDTO{
     nom : String,

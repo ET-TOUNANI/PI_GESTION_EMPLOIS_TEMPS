@@ -1,8 +1,6 @@
 package pi.enset.services;
 
 
-import pi.enset.entities.Departement;
-import pi.enset.entities.Salle;
 import pi.enset.entities.TypeSalle;
 
 import java.util.List;
@@ -17,11 +15,6 @@ public interface ITypeSalleService {
     TypeSalle getTypeSalleById(Long id);
 
     TypeSalle updateTypeSalle(Long id, TypeSalle typeSalle);
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> d47801b397487acc5b35bf0f7853f2b97a87ccb5
+
 }
-=======
-}
->>>>>>> d47801b397487acc5b35bf0f7853f2b97a87ccb5
+

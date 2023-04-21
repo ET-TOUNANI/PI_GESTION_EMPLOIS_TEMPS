@@ -1,83 +1,47 @@
 package pi.enset.web;
-import lombok.AllArgsConstructor;
+
 import org.springframework.graphql.data.method.annotation.Argument;
 import org.springframework.graphql.data.method.annotation.MutationMapping;
 import org.springframework.graphql.data.method.annotation.QueryMapping;
 import org.springframework.stereotype.Controller;
-<<<<<<< HEAD
 import pi.enset.DTO.*;
 import pi.enset.DTO.mappers.GeneralMapper;
 import pi.enset.entities.*;
-import pi.enset.repository.ClasseRepository;
 import pi.enset.services.*;
-=======
-import pi.enset.DTO.DepartementDTO;
-import pi.enset.DTO.EnseignantDTO;
-import pi.enset.DTO.SemestreDTO;
-import pi.enset.DTO.TypeSalleDTO;
-import pi.enset.DTO.mappers.GeneralMapper;
-import pi.enset.entities.Departement;
-import pi.enset.entities.Enseignant;
-import pi.enset.entities.Semestre;
-import pi.enset.entities.TypeSalle;
-import pi.enset.services.IDepartementService;
-import pi.enset.services.IEnseignantService;
-import pi.enset.services.ISemestreService;
-import pi.enset.services.ITypeSalleService;
-<<<<<<< HEAD
->>>>>>> d47801b397487acc5b35bf0f7853f2b97a87ccb5
-=======
->>>>>>> d47801b397487acc5b35bf0f7853f2b97a87ccb5
 
-import javax.swing.text.Element;
 import java.util.List;
 
 @Controller
 public class ControllerGraphql {
     // don't forget to add your service here
 
-private ISemestreService semestreService;
-    private ITypeSalleService typeSalleService;
+    private final ISemestreService semestreService;
+    private final ITypeSalleService typeSalleService;
     private final IDepartementService departementService;
     private final IEnseignantService enseignantService;
-<<<<<<< HEAD
     //Classe and ElementModule
-    private final IClasseService ClasseService;
-    private final IElementDeModuleService ElementDeModuleService;
-    private ISemestreService semestreService;
-    private ITypeSalleService typeSalleService;
+    private final IClasseService classeService;
+    private final IElementDeModuleService elementDeModuleService;
     //Repositories
-    private ClasseRepository classeRepository;
     // don't forget to customize your mapper here
-=======
-    // don't forget to custemize your mapper here
-    private GeneralMapper<Semestre, SemestreDTO> mapperSemestre=new GeneralMapper<>(SemestreDTO.class,Semestre.class);
-    private GeneralMapper<TypeSalle, TypeSalleDTO> mapperTypeSalle=new GeneralMapper<>(TypeSalleDTO.class,TypeSalle.class);
-<<<<<<< HEAD
->>>>>>> d47801b397487acc5b35bf0f7853f2b97a87ccb5
-=======
->>>>>>> d47801b397487acc5b35bf0f7853f2b97a87ccb5
-    private final GeneralMapper<Enseignant, EnseignantDTO> mapperEnseignant=new GeneralMapper<>(EnseignantDTO.class,Enseignant.class);
-    private final GeneralMapper<Departement, DepartementDTO> mapperDepartement=new GeneralMapper<>(DepartementDTO.class,Departement.class);
+    private final GeneralMapper<Enseignant, EnseignantDTO> mapperEnseignant = new GeneralMapper<>(EnseignantDTO.class, Enseignant.class);
+    private final GeneralMapper<Departement, DepartementDTO> mapperDepartement = new GeneralMapper<>(DepartementDTO.class, Departement.class);
     //Mapper Classe and ElementDeModule
-    private final GeneralMapper<Classe, ClasseDTO> mapperClasse=new GeneralMapper<>(ClasseDTO.class,Classe.class);
-    private final GeneralMapper<ElementDeModule, ElementDeModuleDTO> mapperElementDeModule =new GeneralMapper<>(ElementDeModuleDTO.class,ElementDeModule.class);
-    private GeneralMapper<Semestre, SemestreDTO> mapperSemestre;
-    private GeneralMapper<TypeSalle, TypeSalleDTO> mapperTypeSalle;
-    /*
-    public ControllerGraphql(IDepartementService departementService, IEnseignantService enseignantService) {
-        this.departementService = departementService;
-        this.enseignantService = enseignantService;
-    }
-    */
+    private final GeneralMapper<Classe, ClasseDTO> mapperClasse = new GeneralMapper<>(ClasseDTO.class, Classe.class);
+    private final GeneralMapper<ElementDeModule, ElementDeModuleDTO> mapperElementDeModule = new GeneralMapper<>(ElementDeModuleDTO.class, ElementDeModule.class);
+    private final GeneralMapper<Semestre, SemestreDTO> mapperSemestre = new GeneralMapper<>(SemestreDTO.class, Semestre.class);
+    private final GeneralMapper<TypeSalle, TypeSalleDTO> mapperTypeSalle = new GeneralMapper<>(TypeSalleDTO.class, TypeSalle.class);
+
+
     //Constructor with allargs of service
 
-
-    public ControllerGraphql(IDepartementService departementService, IEnseignantService enseignantService, IClasseService classeService, IElementDeModuleService elementDeModuleService) {
+    public ControllerGraphql(IDepartementService departementService, IEnseignantService enseignantService, IClasseService classeService, IElementDeModuleService elementDeModuleService, ISemestreService semestreService, ITypeSalleService typeSalleService) {
         this.departementService = departementService;
         this.enseignantService = enseignantService;
-        ClasseService = classeService;
-        ElementDeModuleService = elementDeModuleService;
+        this.classeService = classeService;
+        this.elementDeModuleService = elementDeModuleService;
+        this.typeSalleService = typeSalleService;
+        this.semestreService = semestreService;
     }
 
     //**************** Departement *****************
@@ -131,6 +95,7 @@ private ISemestreService semestreService;
     public Semestre updateSemestre(@Argument Long id, @Argument SemestreDTO semestre) {
         return semestreService.updateSemestre(id, mapperSemestre.fromRequestDTO(semestre));
     }
+
     //**************** enseignant *****************
     @QueryMapping
     public List<Enseignant> findEnseignants() {
@@ -156,6 +121,7 @@ private ISemestreService semestreService;
     public Enseignant updateEnseignant(@Argument Long id, @Argument EnseignantDTO enseignant) {
         return enseignantService.updateEnseignant(id, mapperEnseignant.fromRequestDTO(enseignant));
     }
+
     //**************** TypeSalle *****************
     @QueryMapping
     public List<TypeSalle> findTypeSalles() {
@@ -179,121 +145,65 @@ private ISemestreService semestreService;
 
     @MutationMapping
     public TypeSalle updateTypeSalle(@Argument Long id, @Argument TypeSalleDTO typeSalleDTO) {
+        System.out.println("hi it's me");
         return typeSalleService.updateTypeSalle(id, mapperTypeSalle.fromRequestDTO(typeSalleDTO));
     }
+
     //**************** put your methodes below *****************
-<<<<<<< HEAD
-<<<<<<< HEAD
     //**************** Classe *****************
     @QueryMapping
-    public List<Classe>  findClasses() {
-        return ClasseService.getClasses();
+    public List<Classe> findClasses() {
+        return classeService.getClasses();
     }
-=======
+
     // add all this methodes to the file schema.graphqls
     // and after test it using this http://localhost:8082/graphiql?path=/graphql
-=======
-    // add all this methodes to the file schema.graphqls
-    // and after test it using this http://localhost:8082/graphiql?path=/graphql
-
-}
->>>>>>> d47801b397487acc5b35bf0f7853f2b97a87ccb5
-
-}
->>>>>>> d47801b397487acc5b35bf0f7853f2b97a87ccb5
 
     @QueryMapping
     public Classe findClasse(@Argument Long id) {
-        return ClasseService.getClasseById(id);
+        return classeService.getClasseById(id);
     }
 
     @MutationMapping
     public Classe addClasse(@Argument ClasseDTO classe) {
-        return ClasseService.addClasse(mapperClasse.fromRequestDTO(classe));
+        return classeService.addClasse(mapperClasse.fromRequestDTO(classe));
     }
 
     @MutationMapping
     public String deleteClasse(@Argument Long id) {
-        return ClasseService.deleteClasse(id);
+        return classeService.deleteClasse(id);
     }
 
     @MutationMapping
     public Classe updateClasse(@Argument Long id, @Argument ClasseDTO classe) {
-        return ClasseService.updateClasse(id, mapperClasse.fromRequestDTO(classe));
+        return classeService.updateClasse(id, mapperClasse.fromRequestDTO(classe));
     }
+
     //**************** Element de Module *****************
     @QueryMapping
-    public List<ElementDeModule>  findElementsDeModule() {
-        return ElementDeModuleService.getElementDeModule();
+    public List<ElementDeModule> findElementsDeModule() {
+        return elementDeModuleService.getElementDeModule();
     }
 
     @QueryMapping
     public ElementDeModule findElementDeModule(@Argument Long id) {
-        return ElementDeModuleService.getElementDeModuleById(id);
+        return elementDeModuleService.getElementDeModuleById(id);
     }
 
     @MutationMapping
     public ElementDeModule addElementDeModule(@Argument ElementDeModuleDTO elementdemodule) {
-        return ElementDeModuleService.addElementDeModule(mapperElementDeModule.fromRequestDTO(elementdemodule));
+        return elementDeModuleService.addElementDeModule(mapperElementDeModule.fromRequestDTO(elementdemodule));
     }
 
     @MutationMapping
     public String deleteElementDeModule(@Argument Long id) {
-        return ElementDeModuleService.deleteElementDeModule(id);
+        return elementDeModuleService.deleteElementDeModule(id);
     }
 
     @MutationMapping
     public ElementDeModule updateElementDeModule(@Argument Long id, @Argument ElementDeModuleDTO elementdemodule) {
-        return ElementDeModuleService.updateElementDeModule(id, mapperElementDeModule.fromRequestDTO(elementdemodule));
+        return elementDeModuleService.updateElementDeModule(id, mapperElementDeModule.fromRequestDTO(elementdemodule));
     }
-    //**************** TypeSalle *****************
-    @QueryMapping
-    public List<TypeSalle> findTypeSalles() {
-        return typeSalleService.getTypeSalles();
-    }
+}
 
-    @QueryMapping
-    public TypeSalle findTypeSalle(@Argument Long id) {
-        return typeSalleService.getTypeSalleById(id);
-    }
-
-    @MutationMapping
-    public TypeSalle addTypeSalle(@Argument TypeSalleDTO typeSalle) {
-        return typeSalleService.addTypeSalle(mapperTypeSalle.fromRequestDTO(typeSalle));
-    }
-
-    @MutationMapping
-    public String deleteTypeSalle(@Argument Long id) {
-        return typeSalleService.deleteTypeSalle(id);
-    }
-
-    @MutationMapping
-    public TypeSalle updateTypeSalle(@Argument Long id, @Argument TypeSalleDTO typeSalleDTO) {
-        return typeSalleService.updateTypeSalle(id, mapperTypeSalle.fromRequestDTO(typeSalleDTO));
-    }
-    //**************** Semestre *****************
-    @QueryMapping
-    public List<Semestre> findSemestres() {
-        return semestreService.getSemestres();
-    }
-
-    @QueryMapping
-    public Semestre findSemestre(@Argument Long id) {
-        return semestreService.getSemestreById(id);
-    }
-
-    @MutationMapping
-    public Semestre addSemestre(@Argument SemestreDTO semestre) {
-        return semestreService.addSemestre(mapperSemestre.fromRequestDTO(semestre));
-    }
-
-    @MutationMapping
-    public String deleteSemestre(@Argument Long id) {
-        return semestreService.deleteSemestre(id);
-    }
-
-    @MutationMapping
-    public Semestre updateSemestre(@Argument Long id, @Argument SemestreDTO semestre) {
-        return semestreService.updateSemestre(id, mapperSemestre.fromRequestDTO(semestre));
-    }
 

@@ -3,14 +3,15 @@ package pi.enset.services;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import pi.enset.entities.Classe;
-import pi.enset.entities.Enseignant;
 import pi.enset.repository.ClasseRepository;
 
 import java.util.List;
+
 @Service
 @AllArgsConstructor
-public class IClasseServiceImpl implements IClasseService{
+public class IClasseServiceImpl implements IClasseService {
     private ClasseRepository classeRepository;
+
     @Override
     public List<Classe> getClasses() {
         return classeRepository.findAll();

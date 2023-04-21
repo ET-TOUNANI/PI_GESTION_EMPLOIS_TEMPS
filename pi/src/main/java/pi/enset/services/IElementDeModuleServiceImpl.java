@@ -6,13 +6,15 @@ import pi.enset.entities.ElementDeModule;
 import pi.enset.repository.ElementModuleRepository;
 
 import java.util.List;
+
 @Service
 @AllArgsConstructor
 public class IElementDeModuleServiceImpl implements IElementDeModuleService {
     private ElementModuleRepository elementModuleRepository;
+
     @Override
     public List<ElementDeModule> getElementDeModule() {
-        return  elementModuleRepository.findAll();
+        return elementModuleRepository.findAll();
     }
 
     @Override

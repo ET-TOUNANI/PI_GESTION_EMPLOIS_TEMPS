@@ -1,4 +1,5 @@
 package pi.enset.ExceptionHandler;
+
 import graphql.ErrorClassification;
 import graphql.GraphQLError;
 import graphql.language.SourceLocation;

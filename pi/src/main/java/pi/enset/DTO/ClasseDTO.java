@@ -3,10 +3,6 @@ package pi.enset.DTO;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import pi.enset.entities.Filiere;
-import pi.enset.entities.Seance;
-
-import java.util.Collection;
 
 @Data
 @NoArgsConstructor
