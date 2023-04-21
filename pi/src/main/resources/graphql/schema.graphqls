@@ -3,6 +3,14 @@ type Query{
     findDepartement(id:Float):Departement
     findEnseignants : [Enseignant],
     findEnseignant(id:Float):Enseignant
+    findClasses : [Classe],
+    findClasse(id:Float):Classe
+    findElementsDeModule : [ElementDeModule],
+    findElementDeModule(id:Float):ElementDeModule
+    findSemestres : [Semestre],
+    findSemestre(id:String):Semestre
+    findTypeSalles : [TypeSalle],
+    findTypeSalle(id:String):TypeSalle
 }
 type Mutation {
     addDepartement(departement: DepartementDTO) : Departement,
@@ -11,6 +19,18 @@ type Mutation {
     addEnseignant(enseignant: EnseignantDTO) : Enseignant,
     updateEnseignant(id:Float,enseignant: EnseignantDTO):Enseignant,
     deleteEnseignant(id:Float):String,
+    addClasse (classe: ClasseDTO) : Classe,
+    updateClasse(id:Float, classe: ClasseDTO):Classe,
+    deleteClasse(id:Float):String,
+    addElementDeModule(elementdemodule: ElementDeModuleDTO) : ElementDeModule,
+    updateElementDeModule(id:Float, elementdemodule: ElementDeModuleDTO):ElementDeModule,
+    deleteElementDeModule(id:Float):String,
+    addSemestre(semestre: SemestreDTO) : Semestre,
+    updateSemestre(id:Float,semestre: SemestreDTO):Semestre,
+    deleteSemestre(id:Float):String,
+    addTypeSalle(typeSalle: TypeSalleDTO) : TypeSalle,
+    updateTypeSalle(id:Float,typeSalle: TypeSalleDTO):TypeSalle,
+    deleteTypeSalle(id:Float):String,
 }
 type Enseignant{
     id :ID,
@@ -27,6 +47,30 @@ type Departement{
     id :ID,
     libelle:String
 }
+type Classe{
+    id :ID,
+    libelle : String,
+    nbrEleves: Int
+}
+type ElementDeModule{
+    id :ID,
+    libelle : String,
+    volumeHoraire: Int
+}
+type Semestre{
+    id :ID,
+    dateDebut : String,
+    dateFin : String,
+    num : String,
+    anneeUniv : String
+}
+type TypeSalle{
+    id : ID,
+    libelle : String,
+    capacite: Int,
+    equipement : String
+}
+
 input DepartementDTO{
     libelle:String
 }
@@ -39,4 +83,23 @@ input EnseignantDTO{
     login: String,
     password: String,
     specialite: String
+}
+input ClasseDTO{
+    libelle : String,
+    nbrEleves: Int
+}
+input ElementDeModuleDTO{
+    libelle : String,
+    volumeHoraire: Int
+}
+input SemestreDTO{
+    dateDebut : String,
+    dateFin : String,
+    num : String,
+    anneeUniv : String
+}
+input TypeSalleDTO{
+    libelle : String,
+    capacite: Int,
+    equipement : String
 }
