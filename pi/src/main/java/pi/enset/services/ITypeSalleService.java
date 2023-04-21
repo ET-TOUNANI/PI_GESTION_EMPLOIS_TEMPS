@@ -1,4 +1,3 @@
-
 package pi.enset.services;
 
 
@@ -18,5 +17,4 @@ public interface ITypeSalleService {
     TypeSalle getTypeSalleById(Long id);
 
     TypeSalle updateTypeSalle(Long id, TypeSalle typeSalle);
-
 }

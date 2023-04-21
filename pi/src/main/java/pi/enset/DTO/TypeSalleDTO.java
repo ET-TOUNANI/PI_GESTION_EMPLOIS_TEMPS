@@ -1,4 +1,3 @@
-
 package pi.enset.DTO;
 
 import lombok.AllArgsConstructor;
@@ -13,5 +12,4 @@ public class TypeSalleDTO {
     private String libelle;
     private int capacite;
     private String equipement;
-
 }

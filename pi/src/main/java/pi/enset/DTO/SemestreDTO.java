@@ -1,4 +1,3 @@
-
 package pi.enset.DTO;
 
 import jakarta.persistence.EnumType;
