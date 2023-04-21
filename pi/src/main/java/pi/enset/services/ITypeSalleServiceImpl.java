@@ -1,3 +1,4 @@
+
 package pi.enset.services;
 
 import lombok.AllArgsConstructor;
@@ -43,4 +44,5 @@ public class ITypeSalleServiceImpl implements ITypeSalleService {
         typeSalle.setId(id);
         return typeSalleRepository.save(typeSalle);
     }
+
 }

@@ -1,3 +1,4 @@
+
 package pi.enset.services;
 
 import pi.enset.entities.Semestre;
@@ -14,4 +15,5 @@ public interface ISemestreService {
     Semestre getSemestreById(Long id);
 
     Semestre updateSemestre(Long id, Semestre semestre);
+
 }
