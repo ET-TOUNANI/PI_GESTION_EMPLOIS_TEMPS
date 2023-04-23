@@ -144,9 +144,8 @@ public class ControllerGraphql {
     }
 
     @MutationMapping
-    public TypeSalle updateTypeSalle(@Argument Long id, @Argument TypeSalleDTO typeSalleDTO) {
-        System.out.println("hi it's me");
-        return typeSalleService.updateTypeSalle(id, mapperTypeSalle.fromRequestDTO(typeSalleDTO));
+    public TypeSalle updateTypeSalle(@Argument Long id, @Argument TypeSalleDTO typeSalle) {
+        return typeSalleService.updateTypeSalle(id, mapperTypeSalle.fromRequestDTO(typeSalle));
     }
 
     //**************** put your methodes below *****************
