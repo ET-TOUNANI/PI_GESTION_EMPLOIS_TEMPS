@@ -19,8 +19,8 @@ public class SeanceDTO {
     private Time heureDebut;
     private Time heureFin;
     private ClasseDTO classe;
-//    waiting for SalleDTO
-//    private SalleDTO salle;
+
+    private SalleDTO salle;
     private ElementDeModuleDTO elementDeModule;
     private EnseignantDTO enseignant;
 }

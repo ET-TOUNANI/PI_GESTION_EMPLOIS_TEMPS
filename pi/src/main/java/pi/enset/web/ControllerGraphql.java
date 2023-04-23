@@ -27,6 +27,7 @@ public class ControllerGraphql {
 
     private final IFiliereService filiereService;
     private final ISalleService salleService;
+
     //Repositories
     // don't forget to customize your mapper here
     private final GeneralMapper<Enseignant, EnseignantDTO> mapperEnseignant = new GeneralMapper<>(EnseignantDTO.class, Enseignant.class);
@@ -43,7 +44,7 @@ public class ControllerGraphql {
 
     //Constructor with allargs of service
 
-    public ControllerGraphql(IDepartementService departementService, IEnseignantService enseignantService, IClasseService classeService, IElementDeModuleService elementDeModuleService, ISemestreService semestreService, ITypeSalleService typeSalleService,IFiliereService filiereService,ISalleService salleService) {
+    public ControllerGraphql(IDepartementService departementService, IEnseignantService enseignantService, IClasseService classeService, IElementDeModuleService elementDeModuleService, ISemestreService semestreService, ITypeSalleService typeSalleService,IFiliereService filiereService,ISalleService salleService,ISeanceService seanceService) {
         this.departementService = departementService;
         this.enseignantService = enseignantService;
         this.classeService = classeService;
@@ -251,7 +252,7 @@ public class ControllerGraphql {
         System.out.println("Salle");
         return salleService.updateSalle(id,mapperSalle.fromRequestDTO(salle));
     }
-    }
+
 
     //**************** Seance *****************
     @QueryMapping

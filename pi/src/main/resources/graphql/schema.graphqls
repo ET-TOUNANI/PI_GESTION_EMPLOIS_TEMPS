@@ -1,4 +1,5 @@
 scalar Date
+scalar Time
 type Query{
 
     findDepartements : [Departement],
@@ -24,6 +25,9 @@ type Query{
 
     findFilieres:[Filiere],
     findFiliere(id:Float):Filiere
+
+    findSeances:[Seance],
+    findSeance(id:Float):Seance
 }
 type Mutation {
     addDepartement(departement: DepartementDTO) : Departement,
@@ -52,6 +56,10 @@ type Mutation {
     addFiliere(filiere:FiliereDTO):Filiere,
     updateFiliere(id:Float,filiere:FiliereDTO):Filiere,
     deleteFiliere(id:Float):String,
+
+    addSeance(seance: SeanceDTO) : Seance,
+    updateSeance(id:Float,seance: SeanceDTO):Seance,
+    deleteSeance(id:Float):String,
 }
 type Enseignant{
     id :ID,
@@ -103,6 +111,27 @@ type Filiere{
     chefFiliere:String
 }
 
+type Seance{
+    id:ID,
+    jour:JourDeLaSemaine,
+    heurDebut:Time,
+    classe:Classe,
+    salle:Salle,
+    elementDeModule:ElementDeModule,
+    enseignant:Enseignant
+
+}
+
+enum JourDeLaSemaine {
+    Lundi
+    Mardi
+    Mercredi
+    Jeudi
+    Vendredi
+    Samedi
+    Dimanche
+}
+
 input DepartementDTO{
     libelle:String
 }
@@ -142,5 +171,14 @@ input FiliereDTO{
     libelle:String,
     nombreSem:Int,
     chefFiliere:String
+}
+
+input SeanceDTO{
+    jour:JourDeLaSemaine,
+    heurDebut:Time,
+    classe:ClasseDTO,
+    salle:SalleDTO,
+    elementDeModule:ElementDeModuleDTO,
+    enseignant:EnseignantDTO
 }
 
