@@ -24,6 +24,9 @@ public class ControllerGraphql {
     private final IElementDeModuleService elementDeModuleService;
 
     private final ISeanceService seanceService;
+
+    private final IFiliereService filiereService;
+    private final ISalleService salleService;
     //Repositories
     // don't forget to customize your mapper here
     private final GeneralMapper<Enseignant, EnseignantDTO> mapperEnseignant = new GeneralMapper<>(EnseignantDTO.class, Enseignant.class);
@@ -33,12 +36,14 @@ public class ControllerGraphql {
     private final GeneralMapper<ElementDeModule, ElementDeModuleDTO> mapperElementDeModule = new GeneralMapper<>(ElementDeModuleDTO.class, ElementDeModule.class);
     private final GeneralMapper<Semestre, SemestreDTO> mapperSemestre = new GeneralMapper<>(SemestreDTO.class, Semestre.class);
     private final GeneralMapper<TypeSalle, TypeSalleDTO> mapperTypeSalle = new GeneralMapper<>(TypeSalleDTO.class, TypeSalle.class);
+    private final GeneralMapper<Filiere,FiliereDTO> mapperFiliere= new GeneralMapper<>(FiliereDTO.class,Filiere.class);
+    private final GeneralMapper<Salle,SalleDTO> mapperSalle=new GeneralMapper<>(SalleDTO.class,Salle.class);
     private final GeneralMapper<Seance, SeanceDTO> mapperSeance = new GeneralMapper<>(SeanceDTO.class, Seance.class);
 
 
     //Constructor with allargs of service
 
-    public ControllerGraphql(IDepartementService departementService, IEnseignantService enseignantService, IClasseService classeService, IElementDeModuleService elementDeModuleService, ISemestreService semestreService, ITypeSalleService typeSalleService, ISeanceService seanceService) {
+    public ControllerGraphql(IDepartementService departementService, IEnseignantService enseignantService, IClasseService classeService, IElementDeModuleService elementDeModuleService, ISemestreService semestreService, ITypeSalleService typeSalleService,IFiliereService filiereService,ISalleService salleService) {
         this.departementService = departementService;
         this.enseignantService = enseignantService;
         this.classeService = classeService;
@@ -46,6 +51,8 @@ public class ControllerGraphql {
         this.typeSalleService = typeSalleService;
         this.semestreService = semestreService;
         this.seanceService = seanceService;
+        this.filiereService= filiereService;
+        this.salleService=salleService;
     }
 
     //**************** Departement *****************
@@ -100,7 +107,7 @@ public class ControllerGraphql {
         return semestreService.updateSemestre(id, mapperSemestre.fromRequestDTO(semestre));
     }
 
-    //**************** enseignant *****************
+    //**************** Enseignant *****************
     @QueryMapping
     public List<Enseignant> findEnseignants() {
         return enseignantService.getEnseignants();
@@ -153,6 +160,7 @@ public class ControllerGraphql {
     }
 
     //**************** put your methodes below *****************
+
     //**************** Classe *****************
     @QueryMapping
     public List<Classe> findClasses() {
@@ -206,6 +214,43 @@ public class ControllerGraphql {
     @MutationMapping
     public ElementDeModule updateElementDeModule(@Argument Long id, @Argument ElementDeModuleDTO elementdemodule) {
         return elementDeModuleService.updateElementDeModule(id, mapperElementDeModule.fromRequestDTO(elementdemodule));
+    }
+    //****** Filiere *******
+    @QueryMapping
+    public List<Filiere> findFilieres(){return filiereService.getFilieres();}
+    @QueryMapping
+    public Filiere findFiliere(@Argument Long id){return filiereService.getFiliereById(id);}
+
+    @MutationMapping
+    public Filiere addFiliere(@Argument FiliereDTO filiere){
+        return filiereService.addFiliere(mapperFiliere.fromRequestDTO(filiere));
+    }
+
+    @MutationMapping
+    public String deleteFiliere(@Argument Long id){return filiereService.deleteFiliere(id);}
+
+    @MutationMapping
+    public Filiere updateFiliere(@Argument Long id,@Argument FiliereDTO filiere){
+        System.out.println("Filiere");
+        return filiereService.updateFiliere(id,mapperFiliere.fromRequestDTO(filiere));
+    }
+    //****** Salle *******
+    @QueryMapping
+    public List<Salle> findSalles(){return salleService.getSalles();}
+    @QueryMapping
+    public Salle findSalle(@Argument Long id){return salleService.getSalleById(id);}
+    @MutationMapping
+    public  Salle addSalle(@Argument SalleDTO salle){
+        return salleService.addSalle(mapperSalle.fromRequestDTO(salle));
+    }
+    @MutationMapping
+    public String deleteSalle(@Argument Long id){return salleService.deleteSalle(id);}
+
+    @MutationMapping
+    public Salle updateSalle(@Argument Long id,@Argument SalleDTO salle){
+        System.out.println("Salle");
+        return salleService.updateSalle(id,mapperSalle.fromRequestDTO(salle));
+    }
     }
 
     //**************** Seance *****************
