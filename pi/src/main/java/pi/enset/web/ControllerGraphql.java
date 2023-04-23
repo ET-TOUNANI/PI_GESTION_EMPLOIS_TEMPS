@@ -22,6 +22,8 @@ public class ControllerGraphql {
     //Classe and ElementModule
     private final IClasseService classeService;
     private final IElementDeModuleService elementDeModuleService;
+
+    private final ISeanceService seanceService;
     //Repositories
     // don't forget to customize your mapper here
     private final GeneralMapper<Enseignant, EnseignantDTO> mapperEnseignant = new GeneralMapper<>(EnseignantDTO.class, Enseignant.class);
@@ -31,17 +33,19 @@ public class ControllerGraphql {
     private final GeneralMapper<ElementDeModule, ElementDeModuleDTO> mapperElementDeModule = new GeneralMapper<>(ElementDeModuleDTO.class, ElementDeModule.class);
     private final GeneralMapper<Semestre, SemestreDTO> mapperSemestre = new GeneralMapper<>(SemestreDTO.class, Semestre.class);
     private final GeneralMapper<TypeSalle, TypeSalleDTO> mapperTypeSalle = new GeneralMapper<>(TypeSalleDTO.class, TypeSalle.class);
+    private final GeneralMapper<Seance, SeanceDTO> mapperSeance = new GeneralMapper<>(SeanceDTO.class, Seance.class);
 
 
     //Constructor with allargs of service
 
-    public ControllerGraphql(IDepartementService departementService, IEnseignantService enseignantService, IClasseService classeService, IElementDeModuleService elementDeModuleService, ISemestreService semestreService, ITypeSalleService typeSalleService) {
+    public ControllerGraphql(IDepartementService departementService, IEnseignantService enseignantService, IClasseService classeService, IElementDeModuleService elementDeModuleService, ISemestreService semestreService, ITypeSalleService typeSalleService, ISeanceService seanceService) {
         this.departementService = departementService;
         this.enseignantService = enseignantService;
         this.classeService = classeService;
         this.elementDeModuleService = elementDeModuleService;
         this.typeSalleService = typeSalleService;
         this.semestreService = semestreService;
+        this.seanceService = seanceService;
     }
 
     //**************** Departement *****************
@@ -202,6 +206,32 @@ public class ControllerGraphql {
     @MutationMapping
     public ElementDeModule updateElementDeModule(@Argument Long id, @Argument ElementDeModuleDTO elementdemodule) {
         return elementDeModuleService.updateElementDeModule(id, mapperElementDeModule.fromRequestDTO(elementdemodule));
+    }
+
+    //**************** Seance *****************
+    @QueryMapping
+    public List<Seance> findSeances() {
+        return seanceService.getSeances();
+    }
+
+    @QueryMapping
+    public Seance findSeance(@Argument Long id) {
+        return seanceService.getSeanceById(id);
+    }
+
+    @MutationMapping
+    public Seance addSeance(@Argument SeanceDTO seance) {
+        return seanceService.addSeance(mapperSeance.fromRequestDTO(seance));
+    }
+
+    @MutationMapping
+    public String deleteSeance(@Argument Long id) {
+        return seanceService.deleteSeance(id);
+    }
+
+    @MutationMapping
+    public Seance updateSeance(@Argument Long id, @Argument SeanceDTO seance) {
+        return seanceService.updateSeance(id, mapperSeance.fromRequestDTO(seance));
     }
 }
 
