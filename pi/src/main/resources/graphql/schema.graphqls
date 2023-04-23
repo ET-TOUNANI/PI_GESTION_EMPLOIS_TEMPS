@@ -1,3 +1,4 @@
+scalar Date
 type Query{
 
     findDepartements : [Departement],
@@ -74,7 +75,7 @@ type Semestre{
 type TypeSalle{
     id : ID,
     libelle : String,
-    capacite: Int,
+    capacite: Float,
     equipement : String
 }
 
@@ -100,13 +101,13 @@ input ElementDeModuleDTO{
     volumeHoraire: Int
 }
 input SemestreDTO{
-    dateDebut : String,
-    dateFin : String,
+    dateDebut : Date,
+    dateFin : Date,
     num : String,
     anneeUniv : String
 }
 input TypeSalleDTO{
     libelle : String,
-    capacite: Int,
+    capacite: Float,
     equipement : String
 }
