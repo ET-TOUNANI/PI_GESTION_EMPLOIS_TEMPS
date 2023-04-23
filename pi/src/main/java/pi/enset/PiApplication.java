@@ -22,9 +22,27 @@ public class PiApplication {
                                  ClasseRepository classeRepository,
                                  ElementModuleRepository elementModuleRepository,
                                  SemestreRepository semestreRepository,
-                                 TypeSalleRepository typeSalleRepository) {
+                                 TypeSalleRepository typeSalleRepository,
+                                 SalleRepository salleRepository,
+                                 FiliereRepository filiereRepository) {
         return args -> {
             // add some data to test
+            Filiere filiere =new Filiere();
+            filiere.setChefFiliere("Chef de filiere");
+            filiere.setLibelle("libelle filiere");
+            filiere.setNombreSem(5);
+            filiereRepository.save(filiere);
+            //******************************
+            Filiere f=Filiere.builder().libelle("BDCC").chefFiliere("M.Khiat").nombreSem(6).build();
+            filiereRepository.save(f);
+            //**************************
+            Salle salle= new Salle();
+            salle.setNumSalle(2);
+            salleRepository.save(salle);
+            //******************************
+            Salle s=Salle.builder().numSalle(10).build();
+            salleRepository.save(s);
+            //******************************************
             Enseignant enseignant = new Enseignant();
             enseignant.setNom("ELYoussfi");
             enseignant.setPrenom("Mohammed");

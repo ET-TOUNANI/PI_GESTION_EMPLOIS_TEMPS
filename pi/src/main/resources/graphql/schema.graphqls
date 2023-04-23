@@ -17,6 +17,12 @@ type Query{
 
     findTypeSalles : [TypeSalle],
     findTypeSalle(id:Float):TypeSalle
+
+    findSalles:[Salle],
+    findSalle(id:Float):Salle
+
+    findFilieres:[Filiere],
+    findFiliere(id:Float):Filiere
 }
 type Mutation {
     addDepartement(departement: DepartementDTO) : Departement,
@@ -37,6 +43,14 @@ type Mutation {
     addTypeSalle(typeSalle: TypeSalleDTO) : TypeSalle,
     updateTypeSalle(id:Float,typeSalle: TypeSalleDTO):TypeSalle,
     deleteTypeSalle(id:Float):String,
+
+    addSalle(salle:SalleDTO):Salle,
+    updateSalle(id:Float,salle:SalleDTO):Salle,
+    deleteSalle(id:Float):String,
+
+    addFiliere(filiere:FiliereDTO):Filiere,
+    updateFiliere(id:Float,filiere:FiliereDTO):Filiere,
+    deleteFiliere(id:Float):String,
 }
 type Enseignant{
     id :ID,
@@ -77,6 +91,16 @@ type TypeSalle{
     capacite: Int,
     equipement : String
 }
+type Salle{
+     id:ID,
+   numSalle:Int
+}
+type Filiere{
+    id:ID,
+    libelle:String,
+    nombreSem:Int,
+    chefFiliere:String
+}
 
 input DepartementDTO{
     libelle:String
@@ -109,4 +133,12 @@ input TypeSalleDTO{
     libelle : String,
     capacite: Int,
     equipement : String
+}
+input SalleDTO{
+    numSalle:Int
+}
+input FiliereDTO{
+    libelle:String,
+    nombreSem:Int,
+    chefFiliere:String
 }
