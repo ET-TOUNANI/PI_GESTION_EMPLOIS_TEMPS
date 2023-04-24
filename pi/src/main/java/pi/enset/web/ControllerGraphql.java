@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import pi.enset.DTO.*;
 import pi.enset.DTO.mappers.GeneralMapper;
 import pi.enset.entities.*;
+import pi.enset.entities.Module;
 import pi.enset.services.*;
 
 import java.util.List;
@@ -26,6 +27,8 @@ public class ControllerGraphql {
 
     private final IFiliereService filiereService;
     private final ISalleService salleService;
+    private final IModuleService moduleService;
+    private final INonDisponibiliteService nonDisponibiliteService;
     //Repositories
     // don't forget to customize your mapper here
     private final GeneralMapper<Enseignant, EnseignantDTO> mapperEnseignant = new GeneralMapper<>(EnseignantDTO.class, Enseignant.class);
@@ -37,11 +40,13 @@ public class ControllerGraphql {
     private final GeneralMapper<TypeSalle, TypeSalleDTO> mapperTypeSalle = new GeneralMapper<>(TypeSalleDTO.class, TypeSalle.class);
     private final GeneralMapper<Filiere,FiliereDTO> mapperFiliere= new GeneralMapper<>(FiliereDTO.class,Filiere.class);
     private final GeneralMapper<Salle,SalleDTO> mapperSalle=new GeneralMapper<>(SalleDTO.class,Salle.class);
+    private final GeneralMapper<Module,ModuleDTO> mapperModule=new GeneralMapper<>(ModuleDTO.class,Module.class);
+    private final GeneralMapper<NonDisponibilite,NonDisponibiliteDTO>mapperNonDisponibilite=new GeneralMapper<>(NonDisponibiliteDTO.class,NonDisponibilite.class);
 
 
     //Constructor with allargs of service
 
-    public ControllerGraphql(IDepartementService departementService, IEnseignantService enseignantService, IClasseService classeService, IElementDeModuleService elementDeModuleService, ISemestreService semestreService, ITypeSalleService typeSalleService,IFiliereService filiereService,ISalleService salleService) {
+    public ControllerGraphql(IDepartementService departementService, IEnseignantService enseignantService, IClasseService classeService, IElementDeModuleService elementDeModuleService, ISemestreService semestreService, ITypeSalleService typeSalleService, IFiliereService filiereService, ISalleService salleService, IModuleService moduleService, INonDisponibiliteService nonDisponibiliteService) {
         this.departementService = departementService;
         this.enseignantService = enseignantService;
         this.classeService = classeService;
@@ -50,6 +55,8 @@ public class ControllerGraphql {
         this.semestreService = semestreService;
         this.filiereService= filiereService;
         this.salleService=salleService;
+        this.moduleService = moduleService;
+        this.nonDisponibiliteService = nonDisponibiliteService;
     }
 
     //**************** Departement *****************
@@ -247,6 +254,42 @@ public class ControllerGraphql {
     public Salle updateSalle(@Argument Long id,@Argument SalleDTO salle){
         System.out.println("Salle");
         return salleService.updateSalle(id,mapperSalle.fromRequestDTO(salle));
+    }
+    //******************Module************
+    @QueryMapping
+    public List<Module>findModules(){return moduleService.getModules();}
+    @QueryMapping
+    public Module findModule(@Argument Long id){
+        return moduleService.getModuleById(id);
+    }
+    @MutationMapping
+    public Module addModule(@Argument ModuleDTO module){
+        return moduleService.addModule(mapperModule.fromRequestDTO(module));
+    }
+    @MutationMapping
+    public String deleteModule(@Argument Long id){
+        return moduleService.deleteModule(id);
+    }
+    @MutationMapping
+    public Module updateModule(@Argument Long id,@Argument ModuleDTO module){
+        return moduleService.updateModule(id, mapperModule.fromRequestDTO(module));
+    }
+    //*********************NonDisponibilite******************
+    @QueryMapping
+    public List<NonDisponibilite>findNonDisponibilites(){return nonDisponibiliteService.getNonDisponibilites();}
+    @QueryMapping
+    public NonDisponibilite findNonDisponibilite(@Argument Long id){return nonDisponibiliteService.getNonDisponibiliteById(id);}
+    @MutationMapping
+    public NonDisponibilite addNonDisponibilite(@Argument NonDisponibiliteDTO nonDisponibilite){
+        return nonDisponibiliteService.addNonDisponibilite(mapperNonDisponibilite.fromRequestDTO(nonDisponibilite));
+    }
+    @MutationMapping
+    public String deleteNonDisponibilite(@Argument Long id){
+        return nonDisponibiliteService.deleteNonDisponibilite(id);
+    }
+    @MutationMapping
+    public NonDisponibilite updateNonDisponibilite(@Argument Long id,@Argument NonDisponibiliteDTO nonDisponibilite){
+        return nonDisponibiliteService.updateNonDisponibilite(id,mapperNonDisponibilite.fromRequestDTO(nonDisponibilite));
     }
     }
 
