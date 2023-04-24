@@ -24,6 +24,12 @@ type Query{
 
     findFilieres:[Filiere],
     findFiliere(id:Float):Filiere
+
+    findModules :[Module],
+    findModule(id:Float):TypeSalle
+
+    findNonDisponibilites:[NonDisponibilite],
+    findNonDisponibilite(id:Float):NonDisponibilite
 }
 type Mutation {
     addDepartement(departement: DepartementDTO) : Departement,
@@ -52,6 +58,14 @@ type Mutation {
     addFiliere(filiere:FiliereDTO):Filiere,
     updateFiliere(id:Float,filiere:FiliereDTO):Filiere,
     deleteFiliere(id:Float):String,
+
+    addModule(module:ModuleDTO):Module,
+    updateModule(id:Float,module:ModuleDTO):Module,
+    deleteModule(id:Float):String,
+
+    addNonDisponibilite(nonDisponibilite:NonDisponibiliteDTO):NonDisponibilite,
+    updateNonDisponibilite(id:Float,nonDisponibilite:NonDisponibiliteDTO):NonDisponibilite,
+    deleteNonDisponibilite(id:Float):String,
 }
 type Enseignant{
     id :ID,
@@ -102,6 +116,32 @@ type Filiere{
     nombreSem:Int,
     chefFiliere:String
 }
+type Module{
+    id: ID,
+    volumeHoraire:Int
+    libelle: String
+}
+type NonDisponibilite{
+    id:ID,
+    jours:JourDeLaSemaine
+}
+enum JourDeLaSemaine{
+    LUNDI_MATIN,
+    LUNDI_APRESMIDI,
+    MARDI_MATIN,
+    MARDI_APRESMIDI,
+    MERCREDI_MATIN,
+    MERCREDI_APRESMIDI,
+    JEUDI_MATIN,
+    JEUDI_APRESMIDI,
+    VENDREDI_MATIN,
+    VENDREDI_APRESMIDI,
+    SAMEDI_MATIN,
+    SAMEDI_APRESMIDI,
+    DIMANCHE_MATIN,
+    DIMANCHE_APRESMIDI
+}
+
 
 input DepartementDTO{
     libelle:String
@@ -142,5 +182,14 @@ input FiliereDTO{
     libelle:String,
     nombreSem:Int,
     chefFiliere:String
+}
+input ModuleDTO{
+    volumeHoraire:Int,
+    libelle: String
+
+}
+input NonDisponibiliteDTO{
+    jours:JourDeLaSemaine
+
 }
 
