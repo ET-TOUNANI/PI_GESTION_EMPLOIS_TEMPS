@@ -1,4 +1,5 @@
 scalar Date
+scalar Time
 type Query{
 
     findDepartements : [Departement],
@@ -25,11 +26,15 @@ type Query{
     findFilieres:[Filiere],
     findFiliere(id:Float):Filiere
 
+    findSeances:[Seance],
+    findSeance(id:Float):Seance
+
     findModules :[Module],
     findModule(id:Float):TypeSalle
 
     findNonDisponibilites:[NonDisponibilite],
     findNonDisponibilite(id:Float):NonDisponibilite
+
 }
 type Mutation {
     addDepartement(departement: DepartementDTO) : Departement,
@@ -59,6 +64,10 @@ type Mutation {
     updateFiliere(id:Float,filiere:FiliereDTO):Filiere,
     deleteFiliere(id:Float):String,
 
+    addSeance(seance: SeanceDTO) : Seance,
+    updateSeance(id:Float,seance: SeanceDTO):Seance,
+    deleteSeance(id:Float):String,
+
     addModule(module:ModuleDTO):Module,
     updateModule(id:Float,module:ModuleDTO):Module,
     deleteModule(id:Float):String,
@@ -66,6 +75,7 @@ type Mutation {
     addNonDisponibilite(nonDisponibilite:NonDisponibiliteDTO):NonDisponibilite,
     updateNonDisponibilite(id:Float,nonDisponibilite:NonDisponibiliteDTO):NonDisponibilite,
     deleteNonDisponibilite(id:Float):String,
+
 }
 type Enseignant{
     id :ID,
@@ -143,6 +153,27 @@ enum JourDeLaSemaine{
 }
 
 
+type Seance{
+    id:ID,
+    jour:JourDeLaSemaine,
+    heurDebut:Time,
+    classe:Classe,
+    salle:Salle,
+    elementDeModule:ElementDeModule,
+    enseignant:Enseignant
+
+}
+
+enum JourDeLaSemaine {
+    Lundi
+    Mardi
+    Mercredi
+    Jeudi
+    Vendredi
+    Samedi
+    Dimanche
+}
+
 input DepartementDTO{
     libelle:String
 }
@@ -191,5 +222,14 @@ input ModuleDTO{
 input NonDisponibiliteDTO{
     jours:JourDeLaSemaine
 
+}
+
+input SeanceDTO{
+    jour:JourDeLaSemaine,
+    heurDebut:Time,
+    classe:ClasseDTO,
+    salle:SalleDTO,
+    elementDeModule:ElementDeModuleDTO,
+    enseignant:EnseignantDTO
 }
 

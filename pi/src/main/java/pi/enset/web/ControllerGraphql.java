@@ -16,7 +16,6 @@ import java.util.List;
 public class ControllerGraphql {
     // don't forget to add your service here
 
-
     private final ISemestreService semestreService;
     private final ITypeSalleService typeSalleService;
     private final IDepartementService departementService;
@@ -25,10 +24,14 @@ public class ControllerGraphql {
     private final IClasseService classeService;
     private final IElementDeModuleService elementDeModuleService;
 
+    private final ISeanceService seanceService;
+
     private final IFiliereService filiereService;
     private final ISalleService salleService;
+
     private final IModuleService moduleService;
     private final INonDisponibiliteService nonDisponibiliteService;
+
     //Repositories
     // don't forget to customize your mapper here
     private final GeneralMapper<Enseignant, EnseignantDTO> mapperEnseignant = new GeneralMapper<>(EnseignantDTO.class, Enseignant.class);
@@ -40,19 +43,28 @@ public class ControllerGraphql {
     private final GeneralMapper<TypeSalle, TypeSalleDTO> mapperTypeSalle = new GeneralMapper<>(TypeSalleDTO.class, TypeSalle.class);
     private final GeneralMapper<Filiere,FiliereDTO> mapperFiliere= new GeneralMapper<>(FiliereDTO.class,Filiere.class);
     private final GeneralMapper<Salle,SalleDTO> mapperSalle=new GeneralMapper<>(SalleDTO.class,Salle.class);
+
+    private final GeneralMapper<Seance, SeanceDTO> mapperSeance = new GeneralMapper<>(SeanceDTO.class, Seance.class);
+
     private final GeneralMapper<Module,ModuleDTO> mapperModule=new GeneralMapper<>(ModuleDTO.class,Module.class);
     private final GeneralMapper<NonDisponibilite,NonDisponibiliteDTO>mapperNonDisponibilite=new GeneralMapper<>(NonDisponibiliteDTO.class,NonDisponibilite.class);
 
 
+
     //Constructor with allargs of service
 
+
+    public ControllerGraphql(IDepartementService departementService, IEnseignantService enseignantService, IClasseService classeService, IElementDeModuleService elementDeModuleService, ISemestreService semestreService, ITypeSalleService typeSalleService,IFiliereService filiereService,ISalleService salleService,ISeanceService seanceService) {
+
     public ControllerGraphql(IDepartementService departementService, IEnseignantService enseignantService, IClasseService classeService, IElementDeModuleService elementDeModuleService, ISemestreService semestreService, ITypeSalleService typeSalleService, IFiliereService filiereService, ISalleService salleService, IModuleService moduleService, INonDisponibiliteService nonDisponibiliteService) {
+
         this.departementService = departementService;
         this.enseignantService = enseignantService;
         this.classeService = classeService;
         this.elementDeModuleService = elementDeModuleService;
         this.typeSalleService = typeSalleService;
         this.semestreService = semestreService;
+        this.seanceService = seanceService;
         this.filiereService= filiereService;
         this.salleService=salleService;
         this.moduleService = moduleService;
@@ -255,6 +267,33 @@ public class ControllerGraphql {
         System.out.println("Salle");
         return salleService.updateSalle(id,mapperSalle.fromRequestDTO(salle));
     }
+
+
+    //**************** Seance *****************
+    @QueryMapping
+    public List<Seance> findSeances() {
+        return seanceService.getSeances();
+    }
+
+    @QueryMapping
+    public Seance findSeance(@Argument Long id) {
+        return seanceService.getSeanceById(id);
+    }
+
+    @MutationMapping
+    public Seance addSeance(@Argument SeanceDTO seance) {
+        return seanceService.addSeance(mapperSeance.fromRequestDTO(seance));
+    }
+
+    @MutationMapping
+    public String deleteSeance(@Argument Long id) {
+        return seanceService.deleteSeance(id);
+    }
+
+    @MutationMapping
+    public Seance updateSeance(@Argument Long id, @Argument SeanceDTO seance) {
+        return seanceService.updateSeance(id, mapperSeance.fromRequestDTO(seance));
+
     //******************Module************
     @QueryMapping
     public List<Module>findModules(){return moduleService.getModules();}
@@ -292,5 +331,6 @@ public class ControllerGraphql {
         return nonDisponibiliteService.updateNonDisponibilite(id,mapperNonDisponibilite.fromRequestDTO(nonDisponibilite));
     }
     }
+}
 
 
