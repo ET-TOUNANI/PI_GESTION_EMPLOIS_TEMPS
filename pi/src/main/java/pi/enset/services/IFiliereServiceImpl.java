@@ -35,6 +35,7 @@ public class IFiliereServiceImpl implements IFiliereService {
     }
     @Override
     public Filiere updateFiliere(Long id, Filiere filiere) {
+        filiere.setId(id);
         return filiereRepository.save(filiere);
     }
 }
