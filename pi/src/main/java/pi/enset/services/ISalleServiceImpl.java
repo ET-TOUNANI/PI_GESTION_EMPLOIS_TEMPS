@@ -35,6 +35,7 @@ public class ISalleServiceImpl implements ISalleService {
     }
     @Override
     public Salle updateSalle(Long id, Salle salle) {
+        salle.setId(id);
         return salleRepository.save(salle);
     }
 }
