@@ -1,11 +1,18 @@
 package pi.enset.entities.enums;
 
 public enum JourDeLaSemaine {
-    Lundi,
-    Mardi,
-    Mercredi,
-    Jeudi,
-    Vendredi,
-    Samedi,
-    Dimanche
+    LUNDI_MATIN,
+    LUNDI_APRESMIDI,
+    MARDI_MATIN,
+    MARDI_APRESMIDI,
+    MERCREDI_MATIN,
+    MERCREDI_APRESMIDI,
+    JEUDI_MATIN,
+    JEUDI_APRESMIDI,
+    VENDREDI_MATIN,
+    VENDREDI_APRESMIDI,
+    SAMEDI_MATIN,
+    SAMEDI_APRESMIDI,
+    DIMANCHE_MATIN,
+    DIMANCHE_APRESMIDI
 };

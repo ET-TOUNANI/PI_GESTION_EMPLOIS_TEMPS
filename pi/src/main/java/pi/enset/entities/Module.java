@@ -7,6 +7,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
 import java.util.Collection;
 
 @Entity
@@ -20,9 +21,9 @@ public class Module {
     private Long id;
     private int volumeHoraire;
     private String libelle;
-    @OneToMany(mappedBy = "module")
+    @OneToMany(mappedBy = "module",fetch = FetchType.EAGER)
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
-    private Collection<ElementDeModule> elementDeModules;
+    private Collection<ElementDeModule> elementDeModules=new ArrayList<>();
     @ManyToOne
     private Semestre semestre;
 }
