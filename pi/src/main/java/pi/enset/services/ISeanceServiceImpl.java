@@ -1,12 +1,17 @@
 package pi.enset.services;
 
+import lombok.AllArgsConstructor;
+import org.springframework.stereotype.Service;
 import pi.enset.entities.Seance;
 import pi.enset.repository.SeanceRepository;
 
 import java.util.List;
 
-public class ISeanceServiceImpl implements ISeanceService{
+@Service
+@AllArgsConstructor
+public class ISeanceServiceImpl implements ISeanceService {
     private SeanceRepository seanceRepository;
+
     @Override
     public List<Seance> getSeances() {
         return seanceRepository.findAll();

@@ -4,12 +4,13 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
-import pi.enset.entities.*;
 import pi.enset.entities.Module;
+import pi.enset.entities.*;
 import pi.enset.entities.enums.JourDeLaSemaine;
 import pi.enset.entities.enums.NumeroSemester;
 import pi.enset.repository.*;
 
+import java.time.LocalTime;
 import java.util.Collections;
 import java.util.Date;
 
@@ -27,24 +28,25 @@ public class PiApplication {
                                  SemestreRepository semestreRepository,
                                  TypeSalleRepository typeSalleRepository,
                                  SalleRepository salleRepository,
-                                 FiliereRepository filiereRepository,ModuleRepository moduleRepository,
-                                 NonDisponibiliteRepository nonDisponibiliteRepository) {
+                                 FiliereRepository filiereRepository, ModuleRepository moduleRepository,
+                                 NonDisponibiliteRepository nonDisponibiliteRepository, SeanceRepository seanceRepository) {
         return args -> {
             // add some data to test
-            Filiere filiere =new Filiere();
+
+            Filiere filiere = new Filiere();
             filiere.setChefFiliere("Chef de filiere");
             filiere.setLibelle("libelle filiere");
             filiere.setNombreSem(5);
             filiereRepository.save(filiere);
             //******************************
-            Filiere f=Filiere.builder().libelle("BDCC").chefFiliere("M.Khiat").nombreSem(6).build();
+            Filiere f = Filiere.builder().libelle("BDCC").chefFiliere("M.Khiat").nombreSem(6).build();
             filiereRepository.save(f);
             //**************************
-            Salle salle= new Salle();
+            Salle salle = new Salle();
             salle.setNumSalle(2);
             salleRepository.save(salle);
             //******************************
-            Salle s=Salle.builder().numSalle(10).build();
+            Salle s = Salle.builder().numSalle(10).build();
             salleRepository.save(s);
             //******************************************
             Enseignant enseignant = new Enseignant();
@@ -127,29 +129,40 @@ public class PiApplication {
                     .build();
             typeSalleRepository.save(typeSalle2);
             //*************************************
-            Module module1=new Module();
+            Module module1 = new Module();
             module1.setLibelle("Architectures distribuée et Middlewares");
             module1.setVolumeHoraire(56);
             module1.getElementDeModules().add(elementDeModule1);
             module1.getElementDeModules().add(elementDeModule2);
             moduleRepository.save(module1);
             //*******************************************
-            Module module2=new Module();
+            Module module2 = new Module();
             module2.setLibelle("Big Data:Fondements et Architectures");
             module2.setVolumeHoraire(56);
             moduleRepository.save(module2);
             //*******************************************
-            Module module3=new Module();
+            Module module3 = new Module();
             module3.setLibelle("Intelligence artificielle et Systèmes Multi agents");
             module3.setVolumeHoraire(56);
             moduleRepository.save(module3);
             //******************************************
-            NonDisponibilite nonDisponibilite=new NonDisponibilite();
-            nonDisponibilite.setJours(Collections.singletonList(JourDeLaSemaine.JEUDI_MATIN));
+            NonDisponibilite nonDisponibilite = new NonDisponibilite();
+            nonDisponibilite.setJour(JourDeLaSemaine.SAMEDI_MATIN);
             nonDisponibilite.setEnseignant(enseignant);
             nonDisponibiliteRepository.save(nonDisponibilite);
-
-
+            //***********************************************
+            Seance seance = Seance.builder()
+                    .jour(JourDeLaSemaine.LUNDI_MATIN)
+                    .heureDebut(LocalTime.of(11,10, 0))
+                    .heureFin(LocalTime.of(12,20, 0))
+                    .classe(classe1)
+                    .elementDeModule(elementDeModule1)
+                    .enseignant(enseignant)
+                    .salle(salle)
+                    .build();
+            //System.out.println(seance.getHeureDebut());
+            seanceRepository.save(seance);
+            //******************************
         };
     }
 

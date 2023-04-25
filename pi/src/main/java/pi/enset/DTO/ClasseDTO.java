@@ -12,9 +12,7 @@ public class ClasseDTO {
     private Long id;
     private String libelle;
     private int nbrEleves;
-    /*
-    #Associations
-    private Filiere filiere;
-    private Collection<Seance> seances;
-     */
+
+    private FiliereDTO filiere;
+
 }

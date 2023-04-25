@@ -6,10 +6,12 @@ import pi.enset.entities.NonDisponibilite;
 import pi.enset.repository.NonDisponibiliteRepository;
 
 import java.util.List;
+
 @Service
 @AllArgsConstructor
 public class INonDisponibiliteServiceImpl implements INonDisponibiliteService {
     private NonDisponibiliteRepository nonDisponibiliteRepository;
+
     @Override
     public List<NonDisponibilite> getNonDisponibilites() {
         return nonDisponibiliteRepository.findAll();
@@ -34,7 +36,7 @@ public class INonDisponibiliteServiceImpl implements INonDisponibiliteService {
 
     @Override
     public NonDisponibilite getNonDisponibiliteById(Long id) {
-        return nonDisponibiliteRepository.findById(id).orElseThrow(()->new RuntimeException("Cette non Disponibilité n'existe pas."));
+        return nonDisponibiliteRepository.findById(id).orElseThrow(() -> new RuntimeException("Cette non Disponibilité n'existe pas."));
     }
 
     @Override

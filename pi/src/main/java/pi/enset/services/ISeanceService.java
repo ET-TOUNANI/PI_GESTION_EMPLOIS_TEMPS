@@ -1,6 +1,5 @@
 package pi.enset.services;
 
-import pi.enset.entities.Departement;
 import pi.enset.entities.Seance;
 
 import java.util.List;

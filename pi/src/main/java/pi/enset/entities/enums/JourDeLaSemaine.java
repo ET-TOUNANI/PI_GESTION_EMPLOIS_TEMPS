@@ -1,6 +1,7 @@
 package pi.enset.entities.enums;
 
 public enum JourDeLaSemaine {
+
     LUNDI_MATIN,
     LUNDI_APRESMIDI,
     MARDI_MATIN,

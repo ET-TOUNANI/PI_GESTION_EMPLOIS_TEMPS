@@ -17,7 +17,4 @@ public class EnseignantDTO {
     private String login;
     private String password;
     private String specialite;
-   /* private Collection<NonDisponibilite> nonDisponibilites;
-    private Collection<Seance> seances;
-    private Collection<ElementDeModule> elementDeModules = new ArrayList<>();*/
 }

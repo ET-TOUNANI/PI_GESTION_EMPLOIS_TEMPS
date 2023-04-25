@@ -8,7 +8,10 @@ public interface IModuleService {
     List<Module> getModules();
 
     Module addModule(Module module);
-    String deleteModule (Long id);
+
+    String deleteModule(Long id);
+
     Module getModuleById(Long id);
-    Module updateModule(Long id,Module module);
+
+    Module updateModule(Long id, Module module);
 }

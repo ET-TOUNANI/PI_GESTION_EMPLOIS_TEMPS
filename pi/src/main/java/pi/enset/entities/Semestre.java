@@ -30,4 +30,5 @@ public class Semestre {
     @OneToMany(mappedBy = "semestre")
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private Collection<Module> modules;
+
 }

@@ -11,7 +11,5 @@ public class ModuleDTO {
     private Long id;
     private int volumeHoraire;
     private String libelle;
-
-    //private Collection<ElementDeModule> elementDeModules;
-    //private Semestre semestre;
+    private SemestreDTO semestre;
 }

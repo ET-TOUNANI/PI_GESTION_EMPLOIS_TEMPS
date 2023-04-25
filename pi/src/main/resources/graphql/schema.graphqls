@@ -86,54 +86,70 @@ type Enseignant{
     email: String,
     login: String,
     password: String,
-    specialite: String
+    specialite: String,
+    nonDisponibilites:[NonDisponibilite],
+    seances:[Seance]
 }
 type Departement{
     id :ID,
-    libelle:String
+    libelle:String,
+    filieres:[Filiere]
 }
 type Classe{
     id :ID,
     libelle : String,
-    nbrEleves: Int
+    nbrEleves: Int,
+    seances:[Seance],
+    filiere:Filiere
 }
 type ElementDeModule{
     id :ID,
     libelle : String,
-    volumeHoraire: Int
+    volumeHoraire: Int,
+    seances:[Seance]
+    module:[Module]
+    enseignants:[Enseignant]
 }
-
 type Semestre{
     id :ID,
-    dateDebut : String,
+    dateDebut : String  ,
     dateFin : String,
-    num : String,
-    anneeUniv : String
+    num : NumeroSemester,
+    anneeUniv : String,
+    modules:[Module]
 }
 type TypeSalle{
     id : ID,
     libelle : String,
     capacite: Float,
-    equipement : String
+    equipement : String,
+    salles:[Salle]
 }
 type Salle{
-     id:ID,
-   numSalle:Int
+    id:ID,
+    numSalle:Int,
+    typeSalle:TypeSalle,
+    seances:[Seance]
 }
 type Filiere{
     id:ID,
     libelle:String,
     nombreSem:Int,
-    chefFiliere:String
+    chefFiliere:String,
+    departement:Departement
+    classes:[Classe]
 }
 type Module{
     id: ID,
     volumeHoraire:Int
     libelle: String
+    semestre:Semestre
+    elementDeModules:[ElementDeModule]
 }
 type NonDisponibilite{
     id:ID,
-    jours:JourDeLaSemaine
+    jour:JourDeLaSemaine
+    enseignant:Enseignant
 }
 enum JourDeLaSemaine{
     LUNDI_MATIN,
@@ -151,29 +167,16 @@ enum JourDeLaSemaine{
     DIMANCHE_MATIN,
     DIMANCHE_APRESMIDI
 }
-
-
 type Seance{
     id:ID,
     jour:JourDeLaSemaine,
-    heurDebut:Time,
+    heurDebut:String,
+    heurFin:String,
     classe:Classe,
     salle:Salle,
     elementDeModule:ElementDeModule,
     enseignant:Enseignant
-
 }
-
-enum JourDeLaSemaine {
-    Lundi
-    Mardi
-    Mercredi
-    Jeudi
-    Vendredi
-    Samedi
-    Dimanche
-}
-
 input DepartementDTO{
     libelle:String
 }
@@ -189,11 +192,14 @@ input EnseignantDTO{
 }
 input ClasseDTO{
     libelle : String,
-    nbrEleves: Int
+    nbrEleves: Int,
+    filiere:FiliereDTO
 }
 input ElementDeModuleDTO{
     libelle : String,
-    volumeHoraire: Int
+    volumeHoraire: Int,
+    module:ModuleDTO,
+    Enseignant:EnseignantDTO
 }
 input SemestreDTO{
     dateDebut : Date,
@@ -201,35 +207,41 @@ input SemestreDTO{
     num : String,
     anneeUniv : String
 }
+
+enum NumeroSemester {
+    S1, S2, S3, S4, S5, S6
+}
 input TypeSalleDTO{
     libelle : String,
     capacite: Float,
-    equipement : String
+    equipement : String,
+
 }
 input SalleDTO{
-    numSalle:Int
+    numSalle:Int,
+    typeSalle:TypeSalleDTO
 }
 input FiliereDTO{
     libelle:String,
     nombreSem:Int,
-    chefFiliere:String
+    chefFiliere:String,
+    departement:DepartementDTO
 }
 input ModuleDTO{
     volumeHoraire:Int,
     libelle: String
-
+    semestre:SemestreDTO
 }
 input NonDisponibiliteDTO{
-    jours:JourDeLaSemaine
-
+    jours:String
+    enseignant:EnseignantDTO
 }
-
 input SeanceDTO{
-    jour:JourDeLaSemaine,
+    jour:String,
     heurDebut:Time,
+    heurFin:Time,
     classe:ClasseDTO,
     salle:SalleDTO,
     elementDeModule:ElementDeModuleDTO,
     enseignant:EnseignantDTO
 }
-

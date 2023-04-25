@@ -10,5 +10,4 @@ import lombok.NoArgsConstructor;
 public class DepartementDTO {
     private Long id;
     private String libelle;
-    //private Collection<Filiere> filieres;
 }

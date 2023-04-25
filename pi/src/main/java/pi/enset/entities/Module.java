@@ -21,9 +21,9 @@ public class Module {
     private Long id;
     private int volumeHoraire;
     private String libelle;
-    @OneToMany(mappedBy = "module",fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "module", fetch = FetchType.EAGER)
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
-    private Collection<ElementDeModule> elementDeModules=new ArrayList<>();
+    private Collection<ElementDeModule> elementDeModules = new ArrayList<>();
     @ManyToOne
     private Semestre semestre;
 }

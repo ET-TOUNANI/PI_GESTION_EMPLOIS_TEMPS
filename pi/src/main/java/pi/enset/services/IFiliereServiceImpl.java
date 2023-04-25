@@ -6,9 +6,12 @@ import pi.enset.entities.Filiere;
 import pi.enset.repository.FiliereRepository;
 
 import java.util.List;
-@Service @AllArgsConstructor
+
+@Service
+@AllArgsConstructor
 public class IFiliereServiceImpl implements IFiliereService {
     private FiliereRepository filiereRepository;
+
     @Override
     public List<Filiere> getFilieres() {
         return filiereRepository.findAll();
@@ -25,14 +28,16 @@ public class IFiliereServiceImpl implements IFiliereService {
             getFiliereById(id);
             filiereRepository.deleteById(id);
             return "Votre supression est effectuée avec succès";
-        }catch (Exception e){
+        } catch (Exception e) {
             return e.getMessage();
         }
     }
+
     @Override
     public Filiere getFiliereById(Long id) {
         return filiereRepository.findById(id).orElseThrow(() -> new RuntimeException("La filière n'existe pas!"));
     }
+
     @Override
     public Filiere updateFiliere(Long id, Filiere filiere) {
         filiere.setId(id);

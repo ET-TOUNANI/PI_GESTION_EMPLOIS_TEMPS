@@ -7,8 +7,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import pi.enset.entities.enums.JourDeLaSemaine;
 
-import java.util.List;
-
 @Entity
 @Data
 @NoArgsConstructor
@@ -18,9 +16,8 @@ public class NonDisponibilite {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @ElementCollection(targetClass = JourDeLaSemaine.class)
     @Enumerated(EnumType.STRING)
-    private List<JourDeLaSemaine> jours;
+    private JourDeLaSemaine jour;
     @ManyToOne
     private Enseignant enseignant;
 }

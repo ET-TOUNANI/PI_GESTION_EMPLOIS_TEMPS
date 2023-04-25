@@ -6,9 +6,12 @@ import pi.enset.entities.Salle;
 import pi.enset.repository.SalleRepository;
 
 import java.util.List;
-@Service @AllArgsConstructor
+
+@Service
+@AllArgsConstructor
 public class ISalleServiceImpl implements ISalleService {
     private SalleRepository salleRepository;
+
     @Override
     public List<Salle> getSalles() {
         return salleRepository.findAll();
@@ -25,14 +28,16 @@ public class ISalleServiceImpl implements ISalleService {
             getSalleById(id);
             salleRepository.deleteById(id);
             return "Votre supression est effectuée avec succès";
-        }catch (Exception e){
+        } catch (Exception e) {
             return e.getMessage();
-    }}
+        }
+    }
 
     @Override
     public Salle getSalleById(Long id) {
-        return salleRepository.findById(id).orElseThrow(() ->new RuntimeException("La salle n'existe pas!"));
+        return salleRepository.findById(id).orElseThrow(() -> new RuntimeException("La salle n'existe pas!"));
     }
+
     @Override
     public Salle updateSalle(Long id, Salle salle) {
         salle.setId(id);

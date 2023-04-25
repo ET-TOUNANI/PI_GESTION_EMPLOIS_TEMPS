@@ -12,11 +12,6 @@ public class ElementDeModuleDTO {
     private Long id;
     private int volumeHoraire;
     private String libelle;
-    /*
-    Associations
-    private Collection<Seance> seances;
-    private Module module;
-    private Collection<Enseignant> enseignants = new ArrayList<>();
-     */
-
+    private ModuleDTO module;
+    private EnseignantDTO enseignant;
 }

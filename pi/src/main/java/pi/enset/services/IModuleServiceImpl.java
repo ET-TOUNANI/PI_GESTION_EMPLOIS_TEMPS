@@ -6,10 +6,12 @@ import pi.enset.entities.Module;
 import pi.enset.repository.ModuleRepository;
 
 import java.util.List;
+
 @Service
 @AllArgsConstructor
 public class IModuleServiceImpl implements IModuleService {
     private ModuleRepository moduleRepository;
+
     @Override
     public List<Module> getModules() {
         return moduleRepository.findAll();
@@ -34,7 +36,7 @@ public class IModuleServiceImpl implements IModuleService {
     @Override
     public Module getModuleById(Long id) {
 
-        return moduleRepository.findById(id).orElseThrow(()->new RuntimeException("Ce module n'existe pas."));
+        return moduleRepository.findById(id).orElseThrow(() -> new RuntimeException("Ce module n'existe pas."));
     }
 
     @Override

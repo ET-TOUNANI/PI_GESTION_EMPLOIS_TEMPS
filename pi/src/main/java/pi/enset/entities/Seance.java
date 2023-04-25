@@ -7,7 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import pi.enset.entities.enums.JourDeLaSemaine;
 
-import java.sql.Time;
+import java.time.LocalTime;
 
 @Entity
 @Data
@@ -21,9 +21,9 @@ public class Seance {
     @Enumerated(EnumType.STRING)
     private JourDeLaSemaine jour;
     @Temporal(TemporalType.TIME)
-    private Time heureDebut;
+    private LocalTime heureDebut;
     @Temporal(TemporalType.TIME)
-    private Time heureFin;
+    private LocalTime heureFin;
     @ManyToOne
     private Classe classe;
     @ManyToOne
