@@ -1,7 +1,7 @@
 <app-page-header
   [name]="'Admin'"
-  [link]="'profs'"
-  [prev]="'Enseignants'"
+  [link]="'salles'"
+  [prev]="'Salles'"
   [current]="'Home'"
 ></app-page-header>
 
@@ -12,7 +12,7 @@
         <input
           type="text"
           class="form-control"
-          placeholder="Recherche par Prénom ..."
+          placeholder="Recherche par capacité ..."
         />
       </div>
     </div>
@@ -21,19 +21,11 @@
         <input
           type="text"
           class="form-control"
-          placeholder="Recherche par Nom ..."
+          placeholder="Recherche par type ..."
         />
       </div>
     </div>
-    <div class="col-lg-4 col-md-6">
-      <div class="form-group">
-        <input
-          type="text"
-          class="form-control"
-          placeholder="Recherche par Spécialité ..."
-        />
-      </div>
-    </div>
+    
     <div class="col-lg-2">
       <div class="search-student-btn">
         <button type="btn" class="btn btn-primary">Chercher</button>
@@ -55,7 +47,7 @@
               <a href="#" class="btn btn-outline-primary me-2"
                 ><i class="fas fa-download"></i> Télécharger </a
               >
-              <a routerLink="/profs/add" class="btn btn-primary"
+              <a routerLink="/salles/add" class="btn btn-primary"
                 ><i class="fas fa-plus"></i
               ></a>
             </div>
@@ -89,8 +81,10 @@
                 </div>
               </th>
               <th>ID</th>
-              <th>Numero de salle</th>
-              <th>type de salle</th>
+              <th>numéro </th>
+              <th>capacité </th>
+              <th>type</th>
+             
               <th class="text-end">Action</th>
             </tr>
           </thead>
@@ -105,10 +99,12 @@
                   />
                 </div>
               </td>
-              <td>123</td>
+              <td>123/td>
               <td>1</td>
-              
+            
+              <td>80</td>
               <td>mini amphi</td>
+             
               <td class="text-end">
                 <div class="actions">
                   <a class="btn btn-sm bg-success-light me-2">

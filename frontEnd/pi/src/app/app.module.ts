@@ -15,6 +15,12 @@ import { GestionProfComponent } from './components/gestion-prof/gestion-prof.com
 import { HomeComponent } from './components/home/home.component';
 import { GestionFiliereComponent } from './components/gestion-filiere/gestion-filiere.component';
 import { AddNewFiliereComponent } from './components/add-new-filiere/add-new-filiere.component';
+import { GestionDepartementComponent } from './components/gestion-departement/gestion-departement.component';
+import { AddNewDepartementComponent } from './components/add-new-departement/add-new-departement.component';
+import { GestionClasseComponent } from './components/gestion-classe/gestion-classe.component';
+import { AddNewClasseComponent } from './components/add-new-classe/add-new-classe.component';
+import { GestionSallesComponent } from './components/gestion-salles/gestion-salles.component';
+import { AddNewSalleComponent } from './components/add-new-salle/add-new-salle.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +36,13 @@ import { AddNewFiliereComponent } from './components/add-new-filiere/add-new-fil
     GestionProfComponent,
     HomeComponent,
     GestionFiliereComponent,
-    AddNewFiliereComponent
+    AddNewFiliereComponent,
+    GestionDepartementComponent,
+    AddNewDepartementComponent,
+    GestionClasseComponent,
+    AddNewClasseComponent,
+    GestionSallesComponent,
+    AddNewSalleComponent
   ],
   imports: [
     BrowserModule,
