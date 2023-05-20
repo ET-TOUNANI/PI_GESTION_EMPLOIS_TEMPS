@@ -1,7 +1,7 @@
 <app-page-header
   [name]="'Admin'"
-  [link]="'profs'"
-  [prev]="'Enseignants'"
+  [link]="'departements'"
+  [prev]="'Départements'"
   [current]="'Home'"
 ></app-page-header>
 
@@ -12,25 +12,7 @@
         <input
           type="text"
           class="form-control"
-          placeholder="Recherche par Prénom ..."
-        />
-      </div>
-    </div>
-    <div class="col-lg-3 col-md-6">
-      <div class="form-group">
-        <input
-          type="text"
-          class="form-control"
-          placeholder="Recherche par Nom ..."
-        />
-      </div>
-    </div>
-    <div class="col-lg-4 col-md-6">
-      <div class="form-group">
-        <input
-          type="text"
-          class="form-control"
-          placeholder="Recherche par Spécialité ..."
+          placeholder="Recherche ..."
         />
       </div>
     </div>
@@ -48,14 +30,14 @@
         <div class="page-header">
           <div class="row align-items-center">
             <div class="col">
-              <h3 class="page-title">Salles</h3>
+              <h3 class="page-title">Départements</h3>
             </div>
 
             <div class="col-auto text-end float-end ms-auto download-grp">
               <a href="#" class="btn btn-outline-primary me-2"
                 ><i class="fas fa-download"></i> Télécharger </a
               >
-              <a routerLink="/profs/add" class="btn btn-primary"
+              <a routerLink="/departements/add" class="btn btn-primary"
                 ><i class="fas fa-plus"></i
               ></a>
             </div>
@@ -89,8 +71,8 @@
                 </div>
               </th>
               <th>ID</th>
-              <th>Numero de salle</th>
-              <th>type de salle</th>
+              <th>libellé</th>
+              <th>chef du département</th>
               <th class="text-end">Action</th>
             </tr>
           </thead>
@@ -106,9 +88,13 @@
                 </div>
               </td>
               <td>123</td>
-              <td>1</td>
-              
-              <td>mini amphi</td>
+              <td>
+                <h2>
+                  <a>mathématiques informatiques</a>
+                </h2>
+              </td>
+              <td>Daaif</td>
+        
               <td class="text-end">
                 <div class="actions">
                   <a class="btn btn-sm bg-success-light me-2">
@@ -140,3 +126,4 @@
     </div>
   </div>
 </div>
+

@@ -29,7 +29,7 @@ export class SidebarComponent {
     icon: "fas fa-chalkboard-teacher"
   },
   {
-    link: "/departments",
+    link: "/departements",
     title: "Départments",
     icon: "fas fa-building"
   },

@@ -5,6 +5,12 @@ import { AddNewProfComponent } from './components/add-new-prof/add-new-prof.comp
 import { HomeComponent } from './components/home/home.component';
 import { GestionFiliereComponent } from './components/gestion-filiere/gestion-filiere.component';
 import { AddNewFiliereComponent } from './components/add-new-filiere/add-new-filiere.component';
+import { GestionDepartementComponent } from './components/gestion-departement/gestion-departement.component';
+import { AddNewDepartementComponent } from './components/add-new-departement/add-new-departement.component';
+import { GestionClasseComponent } from './components/gestion-classe/gestion-classe.component';
+import { AddNewClasseComponent } from './components/add-new-classe/add-new-classe.component';
+import { GestionSallesComponent } from './components/gestion-salles/gestion-salles.component';
+import { AddNewSalleComponent } from './components/add-new-salle/add-new-salle.component';
 
 const routes: Routes = [
     { path :'home' , component: HomeComponent},
@@ -12,6 +18,12 @@ const routes: Routes = [
     { path :'profs/add' , component: AddNewProfComponent},
     { path :'filieres' , component: GestionFiliereComponent},
     { path :'filieres/add' , component: AddNewFiliereComponent},
+    { path :'departements' , component: GestionDepartementComponent},
+    { path :'departements/add' , component: AddNewDepartementComponent},
+    { path :'classes' , component: GestionClasseComponent},
+    { path :'classes/add' , component: AddNewClasseComponent},
+    { path :'salles' , component: GestionSallesComponent},
+    { path :'salles/add' , component: AddNewSalleComponent}
 
 ];
 
