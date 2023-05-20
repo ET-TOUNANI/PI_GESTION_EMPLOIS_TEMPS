@@ -1,7 +1,7 @@
 <app-page-header
   [name]="'Admin'"
   [link]="'profs'"
-  [prev]="'Enseignants'"
+  [prev]="'filières'"
   [current]="'Home'"
 ></app-page-header>
 
@@ -12,7 +12,7 @@
         <input
           type="text"
           class="form-control"
-          placeholder="Recherche par Prénom ..."
+          placeholder="Recherche par libellé..."
         />
       </div>
     </div>
@@ -21,19 +21,11 @@
         <input
           type="text"
           class="form-control"
-          placeholder="Recherche par Nom ..."
+          placeholder="Recherche par chef de filière ..."
         />
       </div>
     </div>
-    <div class="col-lg-4 col-md-6">
-      <div class="form-group">
-        <input
-          type="text"
-          class="form-control"
-          placeholder="Recherche par Spécialité ..."
-        />
-      </div>
-    </div>
+    
     <div class="col-lg-2">
       <div class="search-student-btn">
         <button type="btn" class="btn btn-primary">Chercher</button>
@@ -48,14 +40,14 @@
         <div class="page-header">
           <div class="row align-items-center">
             <div class="col">
-              <h3 class="page-title">Enseignants</h3>
+              <h3 class="page-title">Filière</h3>
             </div>
 
             <div class="col-auto text-end float-end ms-auto download-grp">
               <a href="#" class="btn btn-outline-primary me-2"
                 ><i class="fas fa-download"></i> Télécharger </a
               >
-              <a routerLink="/profs/add" class="btn btn-primary"
+              <a routerLink="/filieres/add" class="btn btn-primary"
                 ><i class="fas fa-plus"></i
               ></a>
             </div>
@@ -88,17 +80,15 @@
                   />
                 </div>
               </th>
-              <th>CNE</th>
-              <th>Nom et prénom</th>
-              <th>Spécialité</th>
-              <th>E-mail</th>
-              <th>téléphone</th>
-              <th>Date de naissance</th>
+              <th>ID</th>
+              <th>Libillé</th>
+              <th>Semstre</th>
+              <th>Chef de Filière</th>
               <th class="text-end">Action</th>
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let i of [1, 1, 1, 1, 1, 1]">
+            <tr *ngFor="let i of [1, 1, 1, 1]">
               <td>
                 <div class="form-check check-tables">
                   <input
@@ -108,16 +98,15 @@
                   />
                 </div>
               </td>
-              <td>MD18945</td>
+              <td>123</td>
               <td>
                 <h2>
-                  <a>Ahmed rebbani</a>
+                  <a>bdcc</a>
                 </h2>
               </td>
-              <td>Reseau</td>
-              <td>ahmed@gmail.com</td>
-              <td>0655455</td>
-              <td>12/55/2050</td>
+              <td>6</td>
+              <td>el khiat</td>
+             
               <td class="text-end">
                 <div class="actions">
                   <a class="btn btn-sm bg-success-light me-2">
@@ -136,16 +125,17 @@
         </table>
         <ul class="pagination justify-content-end mt-4">
           <li class="page-item disabled">
-            <a class="page-link" href="#" tabindex="-1">Précédent </a>
+            <a class="page-link" href="#" tabindex="-1">Previous</a>
           </li>
           <li class="page-item"><a class="page-link" href="#">1</a></li>
           <li class="page-item"><a class="page-link" href="#">2</a></li>
           <li class="page-item"><a class="page-link" href="#">3</a></li>
           <li class="page-item">
-            <a class="page-link" href="#">Suivant</a>
+            <a class="page-link" href="#">Next</a>
           </li>
         </ul>
       </div>
     </div>
   </div>
 </div>
+
