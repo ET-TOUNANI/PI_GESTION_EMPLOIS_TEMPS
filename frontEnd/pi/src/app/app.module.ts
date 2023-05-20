@@ -13,6 +13,8 @@ import { ListDepartementsComponent } from './components/dashboard/list-departeme
 import { AddNewProfComponent } from './components/add-new-prof/add-new-prof.component';
 import { GestionProfComponent } from './components/gestion-prof/gestion-prof.component';
 import { HomeComponent } from './components/home/home.component';
+import { GestionFiliereComponent } from './components/gestion-filiere/gestion-filiere.component';
+import { AddNewFiliereComponent } from './components/add-new-filiere/add-new-filiere.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { HomeComponent } from './components/home/home.component';
     ListDepartementsComponent,
     AddNewProfComponent,
     GestionProfComponent,
-    HomeComponent
+    HomeComponent,
+    GestionFiliereComponent,
+    AddNewFiliereComponent
   ],
   imports: [
     BrowserModule,
