@@ -1,6 +1,8 @@
+import { TypeSalle } from "./typeSalle.models";
+
 export interface Salle {
     id:        number;
     numSalle:  number;
-    typeSalle: null;
+    typeSalle: TypeSalle;
     capacite:number;
 }

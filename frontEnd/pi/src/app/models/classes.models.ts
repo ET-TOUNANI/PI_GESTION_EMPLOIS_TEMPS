@@ -4,5 +4,5 @@ export interface Classe {
     id:        number;
     libelle:   string;
     nbrEleves: number;
-    filiere:   Filiere | null;
+    filiere:   Filiere ;
 }

@@ -5,6 +5,6 @@ export interface ElementDeModule {
     id:            number;
     volumeHoraire: number;
     libelle:       string;
-    module:        Module | null;
-    enseignant:    Prof | null;
+    module:        Module ;
+    enseignant:    Prof;
 }

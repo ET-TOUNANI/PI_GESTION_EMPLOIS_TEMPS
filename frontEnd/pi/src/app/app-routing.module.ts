@@ -13,6 +13,7 @@ import { GestionSallesComponent } from './components/gestion-salles/gestion-sall
 import { AddNewSalleComponent } from './components/add-new-salle/add-new-salle.component';
 
 const routes: Routes = [
+  { path :'' , component: HomeComponent},
     { path :'home' , component: HomeComponent},
     { path :'profs' , component: GestionProfComponent},
     { path :'profs/add' , component: AddNewProfComponent},

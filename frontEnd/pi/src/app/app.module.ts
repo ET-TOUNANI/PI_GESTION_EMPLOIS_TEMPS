@@ -21,6 +21,7 @@ import { GestionClasseComponent } from './components/gestion-classe/gestion-clas
 import { AddNewClasseComponent } from './components/add-new-classe/add-new-classe.component';
 import { GestionSallesComponent } from './components/gestion-salles/gestion-salles.component';
 import { AddNewSalleComponent } from './components/add-new-salle/add-new-salle.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { AddNewSalleComponent } from './components/add-new-salle/add-new-salle.c
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,5 +1,8 @@
+import { Semestre } from "./semestre.models";
+
 export interface Module {
     id:        number;
-    numSalle:  number;
-    typeSalle: null;
+    volumeHoraire:  number;
+    libelle:   string;
+    semestre: Semestre;
 }

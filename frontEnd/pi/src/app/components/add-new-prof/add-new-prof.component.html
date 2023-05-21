@@ -4,12 +4,11 @@
   [prev]="'Enseignants'"
   [current]="'Ajouter un Enseignant'"
 ></app-page-header>
-
 <div class="row">
   <div class="col-sm-12">
     <div class="card comman-shadow">
       <div class="card-body">
-        <form >
+        <form [formGroup]="newProfFormGroup" (ngSubmit)="handleAddProf()">
           <div class="row">
             <div class="col-12">
               <h5 class="form-title student-info">
@@ -25,46 +24,30 @@
                 <input
                   class="form-control"
                   type="text"
-                  placeholder="Prénom ...."
+                  formControlName="prenom"
                 />
               </div>
             </div>
             <div class="col-12 col-sm-4">
               <div class="form-group local-forms">
                 <label>Nom <span class="login-danger">*</span></label>
-                <input
-                  class="form-control"
-                  type="text"
-                  placeholder="Nom ...."
-                />
+                <input class="form-control" type="text" formControlName="nom" />
               </div>
             </div>
             <div class="col-12 col-sm-4">
-              <div class="form-group local-forms">
+              <div class="form-group local-forms angle-icon">
                 <label>Civilité <span class="login-danger">*</span></label>
-                <select class="form-control select">
-                  <option>Selectionner la civilité</option>
-                  <option>Féminin</option>
-                  <option>Masculin</option>
+                <select class="form-control select" formControlName="civilite">
+                  <option value="F">Féminin</option>
+                  <option value="M">Masculin</option>
                 </select>
               </div>
             </div>
-            <div class="col-12 col-sm-4">
-              <div class="form-group local-forms calendar-icon">
-                <label
-                  >Date de naissance <span class="login-danger">*</span></label
-                >
-                <input
-                  class="form-control datetimepicker"
-                  type="text"
-                  placeholder="DD-MM-YYYY"
-                />
-              </div>
-            </div>
+
             <div class="col-12 col-sm-4">
               <div class="form-group local-forms">
                 <label>CNE <span class="login-danger">*</span></label>
-                <input class="form-control" type="text" placeholder="CNE ..." />
+                <input class="form-control" type="text" formControlName="cne" />
               </div>
             </div>
             <div class="col-12 col-sm-4">
@@ -72,8 +55,8 @@
                 <label>E-Mail <span class="login-danger">*</span></label>
                 <input
                   class="form-control"
-                  type="text"
-                  placeholder="Email..."
+                  type="email"
+                  formControlName="email"
                 />
               </div>
             </div>
@@ -83,33 +66,17 @@
                 <input
                   class="form-control"
                   type="text"
-                  placeholder="Spécialité..."
+                  formControlName="specialite"
                 />
               </div>
             </div>
             <div class="col-12 col-sm-4">
               <div class="form-group local-forms">
                 <label>Téléphone </label>
-                <input
-                  class="form-control"
-                  type="text"
-                  placeholder="Téléphone..."
-                />
+                <input class="form-control" type="text" formControlName="tel" />
               </div>
             </div>
-            <div class="col-12 col-sm-4">
-              <div class="form-group students-up-files">
-                <label>Photo du professeur(150px X 150px)</label>
-                <div class="uplod">
-                  <label class="file-upload image-upbtn mb-0">
-                    Choisir un Fichier <input type="file" />
-                  </label>
-                </div>
-              </div>
-            </div>
-            <div class="col-12">
-              <h5 class="form-title"><span>Détails de connexion</span></h5>
-            </div>
+
             <div class="col-12 col-sm-4">
               <div class="form-group local-forms">
                 <label
@@ -118,7 +85,7 @@
                 <input
                   type="text"
                   class="form-control"
-                  placeholder="Nom d'utilisateur..."
+                  formControlName="login"
                 />
               </div>
             </div>
@@ -126,9 +93,9 @@
               <div class="form-group local-forms">
                 <label>Mot de passe <span class="login-danger">*</span></label>
                 <input
-                  type="text"
+                  type="password"
                   class="form-control"
-                  placeholder="Mot de passe****"
+                  formControlName="password"
                 />
               </div>
             </div>
@@ -145,9 +112,9 @@
 
             <div class="col-12 col-sm-12">
               <div class="form-group students-up-files">
-                <label
-                  >Vous pouvez également charger une liste des professeurs
-                  (xlsx, csv, txt)
+                <label>
+                  Vous pouvez également charger une liste des professeurs (xlsx,
+                  csv, txt)
                 </label>
                 <div class="uplod">
                   <label class="file-upload image-upbtn mb-0">

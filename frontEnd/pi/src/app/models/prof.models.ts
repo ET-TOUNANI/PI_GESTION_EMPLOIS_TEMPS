@@ -4,6 +4,7 @@ export interface Prof {
     nom:        string;
     prenom:     string;
     tel:        string;
+    cne:        string;
     email:      string;
     login:      string;
     password:   string;

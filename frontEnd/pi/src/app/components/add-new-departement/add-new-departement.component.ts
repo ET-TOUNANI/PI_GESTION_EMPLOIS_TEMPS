@@ -7,10 +7,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./add-new-departement.component.css']
 })
 export class AddNewDepartementComponent implements OnInit {
-handleAddDepartement() {
 
-
-}
   newDepartementFormGroup!:FormGroup;
   constructor(private fb:FormBuilder){
 
@@ -22,6 +19,7 @@ handleAddDepartement() {
     });
     
   }
-  
+  handleAddDepartement() {
+}
 
 }
