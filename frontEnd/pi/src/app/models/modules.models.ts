@@ -1,3 +1,4 @@
+import { Classe } from "./classes.models";
 import { Semestre } from "./semestre.models";
 
 export interface Module {
@@ -5,4 +6,7 @@ export interface Module {
     volumeHoraire:  number;
     libelle:   string;
     semestre: Semestre;
+     isSeperated : boolean;
+     isMetuale: boolean;
+     classe:Classe;
 }

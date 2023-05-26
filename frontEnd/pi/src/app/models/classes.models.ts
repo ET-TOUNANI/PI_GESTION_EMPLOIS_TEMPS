@@ -1,4 +1,5 @@
 import { Filiere } from "./filieres.models";
+import { Module } from "./modules.models";
 
 export interface Classe {
     id:        number;

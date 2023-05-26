@@ -4,4 +4,5 @@ export interface NonDesponibilitie {
     id:        number;
     jour:      string;
     enseignant: Prof;
+    periode:   string;
 }
