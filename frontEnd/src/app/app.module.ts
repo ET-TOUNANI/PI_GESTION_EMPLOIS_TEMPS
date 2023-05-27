@@ -23,6 +23,7 @@ import { GestionSallesComponent } from './components/gestion/gestion-salles/gest
 import { AddNewSalleComponent } from './components/add/add-new-salle/add-new-salle.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { EditProfComponent } from './components/edit/edit-prof/edit-prof.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { HttpClientModule } from '@angular/common/http';
     GestionClasseComponent,
     AddNewClasseComponent,
     GestionSallesComponent,
-    AddNewSalleComponent
+    AddNewSalleComponent,
+    EditProfComponent
   ],
   imports: [
     BrowserModule,
