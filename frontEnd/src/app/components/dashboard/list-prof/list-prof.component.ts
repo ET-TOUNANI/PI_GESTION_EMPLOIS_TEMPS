@@ -10,8 +10,13 @@ import { ProfServiceService } from 'src/app/services/prof-service.service';
 })
 export class ListProfComponent  implements OnInit{
   profs!: Prof[] ;
+
   errorMessage!: string;
   searchFormGroup! : FormGroup ;
+  page:number=0;
+  size:number=5;
+  totalPages:number=0;
+  currentPage:number=0;
   constructor(private profService : ProfServiceService,private fb : FormBuilder){}
   ngOnInit(): void {
     this.searchFormGroup=this.fb.group({
@@ -22,9 +27,13 @@ export class ListProfComponent  implements OnInit{
    }
     handleSearchCustomers() {
      let kw=this.searchFormGroup?.value.keyword;
-     this.profService.searchProfs(kw).subscribe({
+     this.profService.getProfs(this.page,this.size).subscribe({
          next : (data)=>{
-           this.profs=data;
+           this.profs=data.content;
+           this.totalPages=data.totalPages;
+           this.currentPage=data.number;
+           console.log(data);
+           
          },
          error : (err)=>{
            this.errorMessage=err;
