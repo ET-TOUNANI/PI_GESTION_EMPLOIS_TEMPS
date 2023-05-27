@@ -10,9 +10,6 @@
         <module name="pi" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="pi" target="17" />
-    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
