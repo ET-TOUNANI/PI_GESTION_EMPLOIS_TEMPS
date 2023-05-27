@@ -31,7 +31,7 @@ public class DataFromDb {
     public void loadDataFromDatabase() {
         // Retrieve the data from the services
         rooms = salleService.getSalles();
-        professors = enseignantService.getEnseignants();
+        professors = enseignantService.getAllEnseignants();
         classes = classeService.getClasses();
         semestres = semestreService.getSemestres();
         modules = moduleService.getModules();
