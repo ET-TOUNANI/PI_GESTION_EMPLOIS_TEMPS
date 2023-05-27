@@ -11,9 +11,6 @@ import java.util.List;
 @AllArgsConstructor
 public class IElementDeModuleServiceImpl implements IElementDeModuleService {
     private ElementModuleRepository elementModuleRepository;
-    /*
-
-     */
 
     @Override
     public List<ElementDeModule> getElementDeModule() {

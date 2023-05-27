@@ -1,11 +1,12 @@
 package pi.enset.services;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import pi.enset.entities.Enseignant;
 
 import java.util.List;
 
 public interface IEnseignantService {
-    List<Enseignant> getEnseignants();
 
     Enseignant addEnseignant(Enseignant enseignant);
 
@@ -15,5 +16,9 @@ public interface IEnseignantService {
 
     Enseignant updateEnseignant(Long id, Enseignant enseignant);
 
-    List<Enseignant> searchEnseignants(String keyword);
+    Page<Enseignant> getEnseignants(Pageable pageable);
+
+    Page<Enseignant> searchEnseignants(String keyword, Pageable pageable);
+
+    List<Enseignant> getAllEnseignants();
 }

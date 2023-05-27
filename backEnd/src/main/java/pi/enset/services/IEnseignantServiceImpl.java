@@ -1,6 +1,8 @@
 package pi.enset.services;
 
 import lombok.AllArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import pi.enset.entities.Enseignant;
 import pi.enset.repository.EnseignantRepository;
@@ -11,11 +13,6 @@ import java.util.List;
 @AllArgsConstructor
 public class IEnseignantServiceImpl implements IEnseignantService {
     private EnseignantRepository enseignantRepository;
-
-    @Override
-    public List<Enseignant> getEnseignants() {
-        return enseignantRepository.findAll();
-    }
 
     @Override
     public Enseignant addEnseignant(Enseignant enseignant) {
@@ -44,9 +41,19 @@ public class IEnseignantServiceImpl implements IEnseignantService {
         return enseignantRepository.save(enseignant);
 
     }
+    @Override
+    public Page<Enseignant> getEnseignants(Pageable pageable) {
+        return enseignantRepository.findAll(pageable);
+    }
+
 
     @Override
-    public List<Enseignant> searchEnseignants(String keyword) {
-        return enseignantRepository.search(keyword);
+    public Page<Enseignant> searchEnseignants(String keyword, Pageable pageable) {
+        return enseignantRepository.searchWithPagination(keyword, pageable);
     }
+    @Override
+    public List<Enseignant> getAllEnseignants() {
+        return enseignantRepository.findAll();
+    }
+
 }
