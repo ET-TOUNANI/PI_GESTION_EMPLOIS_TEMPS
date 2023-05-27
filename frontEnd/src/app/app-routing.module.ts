@@ -11,7 +11,11 @@ import { GestionClasseComponent } from './components/gestion/gestion-classe/gest
 import { AddNewClasseComponent } from './components/add/add-new-classe/add-new-classe.component';
 import { GestionSallesComponent } from './components/gestion/gestion-salles/gestion-salles.component';
 import { AddNewSalleComponent } from './components/add/add-new-salle/add-new-salle.component';
+<<<<<<< HEAD
 import {TimetableComponent} from "./components/timetable/timetable.component";
+=======
+import { EditProfComponent } from './components/edit/edit-prof/edit-prof.component';
+>>>>>>> 970c9244f86d6ecdf1f5b3c36237be8544f53bb0
 
 const routes: Routes = [
   { path :'' , component: HomeComponent},
@@ -26,7 +30,12 @@ const routes: Routes = [
     { path :'classes/add' , component: AddNewClasseComponent},
     { path :'salles' , component: GestionSallesComponent},
     { path :'salles/add' , component: AddNewSalleComponent},
+<<<<<<< HEAD
     { path :'emploitemps' , component: TimetableComponent}
+=======
+    {path:'profs/edit',component:EditProfComponent}
+
+>>>>>>> 970c9244f86d6ecdf1f5b3c36237be8544f53bb0
 ];
 
 @NgModule({

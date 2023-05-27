@@ -14,98 +14,30 @@
       >
         <thead class="thead-light">
           <tr>
-            <th>CIN</th>
+           
             <th>Nom et Prénom</th>
             <th class="text-center">Spécialité</th>
-            <th class="text-center">login</th>
+            
             <th class="text-center">Téléphone</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td class="text-nowrap">
-              <div>PRE2209</div>
-            </td>
+          <tr *ngFor="let prof of profs">
+           
             <td class="text-nowrap">
               <a href="profile.html">
-                <img
-                  class="rounded-circle"
-                  src="/assets/img/profs/1.png"
-                  width="25"
-                  alt="prof"
-                />
-                Berrada allam
+               
+                {{prof.nom}}
               </a>
             </td>
-            <td class="text-center">Tec</td>
-            <td class="text-center">berrada@gmaail.com</td>
+        
+            <td class="text-center">{{prof.email}}</td>
             <td class="text-end">
-              <div>068991827</div>
+              <div>{{prof.tel}}</div>
             </td>
           </tr>
-          <tr>
-            <td class="text-nowrap">
-              <div>PRE2209</div>
-            </td>
-            <td class="text-nowrap">
-              <a href="profile.html">
-                <img
-                  class="rounded-circle"
-                  src="/assets/img/profs/1.png"
-                  width="25"
-                  alt="prof"
-                />
-                Berrada allam
-              </a>
-            </td>
-            <td class="text-center">Tec</td>
-            <td class="text-center">berrada@gmaail.com</td>
-            <td class="text-end">
-              <div>068991827</div>
-            </td>
-          </tr>
-          <tr>
-            <td class="text-nowrap">
-              <div>PRE2209</div>
-            </td>
-            <td class="text-nowrap">
-              <a href="profile.html">
-                <img
-                  class="rounded-circle"
-                  src="/assets/img/profs/1.png"
-                  width="25"
-                  alt="prof"
-                />
-                Berrada allam
-              </a>
-            </td>
-            <td class="text-center">Tec</td>
-            <td class="text-center">berrada@gmaail.com</td>
-            <td class="text-end">
-              <div>068991827</div>
-            </td>
-          </tr>
-          <tr>
-            <td class="text-nowrap">
-              <div>PRE2209</div>
-            </td>
-            <td class="text-nowrap">
-              <a href="profile.html">
-                <img
-                  class="rounded-circle"
-                  src="/assets/img/profs/1.png"
-                  width="25"
-                  alt="prof"
-                />
-                Berrada allam
-              </a>
-            </td>
-            <td class="text-center">Tec</td>
-            <td class="text-center">berrada@gmaail.com</td>
-            <td class="text-end">
-              <div>068991827</div>
-            </td>
-          </tr>
+          
+         
         </tbody>
       </table>
     </div>

@@ -122,12 +122,12 @@
                 <td>{{ prof.specialite }}</td>
                 <td class="text-end">
                   <div class="actions">
-                    <a class="btn btn-sm bg-success-light me-2">
+                    <button (click)="handleEditeProf(prof)" class="btn btn-sm bg-success-light me-2">
                       <i class="fas fa-edit"></i>
-                    </a>
-                    <a href="edit-prof.html" class="btn btn-sm bg-danger-light">
+                    </button>
+                    <button  (click)="handleDeleteProf(prof)" class="btn btn-sm bg-danger-light">
                       <i class="fas fa-trash"></i>
-                    </a>
+                    </button>
                   </div>
                 </td>
               </tr>

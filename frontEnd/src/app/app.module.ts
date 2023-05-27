@@ -23,7 +23,11 @@ import { GestionSallesComponent } from './components/gestion/gestion-salles/gest
 import { AddNewSalleComponent } from './components/add/add-new-salle/add-new-salle.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+<<<<<<< HEAD
 import { TimetableComponent } from './components/timetable/timetable.component';
+=======
+import { EditProfComponent } from './components/edit/edit-prof/edit-prof.component';
+>>>>>>> 970c9244f86d6ecdf1f5b3c36237be8544f53bb0
 
 @NgModule({
   declarations: [
@@ -46,7 +50,11 @@ import { TimetableComponent } from './components/timetable/timetable.component';
     AddNewClasseComponent,
     GestionSallesComponent,
     AddNewSalleComponent,
+<<<<<<< HEAD
     TimetableComponent
+=======
+    EditProfComponent
+>>>>>>> 970c9244f86d6ecdf1f5b3c36237be8544f53bb0
   ],
   imports: [
     BrowserModule,
