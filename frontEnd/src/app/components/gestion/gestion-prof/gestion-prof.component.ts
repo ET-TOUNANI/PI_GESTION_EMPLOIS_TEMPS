@@ -9,6 +9,10 @@ import { ProfServiceService } from 'src/app/services/prof-service.service';
   styleUrls: ['./gestion-prof.component.css']
 })
 export class GestionProfComponent implements OnInit {
+handleEditeProf(_t78: Prof) {
+throw new Error('Method not implemented.');
+}
+
   profs!: Prof[] ;
   errorMessage!: string;
   searchFormGroup! : FormGroup ;
@@ -34,4 +38,16 @@ export class GestionProfComponent implements OnInit {
         }
       });
   }
+  handleDeleteProf(prof: Prof) {
+    let conf = confirm("Are you sure?");
+    if(!conf) return;
+    this.profService.deleteProf(prof.id).subscribe({   next : (data) => {
+      let index=this.profs.indexOf(prof);
+      this.profs.slice(index,1);
+      return data;
+    } ,error : err => {
+      this.errorMessage=err;
+    }
+    })
+}
 }

@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Prof } from 'src/app/models/prof.models';
+import { ProfServiceService } from 'src/app/services/prof-service.service';
 
 @Component({
   selector: 'app-add-new-prof',
@@ -10,7 +12,7 @@ import { Prof } from 'src/app/models/prof.models';
 export class AddNewProfComponent {
   newProfFormGroup!: FormGroup;
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder,private profService : ProfServiceService, private router:Router) {}
 
   ngOnInit(): void {
     this.newProfFormGroup = this.fb.group({
@@ -30,9 +32,19 @@ export class AddNewProfComponent {
   handleAddProf() {
     if (this.newProfFormGroup.valid) {
       const newProf: Prof = this.newProfFormGroup.value;
-      console.log(newProf);
+      this.profService.saveProf(newProf).subscribe({
+        next : data=>{
+          alert("Professeur has been successfully saved!");
+          //this.newCustomerFormGroup.reset();
+          this.router.navigateByUrl("/enseignants")
+        },
+        error : err => {
+          console.log(err);
+
+      }})
       
-      // Perform actions to add the newProf object to your system/database
+      
+      
     }
   }
 }
