@@ -2,6 +2,7 @@ package pi.enset.services;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import pi.enset.entities.Departement;
 import pi.enset.entities.Enseignant;
 
 import java.util.List;
@@ -11,6 +12,7 @@ public interface IEnseignantService {
     Enseignant addEnseignant(Enseignant enseignant);
 
     String deleteEnseignant(Long id);
+    List<Enseignant> findEnseignantByNom(String nom);
 
     Enseignant getEnseignantById(Long id);
 

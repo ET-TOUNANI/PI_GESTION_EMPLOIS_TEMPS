@@ -12,5 +12,6 @@ public interface EnseignantRepository extends JpaRepository<Enseignant, Long> {
 
     @Query("SELECT e FROM Enseignant e WHERE e.nom LIKE %?1% OR e.prenom LIKE %?1% OR e.specialite LIKE %?1%")
     Page<Enseignant> searchWithPagination(String keyword, Pageable pageable);
+    List<Enseignant>  findEnseignantByNom (String nom);
 
 }

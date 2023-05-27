@@ -1,5 +1,6 @@
 package pi.enset;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -10,6 +11,7 @@ import pi.enset.entities.enums.NumeroSemester;
 import pi.enset.entities.enums.Periode;
 import pi.enset.entities.enums.TypeSalle;
 import pi.enset.repository.*;
+import pi.enset.settings.LoadFormExcelToDb;
 
 import java.time.DayOfWeek;
 import java.util.ArrayList;
@@ -19,11 +21,19 @@ import java.util.stream.Stream;
 
 @SpringBootApplication
 public class PiApplication {
+    @Autowired
+    private LoadFormExcelToDb loadFormExcelToDb;
     public static void main(String[] args) {
         SpringApplication.run(PiApplication.class, args);
     }
-
     @Bean
+    CommandLineRunner lineRunner(){
+        return args -> {
+            loadFormExcelToDb.PutDataToDb();
+        };
+    }
+
+   /* @Bean
     CommandLineRunner lineRunner(EnseignantRepository enseignantRepository,
                                  DepartementRepostitory departementRepostitory,
                                  ClasseRepository classeRepository,
@@ -238,5 +248,5 @@ public class PiApplication {
         };
 
     }
-
+*/
 }

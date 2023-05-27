@@ -1,0 +1,247 @@
+scalar Date
+scalar Time
+type Query{
+
+    findDepartements : [Departement],
+    findDepartement(id:Float):Departement
+
+    findEnseignants : [Enseignant],
+    findEnseignant(id:Float):Enseignant
+
+    findClasses : [Classe],
+    findClasse(id:Float):Classe
+
+    findElementsDeModule : [ElementDeModule],
+    findElementDeModule(id:Float):ElementDeModule
+
+    findSemestres : [Semestre],
+    findSemestre(id:Float):Semestre
+
+    findTypeSalles : [TypeSalle],
+    findTypeSalle(id:Float):TypeSalle
+
+    findSalles:[Salle],
+    findSalle(id:Float):Salle
+
+    findFilieres:[Filiere],
+    findFiliere(id:Float):Filiere
+
+    findSeances:[Seance],
+    findSeance(id:Float):Seance
+
+    findModules :[Module],
+    findModule(id:Float):TypeSalle
+
+    findNonDisponibilites:[NonDisponibilite],
+    findNonDisponibilite(id:Float):NonDisponibilite
+
+}
+type Mutation {
+    addDepartement(departement: DepartementDTO) : Departement,
+    updateDepartement(id:Float,departement: DepartementDTO):Departement,
+    deleteDepartement(id:Float):String,
+    addEnseignant(enseignant: EnseignantDTO) : Enseignant,
+    updateEnseignant(id:Float,enseignant: EnseignantDTO):Enseignant,
+    deleteEnseignant(id:Float):String,
+    addClasse (classe: ClasseDTO) : Classe,
+    updateClasse(id:Float, classe: ClasseDTO):Classe,
+    deleteClasse(id:Float):String,
+    addElementDeModule(elementdemodule: ElementDeModuleDTO) : ElementDeModule,
+    updateElementDeModule(id:Float, elementdemodule: ElementDeModuleDTO):ElementDeModule,
+    deleteElementDeModule(id:Float):String,
+    addSemestre(semestre: SemestreDTO) : Semestre,
+    updateSemestre(id:Float,semestre: SemestreDTO):Semestre,
+    deleteSemestre(id:Float):String,
+    addTypeSalle(typeSalle: TypeSalleDTO) : TypeSalle,
+    updateTypeSalle(id:Float,typeSalle: TypeSalleDTO):TypeSalle,
+    deleteTypeSalle(id:Float):String,
+
+    addSalle(salle:SalleDTO):Salle,
+    updateSalle(id:Float,salle:SalleDTO):Salle,
+    deleteSalle(id:Float):String,
+
+    addFiliere(filiere:FiliereDTO):Filiere,
+    updateFiliere(id:Float,filiere:FiliereDTO):Filiere,
+    deleteFiliere(id:Float):String,
+
+    addSeance(seance: SeanceDTO) : Seance,
+    updateSeance(id:Float,seance: SeanceDTO):Seance,
+    deleteSeance(id:Float):String,
+
+    addModule(module:ModuleDTO):Module,
+    updateModule(id:Float,module:ModuleDTO):Module,
+    deleteModule(id:Float):String,
+
+    addNonDisponibilite(nonDisponibilite:NonDisponibiliteDTO):NonDisponibilite,
+    updateNonDisponibilite(id:Float,nonDisponibilite:NonDisponibiliteDTO):NonDisponibilite,
+    deleteNonDisponibilite(id:Float):String,
+
+}
+type Enseignant{
+    id :ID,
+    nom : String,
+    civilite: String,
+    prenom: String,
+    tel: String,
+    email: String,
+    login: String,
+    password: String,
+    specialite: String,
+    nonDisponibilites:[NonDisponibilite],
+    seances:[Seance]
+}
+type Departement{
+    id :ID,
+    libelle:String,
+    filieres:[Filiere]
+}
+type Classe{
+    id :ID,
+    libelle : String,
+    nbrEleves: Int,
+    seances:[Seance],
+    filiere:Filiere
+}
+type ElementDeModule{
+    id :ID,
+    libelle : String,
+    volumeHoraire: Int,
+    seances:[Seance]
+    module:[Module]
+    enseignants:[Enseignant]
+}
+type Semestre{
+    id :ID,
+    dateDebut : String  ,
+    dateFin : String,
+    num : NumeroSemester,
+    anneeUniv : String,
+    modules:[Module]
+}
+type TypeSalle{
+    id : ID,
+    libelle : String,
+    capacite: Float,
+    equipement : String,
+    salles:[Salle]
+}
+type Salle{
+    id:ID,
+    numSalle:Int,
+    typeSalle:TypeSalle,
+    seances:[Seance]
+}
+type Filiere{
+    id:ID,
+    libelle:String,
+    nombreSem:Int,
+    chefFiliere:String,
+    departement:Departement
+    classes:[Classe]
+}
+type Module{
+    id: ID,
+    volumeHoraire:Int
+    libelle: String
+    semestre:Semestre
+    elementDeModules:[ElementDeModule]
+}
+type NonDisponibilite{
+    id:ID,
+    jour:JourDeLaSemaine
+    enseignant:Enseignant
+}
+enum JourDeLaSemaine{
+    LUNDI_MATIN,
+    LUNDI_APRESMIDI,
+    MARDI_MATIN,
+    MARDI_APRESMIDI,
+    MERCREDI_MATIN,
+    MERCREDI_APRESMIDI,
+    JEUDI_MATIN,
+    JEUDI_APRESMIDI,
+    VENDREDI_MATIN,
+    VENDREDI_APRESMIDI,
+    SAMEDI_MATIN,
+    SAMEDI_APRESMIDI,
+    DIMANCHE_MATIN,
+    DIMANCHE_APRESMIDI
+}
+type Seance{
+    id:ID,
+    jour:JourDeLaSemaine,
+    heurDebut:String,
+    heurFin:String,
+    classe:Classe,
+    salle:Salle,
+    elementDeModule:ElementDeModule,
+    enseignant:Enseignant
+}
+input DepartementDTO{
+    libelle:String
+}
+input EnseignantDTO{
+    nom : String,
+    civilite: String,
+    prenom: String,
+    tel: String,
+    email: String,
+    login: String,
+    password: String,
+    specialite: String
+}
+input ClasseDTO{
+    libelle : String,
+    nbrEleves: Int,
+    filiere:FiliereDTO
+}
+input ElementDeModuleDTO{
+    libelle : String,
+    volumeHoraire: Int,
+    module:ModuleDTO,
+    Enseignant:EnseignantDTO
+}
+input SemestreDTO{
+    dateDebut : Date,
+    dateFin : Date,
+    num : String,
+    anneeUniv : String
+}
+
+enum NumeroSemester {
+    S1, S2, S3, S4, S5, S6
+}
+input TypeSalleDTO{
+    libelle : String,
+    capacite: Float,
+    equipement : String,
+
+}
+input SalleDTO{
+    numSalle:Int,
+    typeSalle:TypeSalleDTO
+}
+input FiliereDTO{
+    libelle:String,
+    nombreSem:Int,
+    chefFiliere:String,
+    departement:DepartementDTO
+}
+input ModuleDTO{
+    volumeHoraire:Int,
+    libelle: String
+    semestre:SemestreDTO
+}
+input NonDisponibiliteDTO{
+    jours:String
+    enseignant:EnseignantDTO
+}
+input SeanceDTO{
+    jour:String,
+    heurDebut:Time,
+    heurFin:Time,
+    classe:ClasseDTO,
+    salle:SalleDTO,
+    elementDeModule:ElementDeModuleDTO,
+    enseignant:EnseignantDTO
+}

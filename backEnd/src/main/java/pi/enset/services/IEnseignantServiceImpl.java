@@ -18,7 +18,10 @@ public class IEnseignantServiceImpl implements IEnseignantService {
     public Enseignant addEnseignant(Enseignant enseignant) {
         return enseignantRepository.save(enseignant);
     }
-
+    @Override
+    public  List<Enseignant> findEnseignantByNom(String nom){
+        return  enseignantRepository.findEnseignantByNom(nom);
+    }
     @Override
     public String deleteEnseignant(Long id) {
         try {
