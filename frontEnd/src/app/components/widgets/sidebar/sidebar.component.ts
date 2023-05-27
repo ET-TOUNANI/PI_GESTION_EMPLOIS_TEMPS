@@ -14,7 +14,7 @@ export class SidebarComponent {
     icon: "fas fa-home"
   },
   {
-    link: "/emploiDuTemps",
+    link: "/emploitemps",
     title: "Emploi du temps",
     icon: "fas fa-clipboard-list"
   },

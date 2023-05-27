@@ -1,0 +1,240 @@
+<app-page-header
+  [name]="'Admin'"
+  [link]="'emploitemps'"
+  [prev]="'Emploi du temps'"
+  [current]="'Home'"
+></app-page-header>
+<meta charset="utf-8">
+<div class="card report-card">
+  <div class="card-body pb-0">
+    <div class="form-row row align-items-center">
+      <div class="col">
+        <div class="form-group">
+          <label for="department-select">
+            <i class="fa fa-building"></i> Départements
+          </label>
+          <select id="department-select" title="Select a department" class="form-select custom-select">
+            <option selected disabled>Sélectionner...</option>
+            <option>Génie Mécanique</option>
+            <option>Génie Electrique</option>
+            <option>Mathématiques et Informatique</option>
+            <option>Génie Economie et Gestion</option>
+            <option>Sciences et Techniques Administratives et Ingénierie des Compétences</option>
+          </select>
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-group">
+          <label for="field-select">
+            <i class="fa fa-clipboard"></i> Filiéres
+          </label>
+          <select id="field-select" title="Select a field" class="form-select custom-select">
+            <option selected disabled>Sélectionner...</option>
+            <option>GIL - Génie Industriel et Logistique</option>
+            <option>GMSI - Génie Mécanique des Systèmes Industriels</option>
+            <option>MRMI - Mécanique, Robotique et Matériaux Innovants</option>
+            <option>GECSI - Génie Electrique et Contrôle des Systèmes Industriels</option>
+            <option>SEER - Génie Electrique option : Systèmes Electriques et Energies Renouvelables</option>
+            <option>GLSID - Génie du Logiciel et des Systèmes Informatiques Distribués</option>
+            <option>II-BDCC - Ingénierie Informatique : Big Data et Cloud Computing</option>
+            <option>SDIA - Systèmes Distribués et Intelligence Artificielle</option>
+            <option>ESEG - Education et Sciences Economiques et de Gestion</option>
+            <option>FC - Finance et Comptabilité</option>
+            <option>AOE - Administration et Organisation des Entreprises</option>
+          </select>
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-group">
+          <label for="semester-select">
+            <i class="fa fa-calendar"></i> Semestre
+          </label>
+          <select id="semester-select" title="Select a semester" class="form-select custom-select">
+            <option selected disabled>Sélectionner...</option>
+            <option>S1</option>
+            <option>S2</option>
+            <option>S3</option>
+            <option>S4</option>
+            <option>S5</option>
+            <option>S6</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="schedule-table">
+          <table class="table bg-white">
+            <thead>
+            <tr>
+              <th>Jours</th>
+              <th>8h30-10h30</th>
+              <th>10h30-12h30</th>
+              <th>14h-16h</th>
+              <th class="last">16h-18h</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td class="day">Lundi</td>
+              <td class="active" colspan="2">
+                <h4>Architecture distribuée J2EE et Middlewares</h4>
+                <p> Salle : Amphi 2</p>
+                <div class="hover">
+                  <h4>Architecture distribuée J2EE et Middlewares</h4>
+                  <p>8h30-12h30</p>
+                  <span>Mohammed EL Youssfi</span>
+                </div>
+              </td>
+            <td class="active">
+                <h4>Fondements du Big data</h4>
+              <p> Salle : Info 1</p>
+                <div class="hover">
+                  <h4>Fondements du Big data</h4>
+                  <p>14h-16h</p>
+                  <span>Abdelmajid Bousselham</span>
+                </div>
+              </td>
+              <td class="active">
+                <h4>Mise en œuvre des Architectures orientées stockage</h4>
+                <p> Salle : Info 1</p>
+                <div class="hover">
+                  <h4>Mise en œuvre des Architectures orientées stockage</h4>
+                  <p>16h-18h</p>
+                  <span>Abdelmajid Bousselham</span>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="day">Mardi</td>
+              <td class="active">
+                <h4>Initiation à l’entreprenariat</h4>
+                <p> Salle : Amphi 2</p>
+                <div class="hover">
+                  <h4>Initiation à l’entreprenariat</h4>
+                  <p>8h30-10h30</p>
+                  <span>Naoual Zaki</span>
+                </div>
+              </td>
+              <td class="active">
+                <h4>Statistiques en grande dimension et apprentissage</h4>
+                <p> Salle : Amphi 2</p>
+                <div class="hover">
+                  <h4>Statistiques en grande dimension et apprentissage</h4>
+                  <p>10h30-12h30</p>
+                  <span>Zakaria ENNAIMANI</span>
+                </div>
+               </td>
+              <td class="active">
+                <h4>Internet des objets</h4>
+                <p> Salle : Info 1</p>
+                <div class="hover">
+                  <h4>Internet des objets</h4>
+                  <p>14h-16h</p>
+                  <span>Ahmed REBBANI</span>
+                </div>
+              </td>
+              <td class="active">
+                <h4>Droit de l’entreprise et des TIC</h4>
+                <p> Salle : Amphi 2</p>
+                <div class="hover">
+                  <h4>Droit de l’entreprise et des TIC</h4>
+                  <p>16h-18h</p>
+                  <span>Abderrahim NASSEF</span>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="day">Mercredi</td>
+              <td class="active">
+                <h4> Base de l'Intelligence Artificielle</h4>
+                <p> Salle : Amphi 2</p>
+                <div class="hover">
+                  <h4>Base de l'Intelligence Artificielle</h4>
+                  <p>8h30-10h30</p>
+                  <span>Mohammed MESTARI</span>
+                </div>
+              </td>
+              <td class="active">
+                <h4>Optimisation statistique</h4>
+                <p> Salle : Amphi 2</p>
+                <div class="hover">
+                  <h4>Optimisation statistique</h4>
+                  <p>10h30-12h30</p>
+                  <span>Mohammed MESTARI</span>
+                </div>
+              </td>
+              <td class="active" colspan="2">
+              <h4>Projet Personnel 2</h4>
+              <div class="hover">
+                <h4>Projet Personnel 2</h4>
+                <p>14h-18h</p>
+              </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="day">Jeudi</td>
+              <td class="active">
+                <h4>Anglais 4</h4>
+                <p> Salle : Amphi 2</p>
+                <div class="hover">
+                  <h4>Anglais 4</h4>
+                  <p>8h30-10h30</p>
+                  <span>Abderrahim CHALFAOUAT</span>
+                </div>
+              </td>
+              <td class="active">
+                <h4>Ethique et responsabilité sociétale des entreprises</h4>
+                <p> Salle : Amphi 2</p>
+                <div class="hover">
+                  <h4>Ethique et responsabilité sociétale des entreprises</h4>
+                  <p>10h30-12h30</p>
+                  <span>Maha SOULAMI</span>
+                </div>
+              </td>
+              <td></td>
+              <td class="active">
+              <h4>Développement Mobile</h4>
+                <p> Salle : Amphi 2</p>
+              <div class="hover">
+                <h4>Développement Mobile</h4>
+                <p>16h-18h</p>
+                <span>Bouchra BOUIHI</span>
+              </div></td>
+            </tr>
+            <tr>
+              <td class="day">Vendredi</td>
+              <td>
+              </td>
+              <td class="active">
+                <h4>Systèmes Multi-Agents</h4>
+                <p> Salle : Amphi 2</p>
+                <div class="hover">
+                  <h4>Systèmes Multi-Agents</h4>
+                  <p>10h30-1230</p>
+                  <span>Abdelmajid Bousselham</span>
+                </div></td>
+              <td>
+              </td>
+              <td></td>
+            </tr>
+            <tr>
+              <td class="day">Samedi</td>
+              <td class="active" colspan="2">
+                <h4>Contrôles et rattrapages</h4>
+                <div class="hover">
+                  <h4>Contrôles et rattrapages</h4>
+                </div>
+              </td>
+              <td></td>
+              <td></td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
