@@ -1,0 +1,23 @@
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-inner slimscroll">
+    <div id="sidebar-menu" class="sidebar-menu">
+      <ul>
+        <li class="menu-title">
+          <span>Main Menu</span>
+        </li>
+        <li
+          class="submenu"
+          *ngFor="let item of sidebarItems; let i = index"
+          (click)="handleChangeBars(i)"
+          [ngClass]="active == i ? 'active' : ''"
+        >
+          <a [routerLink]="item.link">
+            <i [class]="item.icon"></i>
+            <span>{{ item.title }}</span>
+            <span class="menu-arrow"></span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

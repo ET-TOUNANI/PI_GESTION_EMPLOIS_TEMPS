@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=0"
+    />
+    <title>{{ title }}</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="main-wrapper">
+      <app-navbar></app-navbar>
+
+      <app-sidebar></app-sidebar>
+
+      <div class="page-wrapper">
+        <div class="content container-fluid">
+          <router-outlet> </router-outlet>
+        </div>
+        <app-footer></app-footer>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,144 @@
+<app-page-header
+  [name]="'Admin'"
+  [link]="'profs'"
+  [prev]="'filières'"
+  [current]="'Home'"
+></app-page-header>
+
+<div class="student-group-form">
+  <div class="row">
+    <div class="col-lg-3 col-md-6">
+      <div class="form-group">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Recherche par libellé..."
+        />
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-6">
+      <div class="form-group">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Recherche par chef de filière ..."
+        />
+      </div>
+    </div>
+    
+    <div class="col-lg-2">
+      <div class="search-student-btn">
+        <button type="btn" class="btn btn-primary">Chercher</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-12">
+    <div class="card card-table">
+      <div class="card-body">
+        <div class="page-header">
+          <div class="row align-items-center">
+            <div class="col">
+              <h3 class="page-title">Filière</h3>
+            </div>
+
+            <div class="col-auto text-end float-end ms-auto download-grp">
+              <a href="#" class="btn btn-outline-primary me-2"
+                ><i class="fas fa-download"></i> Télécharger </a
+              >
+              <a routerLink="/filieres/add" class="btn btn-primary"
+                ><i class="fas fa-plus"></i
+              ></a>
+            </div>
+          </div>
+          <div class="row align-items-center">
+            <div class="col">
+              <span class="m-2">Afficher</span>
+              <select class="form-select form-select-sm w-auto">
+                <option selected="" value="10">10</option>
+                <option value="25">25</option>
+                <option value="50">50</option>
+                <option value="100">100</option>
+              </select>
+              <span class="m-2">Entrées</span>
+            </div>
+          </div>
+        </div>
+
+        <table
+          class="table border-0 star-student table-hover table-center mb-0 datatable table-striped"
+        >
+          <thead class="student-thread">
+            <tr>
+              <th>
+                <div class="form-check check-tables">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    value="something"
+                  />
+                </div>
+              </th>
+              <th>ID</th>
+              <th>Libillé</th>
+              <th>Semstre</th>
+              <th>Chef de Filière</th>
+              <th>Département</th>
+
+              <th class="text-end">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let i of [1, 1, 1, 1]">
+              <td>
+                <div class="form-check check-tables">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    value="something"
+                  />
+                </div>
+              </td>
+              <td>123</td>
+              <td>
+                <h2>
+                  <a>bdcc</a>
+                </h2>
+              </td>
+              <td>6</td>
+              <td>el khiat</td>
+              <td>mathématiques informatiques</td>
+             
+              <td class="text-end">
+                <div class="actions">
+                  <a class="btn btn-sm bg-success-light me-2">
+                    <i class="fas fa-edit"></i>
+                  </a>
+                  <a
+                    href="edit-department.html"
+                    class="btn btn-sm bg-danger-light"
+                  >
+                    <i class="fas fa-trash"></i>
+                  </a>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <ul class="pagination justify-content-end mt-4">
+          <li class="page-item disabled">
+            <a class="page-link" href="#" tabindex="-1">Previous</a>
+          </li>
+          <li class="page-item"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item">
+            <a class="page-link" href="#">Next</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
