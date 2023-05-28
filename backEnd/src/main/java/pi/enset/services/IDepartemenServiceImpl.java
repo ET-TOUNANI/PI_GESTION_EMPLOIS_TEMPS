@@ -17,6 +17,11 @@ public class IDepartemenServiceImpl implements IDepartementService {
         // in the moment we will not use pagination
         return departementRepostitory.findAll();
     }
+    @Override
+    public List<Departement> findDepartementByNom(String nom) {
+        // in the moment we will not use pagination
+        return  departementRepostitory.findDepartementByLibelle(nom);
+    }
 
     @Override
     public Departement addDepartement(Departement departement) {

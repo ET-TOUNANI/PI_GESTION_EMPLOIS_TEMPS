@@ -9,6 +9,7 @@ public interface IDepartementService {
     List<Departement> getDepartements();
 
     Departement addDepartement(Departement departement);
+    List<Departement> findDepartementByNom(String nom);
 
     String deleteDepartement(Long id);
 
