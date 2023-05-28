@@ -23,7 +23,7 @@ public class PiApplication {
         SpringApplication.run(PiApplication.class, args);
     }
 
-    /*@Bean
+    @Bean
     CommandLineRunner lineRunner(EnseignantRepository enseignantRepository,
                                  DepartementRepostitory departementRepostitory,
                                  ClasseRepository classeRepository,
@@ -238,6 +238,5 @@ public class PiApplication {
         };
 
     }
-    */
 
 }
