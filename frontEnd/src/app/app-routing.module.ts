@@ -11,6 +11,8 @@ import { GestionClasseComponent } from './components/gestion/gestion-classe/gest
 import { AddNewClasseComponent } from './components/add/add-new-classe/add-new-classe.component';
 import { GestionSallesComponent } from './components/gestion/gestion-salles/gestion-salles.component';
 import { AddNewSalleComponent } from './components/add/add-new-salle/add-new-salle.component';
+import {TimetableComponent} from "./components/timetable/timetable.component";
+import { EditProfComponent } from './components/edit/edit-prof/edit-prof.component';
 
 const routes: Routes = [
   { path :'' , component: HomeComponent},
@@ -24,8 +26,9 @@ const routes: Routes = [
     { path :'classes' , component: GestionClasseComponent},
     { path :'classes/add' , component: AddNewClasseComponent},
     { path :'salles' , component: GestionSallesComponent},
-    { path :'salles/add' , component: AddNewSalleComponent}
-
+    { path :'salles/add' , component: AddNewSalleComponent},
+    { path :'emploitemps' , component: TimetableComponent},
+    {path:'profs/edit',component:EditProfComponent}
 ];
 
 @NgModule({

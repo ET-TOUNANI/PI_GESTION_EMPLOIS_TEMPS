@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Prof } from '../models/prof.models';
 import {environment} from "../../environments/environment";
+import { PageProf } from '../models/profPage.models';
 
 @Injectable({
   providedIn: 'root'
@@ -11,11 +12,11 @@ export class ProfServiceService {
 
    constructor(private http:HttpClient) { }
 
-  public getProfs():Observable<Array<Prof>>{
-    return this.http.get<Array<Prof>>(environment.backendHost+"/enseignants")
+   public getProfs(page: number, size: number): Observable<PageProf> {
+    return this.http.get<PageProf>(environment.backendHost + "/enseignants?page=" + page + "&size=" + size);
   }
-  public searchProfs(keyword : string):Observable<Array<Prof>>{
-    return this.http.get<Array<Prof>>(environment.backendHost+"/enseignants/search?keyword="+keyword)
+  public searchProfs(keyword : string,page: number, size: number):Observable<PageProf>{
+    return this.http.get<PageProf>(environment.backendHost+"/enseignants/search?keyword="+keyword+"&page=" + page + "&size=" + size)
   }
   public saveProf(Prof: Prof):Observable<Prof>{
     return this.http.post<Prof>(environment.backendHost+"/enseignants",Prof);

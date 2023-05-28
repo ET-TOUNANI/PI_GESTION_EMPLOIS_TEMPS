@@ -32,8 +32,8 @@
             "scripts": [
               "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
               "node_modules/jquery/dist/jquery.min.js",
-              "src/assets/js/script.js"
-
+              "src/assets/js/script.js",
+              "src/assets/js/feather.min.js"
             ]
           },
           "configurations": {
@@ -94,10 +94,10 @@
               "src/assets"
             ],
             "styles": [
-
-              "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              
+            ]
           }
         }
       }
