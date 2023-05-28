@@ -42,9 +42,19 @@ public class GaAlgorithm {
         return days.get(index);
     }
 
-    private Periode getRandomPeriode() {
-        int index = random.nextInt(timeslots.length);
-        return timeslots[index];
+    private Periode getRandomPeriode(DayOfWeek day) {
+        // if day equal wednesday and periode equal P3 or P4 then rgenerate periode
+        if (day.equals(DayOfWeek.WEDNESDAY)) {
+            int index = random.nextInt(timeslots.length);
+            while (timeslots[index].equals(Periode.P3) || timeslots[index].equals(Periode.P4)) {
+                index = random.nextInt(timeslots.length);
+            }
+            return timeslots[index];
+        }
+        else {
+            int index = random.nextInt(timeslots.length);
+            return timeslots[index];
+        }
     }
 
     private List<ElementDeModule> getElementsForClasse(Classe classe) {
@@ -76,7 +86,7 @@ public class GaAlgorithm {
 
                 for (ElementDeModule element : elements) {
                     DayOfWeek day = getRandomDay();
-                    Periode periode = getRandomPeriode();
+                    Periode periode = getRandomPeriode(day);
                     int roomIndex = getRandomRoom(element);
                     element.setJour(day);
                     element.setPeriode(periode);
@@ -247,7 +257,7 @@ public class GaAlgorithm {
         // Randomly reassign day and period for the element in the updated timetable
 
         DayOfWeek randomDay = getRandomDay();
-        Periode randomPeriod = getRandomPeriode();
+        Periode randomPeriod = getRandomPeriode(randomDay);
         classTimetable.get(position1).setJour(randomDay);
         classTimetable.get(position1).setPeriode(randomPeriod);
         // Swap the elements at the selected positions
