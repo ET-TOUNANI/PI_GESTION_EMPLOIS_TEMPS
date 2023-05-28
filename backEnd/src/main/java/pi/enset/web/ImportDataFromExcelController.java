@@ -14,11 +14,14 @@ import java.io.IOException;
 @AllArgsConstructor
 public class ImportDataFromExcelController {
     private LoadFormExcelToDb loadFormExcelToDb;
-    @GetMapping("/import?{path}")
-    public String importData(@RequestParam String path) {
+    @GetMapping("/import")
+    public String importData(@RequestParam(name = "path") String path) {
         try {
-            loadFormExcelToDb.PutDataToDb(path);
-            return "les données sont importées avec succès";
+           boolean isImport= loadFormExcelToDb.PutDataToDb(path);
+              if(isImport)
+                return "les données sont importées avec succès";
+                else
+                    return "les données ne sont pas importées";
         } catch (IOException e) {
             return "les données ne sont pas importées";
         }
