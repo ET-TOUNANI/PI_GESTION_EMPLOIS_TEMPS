@@ -27,6 +27,7 @@ public class LoadFormExcelToDb {
     private ISemestreService iSemestreService;
     private IDepartementService iDepartementService;
 
+
     public boolean PutDataToDb(String path) throws IOException {
         boolean isImported = true;
         try {
@@ -73,10 +74,45 @@ public class LoadFormExcelToDb {
                                     if (!cell.getStringCellValue().equals("")) {
                                         e.setNom(cell.getStringCellValue().split("_")[0]);
                                         e.setPrenom(cell.getStringCellValue().split("_")[1]);
-                                        if (iEnseignantService.findEnseignantByNom(e.getNom()).size() == 0) {
-                                            iEnseignantService.addEnseignant(e);
-                                        }
                                     }
+                                }
+                                if (cell.getColumnIndex() == 3) {
+                                    if (!cell.getStringCellValue().equals("")) {
+                                        e.setSpecialite(cell.getStringCellValue());
+                                    }
+                                }
+                                if (cell.getColumnIndex() == 4) {
+                                    if (!cell.getStringCellValue().equals("")) {
+                                        e.setTel(cell.getStringCellValue());
+                                    }
+                                }
+                                if (cell.getColumnIndex() == 5) {
+                                    if (!cell.getStringCellValue().equals("")) {
+                                        e.setEmail(cell.getStringCellValue());
+                                    }
+                                }
+                                if (cell.getColumnIndex() == 6) {
+                                    if (!cell.getStringCellValue().equals("")) {
+                                        e.setLogin(cell.getStringCellValue());
+                                    }
+                                }
+                                if (cell.getColumnIndex() == 7) {
+                                    if (!cell.getStringCellValue().equals("")) {
+                                        e.setCne(cell.getStringCellValue());
+                                    }
+                                }
+                                if (cell.getColumnIndex() == 8) {
+                                    if (!cell.getStringCellValue().equals("")) {
+                                        e.setCivilite(cell.getStringCellValue());
+                                    }
+                                }
+                                if (cell.getColumnIndex() == 9) {
+                                    if (!cell.getStringCellValue().equals("")) {
+                                        e.setPassword(cell.getStringCellValue());
+                                    }
+                                }
+                                if (iEnseignantService.findEnseignantByNom(e.getNom()).size() == 0) {
+                                    iEnseignantService.addEnseignant(e);
                                 }
                             }
                         }
@@ -95,20 +131,27 @@ public class LoadFormExcelToDb {
                     Classe classe = null;
                     Module module = null;
                     ElementDeModule element;
+                    int j=5;
                     for (Row row : sheet) {
                         if (row.getRowNum() >= 6) {
+                            j++;
                             for (Cell cell : row) {
+                                /*if (cell.getColumnIndex() == 6){
+                                     int Nbeleve=(int) cell.getRow().getCell(7).getNumericCellValue();
+                                }*/
                                 if (cell.getColumnIndex() == 1) {
                                     if (!cell.getStringCellValue().equals("")) {
                                         semestre = new Semestre();
                                         semestre.setNum(NumeroSemester.valueOf(cell.getStringCellValue()));
-                                        semestre.setAnneeUniv(sheet.getRow(0).getCell(2).getStringCellValue());
+                                        semestre.setAnneeUniv(sheet.getRow(j).getCell(2).getStringCellValue());
                                         if (!semestres.contains(semestre)) {
                                             semestres.add(semestre);
                                         }
                                         iSemestreService.addSemestre(semestre);
                                         classe = new Classe();
+                                        classe.setNbrEleves((int) sheet.getRow(j).getCell(7).getNumericCellValue());
                                         classe.setLibelle(filiere.getLibelle() + "" + semestre.getNum().toString().charAt(1));
+                                        //(int) cell.getRow().getCell(4).getNumericCellValue();
                                         filiere.getClasses().add(classe);
                                         if (iDepartementService.findDepartementByNom(departement.getLibelle()).size() == 0) {
                                             filiere.setDepartement(departement);
