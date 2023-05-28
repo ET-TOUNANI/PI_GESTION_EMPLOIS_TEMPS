@@ -70,10 +70,10 @@
             <div class="col">
               <span class="m-2">Afficher</span>
               <select class="form-select form-select-sm w-auto">
-                <option selected="" value="10">10</option>
-                <option value="25">25</option>
-                <option value="50">50</option>
-                <option value="100">100</option>
+                <option selected="" [ngValue]="option1" >{{option1}}</option>
+                <option [ngValue]="option2">{{option2}}</option>
+                <option [ngValue]="option3">{{option3}}</option>
+                <option [ngValue]="option4">{{option4}}</option>
               </select>
               <span class="m-2">Entrées</span>
             </div>
@@ -136,17 +136,20 @@
         </div>
 
         <!-- Pagination -->
-        <ul class="pagination justify-content-end mt-4">
-          <li class="page-item disabled">
-            <a class="page-link" href="#" tabindex="-1">Précédent</a>
-          </li>
-          <li class="page-item"><a class="page-link" href="#">1</a></li>
-          <li class="page-item"><a class="page-link" href="#">2</a></li>
-          <li class="page-item"><a class="page-link" href="#">3</a></li>
-          <li class="page-item">
-            <a class="page-link" href="#">Suivant</a>
-          </li>
-        </ul>
+<ul class="pagination justify-content-end mt-4">
+  <li class="page-item" [ngClass]="{ disabled: currentPage === 0 }">
+    <a class="page-link"  tabindex="-1" (click)="goToPreviousSet()">Précédent</a>
+  </li>
+  <li class="page-item"  *ngFor="let page of displayedPages" [class.selected]="currentPage === page">
+    <a  class="page-link" (click)="gotoPage(page)">{{ page + 1 }}</a>
+  </li>
+  <li class="page-item" [ngClass]="{ disabled: currentPage >= totalPages - 1 }">
+    <!-- Add the following code to disable the "Suivant" button when there are no more pages to show -->
+<button class="page-link" [disabled]="currentPage >= totalPages - 1" (click)="goToNextSet()">Suivant</button>
+
+  </li>
+</ul>
+
       </div>
     </div>
   </div>
