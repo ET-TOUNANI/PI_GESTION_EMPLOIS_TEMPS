@@ -18,5 +18,10 @@ public interface ElementModuleRepository extends JpaRepository<ElementDeModule, 
     @Query("SELECT e FROM ElementDeModule e WHERE e.jour = :dayOfWeek AND e.periode = :periode AND e.module.classe.id = :classeId")
     List<ElementDeModule> findByDayOfWeekAndPeriodeAndClasse(@Param("dayOfWeek") DayOfWeek dayOfWeek, @Param("periode") Periode periode, @Param("classeId") Long classeId);
 
+    @Query("SELECT e FROM ElementDeModule e WHERE e.jour = :dayOfWeek AND e.periode = :periode AND e.enseignant.id = :ProfId")
+    List<ElementDeModule> findByDayOfWeekAndPeriodeAndProf(@Param("dayOfWeek") DayOfWeek dayOfWeek, @Param("periode") Periode periode, @Param("ProfId") Long ProfId);
+
+
+
 
 }
