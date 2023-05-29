@@ -4,25 +4,30 @@
   [prev]="'Départements'"
   [current]="'Home'"
 ></app-page-header>
-
 <div class="student-group-form">
-  <div class="row">
-    <div class="col-lg-3 col-md-6">
-      <div class="form-group">
-        <input
-          type="text"
-          class="form-control"
-          placeholder="Recherche ..."
-        />
+  <form [formGroup]="searchFormGroup" (ngSubmit)="handleSearchDepartments()">
+    <!-- Search form -->
+    <div class="row">
+      <div class="col-lg-3 col-md-6">
+        <div class="form-group">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Recherche par libellé ..."
+            formControlName="keyword"
+          />
+        </div>
+      </div>
+
+      <div class="col-lg-2">
+        <div class="search-student-btn">
+          <button type="btn" class="btn btn-primary">Chercher</button>
+        </div>
       </div>
     </div>
-    <div class="col-lg-2">
-      <div class="search-student-btn">
-        <button type="btn" class="btn btn-primary">Chercher</button>
-      </div>
-    </div>
-  </div>
+  </form>
 </div>
+
 <div class="row">
   <div class="col-sm-12">
     <div class="card card-table">
@@ -32,98 +37,113 @@
             <div class="col">
               <h3 class="page-title">Départements</h3>
             </div>
-
             <div class="col-auto text-end float-end ms-auto download-grp">
-              <a href="#" class="btn btn-outline-primary me-2"
-                ><i class="fas fa-download"></i> Télécharger </a
-              >
-              <a routerLink="/departements/add" class="btn btn-primary"
-                ><i class="fas fa-plus"></i
-              ></a>
+              <a routerLink="/profs/add" class="btn btn-primary">
+                <i class="fas fa-plus"></i>
+              </a>
             </div>
           </div>
           <div class="row align-items-center">
             <div class="col">
               <span class="m-2">Afficher</span>
-              <select class="form-select form-select-sm w-auto">
-                <option selected="" value="10">10</option>
-                <option value="25">25</option>
-                <option value="50">50</option>
-                <option value="100">100</option>
+              <!-- when selected value change , handle that -->
+              <select
+                (change)="handleChangeSize($event)"
+                class="form-select form-select-sm w-auto"
+              >
+                <option selected="" [ngValue]="option1">{{ option1 }}</option>
+                <option [ngValue]="option2">{{ option2 }}</option>
+                <option [ngValue]="option3">{{ option3 }}</option>
+                <option [ngValue]="option4">{{ option4 }}</option>
               </select>
+
               <span class="m-2">Entrées</span>
             </div>
           </div>
         </div>
 
-        <table
-          class="table border-0 star-student table-hover table-center mb-0 datatable table-striped"
-        >
-          <thead class="student-thread">
-            <tr>
-              <th>
-                <div class="form-check check-tables">
-                  <input
-                    class="form-check-input"
-                    type="checkbox"
-                    value="something"
-                  />
-                </div>
-              </th>
-              <th>ID</th>
-              <th>libellé</th>
-              <th>chef du département</th>
-              <th class="text-end">Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let i of [1, 1, 1, 1, 1, 1]">
-              <td>
-                <div class="form-check check-tables">
-                  <input
-                    class="form-check-input"
-                    type="checkbox"
-                    value="something"
-                  />
-                </div>
-              </td>
-              <td>123</td>
-              <td>
-                <h2>
-                  <a>mathématiques informatiques</a>
-                </h2>
-              </td>
-              <td>Daaif</td>
-        
-              <td class="text-end">
-                <div class="actions">
-                  <a class="btn btn-sm bg-success-light me-2">
+        <div class="table-responsive">
+          <table
+            class="table border-0 star-student table-hover table-center mb-0 datatable table-striped"
+          >
+            <thead class="student-thread">
+              <tr>
+                <th>
+                  <div class="form-check check-tables">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      value="something"
+                    />
+                  </div>
+                </th>
+                <th>ID</th>
+                <th>libellé</th>
+                <th>chef du département</th>
+                <th scope="col">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let department of departments">
+                <td>
+                  <div class="form-check check-tables">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      value="something"
+                    />
+                  </div>
+                </td>
+                <td>{{ department.id }}</td>
+                <td>{{ department.libelle }}</td>
+                <td>{{ department.chefDepartement }}</td>
+                <td>
+                  <a
+                    class="btn btn-sm bg-success-light me-2"
+                    [routerLink]="['/admin', 'departements', department.id]"
+                  >
                     <i class="fas fa-edit"></i>
                   </a>
                   <a
-                    href="edit-department.html"
+                    (click)="handleDeleteDepartment(department)"
                     class="btn btn-sm bg-danger-light"
                   >
                     <i class="fas fa-trash"></i>
                   </a>
-                </div>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!-- Pagination -->
         <ul class="pagination justify-content-end mt-4">
-          <li class="page-item disabled">
-            <a class="page-link" href="#" tabindex="-1">Précédent </a>
+          <li class="page-item" [ngClass]="{ disabled: currentPage === 0 }">
+            <a class="page-link" tabindex="-1" (click)="goToPreviousSet()"
+              >Précédent</a
+            >
           </li>
-          <li class="page-item"><a class="page-link" href="#">1</a></li>
-          <li class="page-item"><a class="page-link" href="#">2</a></li>
-          <li class="page-item"><a class="page-link" href="#">3</a></li>
-          <li class="page-item">
-            <a class="page-link" href="#">Suivant</a>
+          <li
+            class="page-item"
+            *ngFor="let page of displayedPages"
+            [class.selected]="currentPage === page"
+          >
+            <a class="page-link" (click)="gotoPage(page)">{{ page + 1 }}</a>
+          </li>
+          <li
+            class="page-item"
+            [ngClass]="{ disabled: currentPage >= totalPages - 1 }"
+          >
+            <!-- Add the following code to disable the "Suivant" button when there are no more pages to show -->
+            <button
+              class="page-link"
+              [disabled]="currentPage >= totalPages - 1"
+              (click)="goToNextSet()"
+            >
+              Suivant
+            </button>
           </li>
         </ul>
       </div>
     </div>
   </div>
 </div>
-

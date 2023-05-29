@@ -8,6 +8,7 @@ import com.lowagie.text.pdf.BaseFont;
 import com.lowagie.text.pdf.PdfWriter;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.AllArgsConstructor;
+import org.springframework.core.io.PathResource;
 import org.springframework.stereotype.Service;
 import pi.enset.entities.Classe;
 import pi.enset.entities.Departement;
@@ -75,10 +76,10 @@ public class PdfExportService {
                 Table myTable = new Table(5); // 3 columns
 
 
-                FontFactory.register("backEnd/src/main/resources/Fonts/QuattrocentoSans-Italic.ttf");
+                FontFactory.register("Fonts/QuattrocentoSans-Italic.ttf");
 
 
-                FontFactory.register("backEnd/src/main/resources/Fonts/Calibri Regular.ttf");
+                FontFactory.register("Fonts/Calibri Regular.ttf");
 
                 Font Calibri1 = FontFactory.getFont("Calibri", BaseFont.WINANSI, 10,Font.BOLD);
 
@@ -223,8 +224,8 @@ public class PdfExportService {
                 // Create a Font object
 
 
-                FontFactory.register("backEnd/src/main/resources/Fonts/COMIC.ttf");
-                FontFactory.register("backEnd/src/main/resources/Fonts/times new roman.ttf");
+                FontFactory.register("Fonts/COMIC.ttf");
+                FontFactory.register("Fonts/times new roman.ttf");
 
                 Font font1 = FontFactory.getFont("Comic Sans MS", 14, Font.UNDERLINE);
                 Font font2 = FontFactory.getFont("Times New Roman", 14);
@@ -253,9 +254,8 @@ public class PdfExportService {
                 paragraph5.setAlignment(Element.ALIGN_CENTER);
                 Paragraph paragraph6 = new Paragraph(text6,font6);
                 paragraph6.setAlignment(Element.ALIGN_CENTER);
-
-                Image headerImage = Image.getInstance("backEnd/src/main/resources/header.jpg");
-                Image footerImage = Image.getInstance("backEnd/src/main/resources/footer.jpg");
+                Image headerImage = Image.getInstance("src/main/resources/header.jpg");
+                Image footerImage = Image.getInstance("src/main/resources/footer.jpg");
                 float headerWidth = PageSize.A4.getWidth();
                 float headerHeight = 50f;  // Adjust the height as needed
                 float footerWidth = PageSize.A4.getWidth();
@@ -338,10 +338,10 @@ public class PdfExportService {
         Table myTable = new Table(5); // 3 columns
 
 
-        FontFactory.register("backEnd/src/main/resources/Fonts/QuattrocentoSans-Italic.ttf");
+        FontFactory.register("Fonts/QuattrocentoSans-Italic.ttf");
 
 
-        FontFactory.register("backEnd/src/main/resources/Fonts/Calibri Regular.ttf");
+        FontFactory.register("Fonts/Calibri Regular.ttf");
 
         Font Calibri1 = FontFactory.getFont("Calibri", BaseFont.WINANSI, 10,Font.BOLD);
 
@@ -491,8 +491,8 @@ public class PdfExportService {
             // Create a Font object
 
 
-            FontFactory.register("backEnd/src/main/resources/Fonts/COMIC.ttf");
-            FontFactory.register("backEnd/src/main/resources/Fonts/times new roman.ttf");
+            FontFactory.register("Fonts/COMIC.ttf");
+            FontFactory.register("Fonts/times new roman.ttf");
 
             Font font1 = FontFactory.getFont("Comic Sans MS", 14, Font.UNDERLINE);
             Font font2 = FontFactory.getFont("Times New Roman", 14);
@@ -522,8 +522,8 @@ public class PdfExportService {
             Paragraph paragraph6 = new Paragraph(text6,font6);
             paragraph6.setAlignment(Element.ALIGN_CENTER);
 
-            Image headerImage = Image.getInstance("backEnd/src/main/resources/header.jpg");
-            Image footerImage = Image.getInstance("backEnd/src/main/resources/footer.jpg");
+            Image headerImage = Image.getInstance("src/main/resources/header.jpg");
+            Image footerImage = Image.getInstance("src/main/resources/footer.jpg");
             float headerWidth = PageSize.A4.getWidth();
             float headerHeight = 50f;  // Adjust the height as needed
             float footerWidth = PageSize.A4.getWidth();
@@ -598,10 +598,10 @@ public class PdfExportService {
             //1) Let's create a Table object
             Table myTable = new Table(5); // 3 columns
 
-            FontFactory.register("backEnd/src/main/resources/Fonts/QuattrocentoSans-Italic.ttf");
+            FontFactory.register("Fonts/QuattrocentoSans-Italic.ttf");
 
 
-            FontFactory.register("backEnd/src/main/resources/Fonts/Calibri Regular.ttf");
+            FontFactory.register("Fonts/Calibri Regular.ttf");
 
             Font Calibri1 = FontFactory.getFont("Calibri", BaseFont.WINANSI, 10,Font.BOLD);
 
@@ -746,8 +746,8 @@ public class PdfExportService {
             // Create a Font object
 
 
-            FontFactory.register("backEnd/src/main/resources/Fonts/COMIC.ttf");
-            FontFactory.register("backEnd/src/main/resources/Fonts/times new roman.ttf");
+            FontFactory.register("Fonts/COMIC.TTF");
+            FontFactory.register("Fonts/times new roman.ttf");
 
             Font font1 = FontFactory.getFont("Comic Sans MS", 14, Font.UNDERLINE);
             Font font2 = FontFactory.getFont("Times New Roman", 14);
@@ -776,9 +776,9 @@ public class PdfExportService {
             paragraph5.setAlignment(Element.ALIGN_CENTER);
             Paragraph paragraph6 = new Paragraph(text6,font6);
             paragraph6.setAlignment(Element.ALIGN_CENTER);
-            
-            Image headerImage = Image.getInstance("backEnd/src/main/resources/header.jpg");
-            Image footerImage = Image.getInstance("backEnd/src/main/resources/footer.jpg");
+
+            Image headerImage = Image.getInstance("src/main/resources/header.jpg");
+            Image footerImage = Image.getInstance("src/main/resources/footer.jpg");
             float headerWidth = PageSize.A4.getWidth();
             float headerHeight = 50f;  // Adjust the height as needed
             float footerWidth = PageSize.A4.getWidth();

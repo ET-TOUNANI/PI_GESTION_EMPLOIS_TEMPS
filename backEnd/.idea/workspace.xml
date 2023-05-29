@@ -5,7 +5,48 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="30497bce-640a-4049-9739-312b719d2809" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/pi/enset/GAlgo/GaAlgorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pi/enset/GAlgo/GaAlgorithm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pi/enset/repository/DepartementRepostitory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pi/enset/repository/DepartementRepostitory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pi/enset/services/IDepartemenServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pi/enset/services/IDepartemenServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pi/enset/services/IDepartementService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pi/enset/services/IDepartementService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pi/enset/web/DepartementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pi/enset/web/DepartementController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/GAlgo/GaAlgorithm.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/GAlgo/GaAlgorithm.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/PiApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/PiApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/entities/Classe$ClasseBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/entities/Classe$ClasseBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/entities/Classe.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/entities/Classe.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/entities/Departement$DepartementBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/entities/Departement$DepartementBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/entities/Departement.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/entities/Departement.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/entities/ElementDeModule$ElementDeModuleBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/entities/ElementDeModule$ElementDeModuleBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/entities/ElementDeModule.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/entities/ElementDeModule.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/entities/Enseignant$EnseignantBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/entities/Enseignant$EnseignantBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/entities/Enseignant.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/entities/Enseignant.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/entities/Filiere$FiliereBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/entities/Filiere$FiliereBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/entities/Filiere.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/entities/Filiere.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/entities/Module$ModuleBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/entities/Module$ModuleBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/entities/Module.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/entities/Module.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/entities/NonDisponibilite$NonDisponibiliteBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/entities/NonDisponibilite$NonDisponibiliteBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/entities/NonDisponibilite.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/entities/NonDisponibilite.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/entities/Salle$SalleBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/entities/Salle$SalleBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/entities/Salle.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/entities/Salle.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/entities/Semestre$SemestreBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/entities/Semestre$SemestreBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/entities/Semestre.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/entities/Semestre.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/repository/DepartementRepostitory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/repository/DepartementRepostitory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/services/IDepartemenServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/services/IDepartemenServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/services/IDepartementService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/services/IDepartementService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/web/DepartementController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/web/DepartementController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontEnd/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../frontEnd/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontEnd/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../frontEnd/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontEnd/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontEnd/src/app/app-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontEnd/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontEnd/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontEnd/src/app/components/add/add-new-prof/add-new-prof.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontEnd/src/app/components/add/add-new-prof/add-new-prof.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontEnd/src/app/components/add/add-new-prof/add-new-prof.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontEnd/src/app/components/add/add-new-prof/add-new-prof.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontEnd/src/app/components/edit/edit-prof/edit-prof.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontEnd/src/app/components/edit/edit-prof/edit-prof.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontEnd/src/app/components/edit/edit-prof/edit-prof.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontEnd/src/app/components/edit/edit-prof/edit-prof.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontEnd/src/app/components/gestion/gestion-departement/gestion-departement.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontEnd/src/app/components/gestion/gestion-departement/gestion-departement.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontEnd/src/app/components/gestion/gestion-departement/gestion-departement.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontEnd/src/app/components/gestion/gestion-departement/gestion-departement.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontEnd/src/app/components/gestion/gestion-prof/gestion-prof.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontEnd/src/app/components/gestion/gestion-prof/gestion-prof.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontEnd/src/app/components/gestion/gestion-prof/gestion-prof.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontEnd/src/app/components/gestion/gestion-prof/gestion-prof.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontEnd/src/app/models/profPage.models.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontEnd/src/app/models/profPage.models.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,7 +144,8 @@
       <workItem from="1685261026899" duration="1232000" />
       <workItem from="1685271991818" duration="29000" />
       <workItem from="1685276005671" duration="3755000" />
-      <workItem from="1685309418829" duration="586000" />
+      <workItem from="1685309418829" duration="3665000" />
+      <workItem from="1685383426025" duration="5157000" />
     </task>
     <servers />
   </component>

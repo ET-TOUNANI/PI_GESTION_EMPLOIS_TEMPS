@@ -15,7 +15,6 @@ import { GestionProfComponent } from './components/gestion/gestion-prof/gestion-
 import { HomeComponent } from './components/home/home.component';
 import { GestionFiliereComponent } from './components/gestion/gestion-filiere/gestion-filiere.component';
 import { AddNewFiliereComponent } from './components/add/add-new-filiere/add-new-filiere.component';
-import { GestionDepartementComponent } from './components/gestion/gestion-departement/gestion-departement.component';
 import { AddNewDepartementComponent } from './components/add/add-new-departement/add-new-departement.component';
 import { GestionClasseComponent } from './components/gestion/gestion-classe/gestion-classe.component';
 import { AddNewClasseComponent } from './components/add/add-new-classe/add-new-classe.component';
@@ -25,6 +24,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { TimetableComponent } from './components/timetable/timetable.component';
 import { EditProfComponent } from './components/edit/edit-prof/edit-prof.component';
+import { NotFoundComponent } from './components/widgets/not-found/not-found.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { GestionDepartmentComponent } from './components/gestion/gestion-departement/gestion-departement.component';
 
 @NgModule({
   declarations: [
@@ -41,21 +43,23 @@ import { EditProfComponent } from './components/edit/edit-prof/edit-prof.compone
     HomeComponent,
     GestionFiliereComponent,
     AddNewFiliereComponent,
-    GestionDepartementComponent,
     AddNewDepartementComponent,
     GestionClasseComponent,
     AddNewClasseComponent,
+    GestionDepartmentComponent,
     GestionSallesComponent,
     AddNewSalleComponent,
     TimetableComponent,
-    EditProfComponent
+    EditProfComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-     ReactiveFormsModule
+     ReactiveFormsModule,
+     BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

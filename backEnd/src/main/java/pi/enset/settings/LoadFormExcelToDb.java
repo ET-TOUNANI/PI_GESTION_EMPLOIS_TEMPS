@@ -150,7 +150,7 @@ public class LoadFormExcelToDb {
                                         iSemestreService.addSemestre(semestre);
                                         classe = new Classe();
                                         classe.setNbrEleves((int) sheet.getRow(j).getCell(7).getNumericCellValue());
-                                        classe.setLibelle(filiere.getLibelle() + "" + semestre.getNum().toString().charAt(1));
+                                        classe.setLibelle(filiere.getLibelle() + " " + semestre.getNum().toString().charAt(1));
                                         //(int) cell.getRow().getCell(4).getNumericCellValue();
                                         filiere.getClasses().add(classe);
                                         if (iDepartementService.findDepartementByNom(departement.getLibelle()).size() == 0) {
