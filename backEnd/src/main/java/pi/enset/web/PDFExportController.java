@@ -30,9 +30,23 @@ public class PDFExportController {
         this.pdfGeneratorService.DepartementsPDF(response,id);
     }
     @GetMapping("/classes/{id}")
-    public void generatePDFbyClass(HttpServletResponse response,@PathVariable int id) {
+    public void generatePDFbyClass(HttpServletResponse response,@PathVariable int id) throws IOException {
 
         this.pdfGeneratorService.OneClassePDF(response,id);
+
+    }
+
+    @GetMapping("/Enseignants/{id}")
+    public void generatePDFbyProf(HttpServletResponse response,@PathVariable int id) throws IOException {
+
+        this.pdfGeneratorService.ProfPDF(response,id);
+
+    }
+
+    @GetMapping("/Enseignants")
+    public void generatePDFbyProf(HttpServletResponse response) throws IOException {
+
+        this.pdfGeneratorService.AllProfsPDF(response);
 
     }
 }
