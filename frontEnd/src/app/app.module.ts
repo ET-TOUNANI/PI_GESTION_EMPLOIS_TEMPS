@@ -27,6 +27,7 @@ import { EditProfComponent } from './components/edit/edit-prof/edit-prof.compone
 import { NotFoundComponent } from './components/widgets/not-found/not-found.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { GestionDepartmentComponent } from './components/gestion/gestion-departement/gestion-departement.component';
+import { EditDepartementComponent } from './components/edit/edit-departement/edit-departement.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import { GestionDepartmentComponent } from './components/gestion/gestion-departe
     AddNewSalleComponent,
     TimetableComponent,
     EditProfComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    EditDepartementComponent
   ],
   imports: [
     BrowserModule,

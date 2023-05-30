@@ -14,6 +14,7 @@ import {TimetableComponent} from "./components/timetable/timetable.component";
 import { EditProfComponent } from './components/edit/edit-prof/edit-prof.component';
 import { NotFoundComponent } from './components/widgets/not-found/not-found.component';
 import { GestionDepartmentComponent } from './components/gestion/gestion-departement/gestion-departement.component';
+import { EditDepartementComponent } from './components/edit/edit-departement/edit-departement.component';
 
 const routes: Routes = [
   { path :'' , component: HomeComponent},
@@ -30,6 +31,7 @@ const routes: Routes = [
     { path :'salles/add' , component: AddNewSalleComponent},
     { path :'emploitemps' , component: TimetableComponent},
     {path:'profs/edit',component:EditProfComponent},
+    { path :'departements/edit' , component: EditDepartementComponent},
     // not-found
     { path :'**' , component: NotFoundComponent},
     

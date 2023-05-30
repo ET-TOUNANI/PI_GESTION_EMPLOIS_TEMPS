@@ -21,10 +21,6 @@ export class GestionDepartmentComponent implements OnInit {
   currentPage: number = 0;
   totalelements:number=0;
   displayedPages: number[] = [];
-  option1:number=0;
-  option2:number=0;
-  option3:number=0;
-  option4:number=0;
   constructor(
     private departmentService: DepartmentService,
     private fb: FormBuilder,
@@ -37,6 +33,10 @@ export class GestionDepartmentComponent implements OnInit {
     });
     this.handleSearchDepartments();
   }
+   handleEditeDepart(departEdit: Departement) {
+    this.router.navigateByUrl('/departements/edit',{state :departEdit});
+  }
+
  handleChangeSize($event: Event) {
       this.size = parseInt((<HTMLInputElement>$event.target).value);
       this.handleSearchDepartments();
@@ -50,11 +50,6 @@ export class GestionDepartmentComponent implements OnInit {
           this.totalPages = data.totalPages;
           this.currentPage = data.number;
           this.setDisplayedPages();
-           console.log(data);
-        this.option1=Math.ceil(this.totalelements/4)
-        this.option2= Math.ceil((this.totalelements/2))
-        this.option3=Math.ceil((this.totalelements/4)*3)
-        this.option4=this.totalelements;
         },
         (error) => {
           this.errorMessage = error;
@@ -74,14 +69,9 @@ export class GestionDepartmentComponent implements OnInit {
       confirmButtonText: 'Oui, supprimez-le !'
     }).then((result) => {
       if (result.isConfirmed) {
-        this.departmentService.deleteDepartment(department.id).subscribe(() => {
-          this.departments = this.departments.filter((d) => d.id !== department.id);
-          Swal.fire(
-            'Supprimé !',
-            'Le département a été supprimé.',
-            'success'
-          );
-        });
+        this.departmentService.deleteDepartment(department.id).subscribe();
+         this.departments = this.departments.filter((d) => d.id !== department.id);
+         
       }
     });
   }

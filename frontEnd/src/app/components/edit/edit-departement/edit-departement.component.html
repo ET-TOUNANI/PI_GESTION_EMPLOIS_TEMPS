@@ -9,10 +9,7 @@
   <div class="col-sm-12">
     <div class="card comman-shadow">
       <div class="card-body">
-        <form
-          [formGroup]="newDepartementFormGroup"
-          (ngSubmit)="handleAddDepartement()"
-        >
+        <form [formGroup]="editDepartFormGroup" (submit)="handleUpdateDepart()">
           <div class="row">
             <div class="col-12">
               <h5 class="form-title student-info">
@@ -29,7 +26,6 @@
                   class="form-control"
                   type="text"
                   formControlName="libelle"
-                  placeholder="Libellé ...."
                 />
               </div>
             </div>
@@ -42,7 +38,6 @@
                   class="form-control"
                   type="text"
                   formControlName="chefDepartement"
-                  placeholder="Chef du Département...."
                 />
               </div>
             </div>

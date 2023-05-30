@@ -5,91 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="30497bce-640a-4049-9739-312b719d2809" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../Test/dataFilieres.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Test/dataFilieres.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jpa-buddy.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/toolchains.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/toolchains.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/mvnw" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvnw.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/mvnw.cmd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pi/enset/GAlgo/Criterias.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pi/enset/GAlgo/Criterias.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pi/enset/GAlgo/GaAlgorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pi/enset/GAlgo/GaAlgorithm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pi/enset/GAlgo/SchoolTimetable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pi/enset/GAlgo/SchoolTimetable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pi/enset/PiApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pi/enset/PiApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pi/enset/entities/Classe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pi/enset/entities/Classe.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pi/enset/entities/Departement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pi/enset/entities/Departement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pi/enset/entities/ElementDeModule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pi/enset/entities/ElementDeModule.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pi/enset/entities/Enseignant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pi/enset/entities/Enseignant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pi/enset/entities/Filiere.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pi/enset/entities/Filiere.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pi/enset/entities/Module.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pi/enset/entities/Module.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pi/enset/entities/NonDisponibilite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pi/enset/entities/NonDisponibilite.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pi/enset/entities/Salle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pi/enset/entities/Salle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pi/enset/entities/Semestre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pi/enset/entities/Semestre.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pi/enset/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pi/enset/entities/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pi/enset/entities/enums/NumeroSemester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pi/enset/entities/enums/NumeroSemester.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pi/enset/entities/enums/Periode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pi/enset/entities/enums/Periode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pi/enset/entities/enums/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pi/enset/entities/enums/Role.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pi/enset/entities/enums/TypeSalle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pi/enset/entities/enums/TypeSalle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pi/enset/repository/ClasseRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pi/enset/repository/ClasseRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pi/enset/repository/DepartementRepostitory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pi/enset/repository/DepartementRepostitory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pi/enset/repository/EnseignantRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pi/enset/repository/EnseignantRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pi/enset/repository/FiliereRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pi/enset/repository/FiliereRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pi/enset/repository/ModuleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pi/enset/repository/ModuleRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pi/enset/repository/NonDisponibiliteRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pi/enset/repository/NonDisponibiliteRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pi/enset/repository/SalleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pi/enset/repository/SalleRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pi/enset/repository/SemestreRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pi/enset/repository/SemestreRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pi/enset/services/IClasseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pi/enset/services/IClasseService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pi/enset/services/IClasseServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pi/enset/services/IClasseServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pi/enset/services/IDepartemenServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pi/enset/services/IDepartemenServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pi/enset/services/IDepartementService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pi/enset/services/IDepartementService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pi/enset/services/IElementDeModuleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pi/enset/services/IElementDeModuleService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pi/enset/services/IElementDeModuleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pi/enset/services/IElementDeModuleServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pi/enset/services/IEmpliDeTempsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pi/enset/services/IEmpliDeTempsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pi/enset/services/IEmpliDeTempsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pi/enset/services/IEmpliDeTempsServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pi/enset/services/IEnseignantService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pi/enset/services/IEnseignantService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pi/enset/services/IEnseignantServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pi/enset/services/IEnseignantServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pi/enset/services/IFiliereService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pi/enset/services/IFiliereService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pi/enset/services/IFiliereServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pi/enset/services/IFiliereServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pi/enset/services/IModuleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pi/enset/services/IModuleService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pi/enset/services/IModuleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pi/enset/services/IModuleServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pi/enset/services/INonDisponibiliteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pi/enset/services/INonDisponibiliteService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pi/enset/services/INonDisponibiliteServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pi/enset/services/INonDisponibiliteServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pi/enset/services/ISalleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pi/enset/services/ISalleService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pi/enset/services/ISalleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pi/enset/services/ISalleServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pi/enset/services/ISemestreService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pi/enset/services/ISemestreService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pi/enset/services/ISemestreServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pi/enset/services/ISemestreServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pi/enset/settings/CorsConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pi/enset/settings/CorsConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pi/enset/settings/DataFromDb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pi/enset/settings/DataFromDb.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pi/enset/settings/LoadFormExcelToDb.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pi/enset/settings/PdfExportService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pi/enset/settings/PdfExportService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pi/enset/web/ClasseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pi/enset/web/ClasseController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pi/enset/web/DepartementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pi/enset/web/DepartementController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pi/enset/web/ElementDeModuleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pi/enset/web/ElementDeModuleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pi/enset/web/EmploisDeTemps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pi/enset/web/EmploisDeTemps.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pi/enset/web/EnseignantController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pi/enset/web/EnseignantController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pi/enset/web/FiliereController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pi/enset/web/FiliereController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pi/enset/web/ImportDataFromExcelController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pi/enset/web/ImportDataFromExcelController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pi/enset/web/ModuleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pi/enset/web/ModuleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pi/enset/web/NonDisponibilitiesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pi/enset/web/NonDisponibilitiesController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pi/enset/web/PDFExportController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pi/enset/web/PDFExportController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pi/enset/web/SalleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pi/enset/web/SalleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pi/enset/web/SemseterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pi/enset/web/SemseterController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/dataFilieres.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pi/enset/PiApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pi/enset/PiApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/GAlgo/GaAlgorithm.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/GAlgo/GaAlgorithm.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/PiApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/PiApplication.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/repository/DepartementRepostitory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/repository/DepartementRepostitory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/repository/ElementModuleRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/repository/ElementModuleRepository.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/services/IDepartemenServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/services/IDepartemenServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/services/IDepartementService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/services/IDepartementService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/web/DepartementController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/web/DepartementController.class" afterDir="false" />
@@ -193,7 +115,7 @@
       <workItem from="1685276005671" duration="3755000" />
       <workItem from="1685309418829" duration="586000" />
       <workItem from="1685472492225" duration="477000" />
-      <workItem from="1685473008239" duration="1251000" />
+      <workItem from="1685473008239" duration="1889000" />
     </task>
     <servers />
   </component>
