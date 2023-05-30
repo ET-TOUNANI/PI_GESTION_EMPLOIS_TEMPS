@@ -1,8 +1,6 @@
 package pi.enset.services;
 
 import lombok.AllArgsConstructor;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import pi.enset.entities.Departement;
 import pi.enset.repository.DepartementRepostitory;
@@ -50,10 +48,5 @@ public class IDepartemenServiceImpl implements IDepartementService {
     public Departement updateDeparetement(Long id, Departement departement) {
         departement.setId(id);
         return departementRepostitory.save(departement);
-    }
-
-    @Override
-    public Page<Departement> searchDepartements(String keyword, Pageable pageable) {
-        return departementRepostitory.searchWithPagination(keyword, pageable);
     }
 }

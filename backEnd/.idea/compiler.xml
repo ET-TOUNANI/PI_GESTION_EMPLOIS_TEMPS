@@ -9,15 +9,14 @@
         <outputRelativeToContentRoot value="true" />
         <module name="pi" />
         <module name="backEnd" />
+        <module name="backend" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="backend" target="17" />
-    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="backEnd" options="-parameters" />
+      <module name="backend" options="-parameters" />
       <module name="pi" options="-parameters" />
     </option>
   </component>

@@ -218,30 +218,25 @@ public class GaAlgorithm {
             List<ElementDeModule> parent2Timetable = parent2.getTimetable(classIndex);// IIBDCC emplois du temps 2
 
             int timetableSize = parent1Timetable.size();
-            if(timetableSize >0){
-                int nb=random.nextInt((timetableSize / 2) - 1);
 
-                // Determine crossover point
-                int crossoverPoint = nb + 1;
+            // Determine crossover point
+            int crossoverPoint = random.nextInt((timetableSize / 2) - 1) + 1;
+            //exit(0);
+            // Create child timetables by combining parent schedules
+            List<ElementDeModule> child1Timetable = new ArrayList<>(parent1Timetable.subList(0, crossoverPoint));
+            List<ElementDeModule> child2Timetable = new ArrayList<>(parent2Timetable.subList(0, crossoverPoint));
 
-                //exit(0);
-                // Create child timetables by combining parent schedules
-                List<ElementDeModule> child1Timetable = new ArrayList<>(parent1Timetable.subList(0, crossoverPoint));
-                List<ElementDeModule> child2Timetable = new ArrayList<>(parent2Timetable.subList(0, crossoverPoint));
+            List<ElementDeModule> remainingElementsParent1 = parent1Timetable.stream().filter(element -> !child2Timetable.contains(element)).toList();
 
-                List<ElementDeModule> remainingElementsParent1 = parent1Timetable.stream().filter(element -> !child2Timetable.contains(element)).toList();
+            List<ElementDeModule> remainingElementsParent2 = parent2Timetable.stream().filter(element -> !child1Timetable.contains(element)).toList();
 
-                List<ElementDeModule> remainingElementsParent2 = parent2Timetable.stream().filter(element -> !child1Timetable.contains(element)).toList();
+            // Add remaining elements from the other parent to each child timetable
+            child1Timetable.addAll(remainingElementsParent2);
+            child2Timetable.addAll(remainingElementsParent1);
 
-                // Add remaining elements from the other parent to each child timetable
-                child1Timetable.addAll(remainingElementsParent2);
-                child2Timetable.addAll(remainingElementsParent1);
-
-                // Add child timetables to offspring
-                offspring1.getTimetable(classIndex).addAll(child1Timetable);
-                offspring2.getTimetable(classIndex).addAll(child2Timetable);
-            }
-
+            // Add child timetables to offspring
+            offspring1.getTimetable(classIndex).addAll(child1Timetable);
+            offspring2.getTimetable(classIndex).addAll(child2Timetable);
         }
 
         List<SchoolTimetable> offspring = new ArrayList<>();

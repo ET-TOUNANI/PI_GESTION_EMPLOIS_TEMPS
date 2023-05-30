@@ -2,9 +2,6 @@ package pi.enset.web;
 
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
 import pi.enset.entities.Departement;
 import pi.enset.services.IDepartementService;
@@ -24,15 +21,6 @@ public class DepartementController {
     @GetMapping
     public List<Departement> getAllDepartements() {
         return departementService.getDepartements();
-    }
-    @GetMapping("/search")
-    public Page<Departement> searchDepartements(
-            @RequestParam(defaultValue = "") String keyword,
-            @RequestParam(defaultValue = "0") int page,
-            @RequestParam(defaultValue = "10") int size
-    ) {
-        Pageable pageable = PageRequest.of(page, size);
-        return departementService.searchDepartements(keyword, pageable);
     }
 
     @GetMapping("/{id}")

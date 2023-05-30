@@ -1,8 +1,6 @@
 package pi.enset.services;
 
 
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import pi.enset.entities.Departement;
 
 import java.util.List;
@@ -18,6 +16,4 @@ public interface IDepartementService {
     Departement getDepartementById(Long id);
 
     Departement updateDeparetement(Long id, Departement departement);
-
-    Page<Departement> searchDepartements(String keyword, Pageable pageable);
 }
