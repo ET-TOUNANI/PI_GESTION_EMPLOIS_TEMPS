@@ -8,8 +8,6 @@ import { NavbarComponent } from './components/widgets/navbar/navbar.component';
 import { FooterComponent } from './components/widgets/footer/footer.component';
 import { PageHeaderComponent } from './components/widgets/page-header/page-header.component';
 import { StatistiqueComponent } from './components/widgets/statistique/statistique.component';
-import { ListProfComponent } from './components/dashboard/list-prof/list-prof.component';
-import { ListDepartementsComponent } from './components/dashboard/list-departements/list-departements.component';
 import { AddNewProfComponent } from './components/add/add-new-prof/add-new-prof.component';
 import { GestionProfComponent } from './components/gestion/gestion-prof/gestion-prof.component';
 import { HomeComponent } from './components/home/home.component';
@@ -29,6 +27,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { GestionDepartmentComponent } from './components/gestion/gestion-departement/gestion-departement.component';
 import { EditDepartementComponent } from './components/edit/edit-departement/edit-departement.component';
 import { EditSalleComponent } from './components/edit/edit-salle/edit-salle.component';
+import { ActionsComponent } from './components/dashboard/actions/actions.component';
 
 @NgModule({
   declarations: [
@@ -38,8 +37,7 @@ import { EditSalleComponent } from './components/edit/edit-salle/edit-salle.comp
     FooterComponent,
     PageHeaderComponent,
     StatistiqueComponent,
-    ListProfComponent,
-    ListDepartementsComponent,
+    ActionsComponent,
     AddNewProfComponent,
     GestionProfComponent,
     HomeComponent,
@@ -55,7 +53,8 @@ import { EditSalleComponent } from './components/edit/edit-salle/edit-salle.comp
     EditProfComponent,
     NotFoundComponent,
     EditDepartementComponent,
-    EditSalleComponent
+    EditSalleComponent,
+    ActionsComponent
   ],
   imports: [
     BrowserModule,

@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ListProfComponent } from './list-prof.component';
+import { ActionsComponent } from './actions.component';
 
-describe('ListProfComponent', () => {
-  let component: ListProfComponent;
-  let fixture: ComponentFixture<ListProfComponent>;
+describe('ActionsComponent', () => {
+  let component: ActionsComponent;
+  let fixture: ComponentFixture<ActionsComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [ListProfComponent]
+      declarations: [ActionsComponent]
     });
-    fixture = TestBed.createComponent(ListProfComponent);
+    fixture = TestBed.createComponent(ActionsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

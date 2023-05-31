@@ -3,9 +3,14 @@ package pi.enset.web;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 import pi.enset.settings.LoadFormExcelToDb;
 
+import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.StandardCopyOption;
+import java.util.Objects;
 
 @Slf4j
 @CrossOrigin("*")
@@ -14,17 +19,23 @@ import java.io.IOException;
 @AllArgsConstructor
 public class ImportDataFromExcelController {
     private LoadFormExcelToDb loadFormExcelToDb;
-    @GetMapping("/import")
-    public String importData(@RequestParam(name = "path") String path) {
+
+    @PostMapping("/import")
+    public Boolean importData(@RequestParam("file") MultipartFile file) {
         try {
-           boolean isImport= loadFormExcelToDb.PutDataToDb(path);
-              if(isImport)
-                return "les données sont importées avec succès";
-                else
-                    return "les données ne sont pas importées";
+            File convertedFile = convertMultipartFileToFile(file);
+            return loadFormExcelToDb.PutDataToDb(convertedFile.getPath());
         } catch (IOException e) {
-            return "les données ne sont pas importées";
+            return false;
         }
     }
 
+    private File convertMultipartFileToFile(MultipartFile multipartFile) throws IOException {
+        String tempDir = System.getProperty("java.io.tmpdir");
+        File file = new File(tempDir + "/" + Objects.requireNonNull(multipartFile.getOriginalFilename()));
+        try (var inputStream = multipartFile.getInputStream()) {
+            Files.copy(inputStream, file.toPath(), StandardCopyOption.REPLACE_EXISTING);
+        }
+        return file;
+    }
 }

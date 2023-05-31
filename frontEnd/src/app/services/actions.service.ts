@@ -10,11 +10,17 @@ export class ActionsService {
 
   constructor( private http:HttpClient) { }
 
-  public importFile(pathFile: String): Observable<any> {
-    return this.http.get(environment.backendHost + "/data/import?path=" + pathFile);
+   public importFile(file: File): Observable<any> {
+    const formData = new FormData();
+    formData.append('file', file);
+    console.log(formData.get('file'));
+    
+    
+    return this.http.post(environment.backendHost + '/data/import', formData);
   }
-  public exportFile(): Observable<any> {
-    return this.http.get(environment.backendHost + "/pdf/classes");
+  public exportFile(): Observable<Blob> {
+    // Set the response type to 'blob' to receive binary data
+    return this.http.get(environment.backendHost + "/pdf/classes", { responseType: 'blob' });
   }
   public generateEmploi(): Observable<any> {
     return this.http.get(environment.backendHost + "/emploisDeTemps/generate");

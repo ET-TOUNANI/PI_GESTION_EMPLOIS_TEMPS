@@ -8,7 +8,12 @@
     font-size: 12px;
     margin-left: 2.5em;
 }
-i{
+
+i {
     font-size: 30px;
     margin: 10px;
+}
+.input {
+    background-color: darkblue;
+    padding: 10px;
 }

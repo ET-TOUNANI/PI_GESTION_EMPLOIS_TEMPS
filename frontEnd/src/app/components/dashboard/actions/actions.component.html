@@ -1,0 +1,139 @@
+<div class="row">
+  <div class="col-xl-6 d-flex">
+    <div class="card flex-fill comman-shadow">
+      <div class="card flex-fill student-space comman-shadow">
+        <div class="card-header d-flex align-items-center">
+          <h5 class="card-title">Raccourcis de Tâches</h5>
+        </div>
+        <div class="card-body">
+          <section>
+            <!--generete emplois du temps-->
+            <!--Import data-->
+            <!--export emplois du temps en PDF-->
+            <!--vider la base de données-->
+            <div class="container justify-content-between">
+              <button
+                *ngIf="!spinnerImport"
+                type="button"
+                onclick="document.getElementById('getFile').click()"
+                class="btn btn-primary btn-square-md"
+              >
+                <i class="fas fa-file-import"></i><br />
+                Importer les données à partir d'un fichier Excel
+                <input
+                  type="file"
+                  (change)="handleImport($event)"
+                  accept=".xlsx, .xls"
+                  class="form-control"
+                  id="getFile"
+                  style="display: none"
+                />
+              </button>
+              <button
+                *ngIf="spinnerImport"
+                type="button"
+                class="btn btn-primary btn-square-md"
+              >
+                <div class="text-center">
+                  <div class="spinner-border" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                  </div>
+                </div>
+              </button>
+              <button
+                *ngIf="!spinnerGenerate"
+                (click)="handleGenerate()"
+                type="button"
+                class="btn btn-primary btn-square-md"
+              >
+                <i class="fas fa-random"></i><br />
+                Générer les emplois du temps
+              </button>
+              <button
+                *ngIf="spinnerGenerate"
+                type="button"
+                class="btn btn-primary btn-square-md"
+              >
+                <div class="text-center">
+                  <div class="spinner-border" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                  </div>
+                </div>
+              </button>
+
+              <button
+                *ngIf="!spinnerExport"
+                (click)="handleExport()"
+                type="button"
+                class="btn btn-primary btn-square-md"
+              >
+                <i class="fas fa-file-export"></i><br />
+                Exporter les emplois du temps en PDF
+              </button>
+              <button
+                *ngIf="spinnerExport"
+                type="button"
+                class="btn btn-primary btn-square-md"
+              >
+                <div class="text-center">
+                  <div class="spinner-border" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                  </div>
+                </div>
+              </button>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-xl-6 d-flex">
+    <div class="card flex-fill comman-shadow">
+      <div class="card flex-fill student-space comman-shadow">
+        <div class="card-header d-flex align-items-center">
+          <h5 class="card-title">Statut des Tâches et Activités</h5>
+        </div>
+        <div class="card-body">
+          <div class="activity-groups">
+            <div class="activity-awards">
+              <div class="award-boxs">
+                <img
+                  width="25"
+                  height="25"
+                  [src]="
+                    importStatus
+                      ? '/assets/img/icons/done.png'
+                      : '/assets/img/icons/notDone.png'
+                  "
+                  alt="Award"
+                />
+              </div>
+              <div class="award-list-outs">
+                <h4>Importation des données</h4>
+              </div>
+            </div>
+
+            <div class="activity-awards">
+              <div class="award-boxs">
+                <img
+                  width="25"
+                  height="25"
+                  [src]="
+                    generateStatus
+                      ? '/assets/img/icons/done.png'
+                      : '/assets/img/icons/notDone.png'
+                  "
+                  alt="Award"
+                />
+              </div>
+              <div class="award-list-outs">
+                <h4>Géneration des emplois du temps</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
