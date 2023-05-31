@@ -368,7 +368,7 @@ public class PdfExportService {
         paragraph6.setAlignment(Element.ALIGN_CENTER);
 
         Image headerImage = Image.getInstance("src/main/resources/header.jpg");
-        Image footerImage = Image.getInstance("src/main/resources/header.jpg");
+        Image footerImage = Image.getInstance("src/main/resources/footer.jpg");
         float headerWidth = PageSize.A4.getWidth();
         float headerHeight = 50f;  // Adjust the height as needed
         float footerWidth = PageSize.A4.getWidth();
