@@ -1,8 +1,11 @@
 package pi.enset.services;
 
 import lombok.AllArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import pi.enset.entities.Salle;
+import pi.enset.entities.enums.TypeSalle;
 import pi.enset.repository.SalleRepository;
 
 import java.util.List;
@@ -42,5 +45,15 @@ public class ISalleServiceImpl implements ISalleService {
     public Salle updateSalle(Long id, Salle salle) {
         salle.setId(id);
         return salleRepository.save(salle);
+    }
+
+    @Override
+    public Page<Salle> searchSalles(TypeSalle keyword, Pageable pageable) {
+        return salleRepository.searchWithPagination(keyword, pageable);
+    }
+
+    @Override
+    public Page<Salle> getSalles(Pageable pageable) {
+        return salleRepository.findAll(pageable);
     }
 }

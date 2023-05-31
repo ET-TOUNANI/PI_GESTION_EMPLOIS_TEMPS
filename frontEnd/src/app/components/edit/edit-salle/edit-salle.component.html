@@ -9,10 +9,7 @@
   <div class="col-sm-12">
     <div class="card comman-shadow">
       <div class="card-body">
-        <form
-          [formGroup]="newSalleFormGroup"
-          (ngSubmit)="handleAddDepartement()"
-        >
+        <form [formGroup]="editSalleFormGroup" (ngSubmit)="handleUpdateSalle()">
           <div class="row">
             <div class="col-12">
               <h5 class="form-title student-info">
@@ -45,11 +42,13 @@
             <div class="col-12 col-sm-4">
               <div class="form-group local-forms">
                 <label>type <span class="login-danger">*</span></label>
-                <input
-                  class="form-control"
-                  formControlName="typeSalle"
-                  type="text"
-                />
+
+                <select class="form-control select" formControlName="typeSalle">
+                  <option value="miniAmphi">miniAmphi</option>
+                  <option value="small">small</option>
+                  <option value="big">big</option>
+                  <option value="Tps">Tps</option>
+                </select>
               </div>
             </div>
 

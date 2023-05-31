@@ -2,11 +2,12 @@ package pi.enset.web;
 
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
 import pi.enset.entities.Filiere;
 import pi.enset.services.IFiliereService;
-
-import java.util.List;
 
 @Slf4j
 @CrossOrigin("*")
@@ -17,10 +18,13 @@ public class FiliereController {
 
     private final IFiliereService filiereService;
 
-
     @GetMapping
-    public List<Filiere> getAllFilieres() {
-        return filiereService.getFilieres();
+    public Page<Filiere> getAllFilieres(
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "10") int size
+    ) {
+        Pageable pageable = PageRequest.of(page, size);
+        return filiereService.getFilieres(pageable);
     }
 
     @GetMapping("/{id}")
@@ -38,9 +42,18 @@ public class FiliereController {
         return filiereService.updateFiliere(id, updatedFiliere);
     }
 
-
     @DeleteMapping("/{id}")
     public String deleteFiliere(@PathVariable Long id) {
         return filiereService.deleteFiliere(id);
+    }
+
+    @GetMapping("/search")
+    public Page<Filiere> searchFilieres(
+            @RequestParam String keyword,
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "10") int size
+    ) {
+        Pageable pageable = PageRequest.of(page, size);
+        return filiereService.searchFilieres(keyword, pageable);
     }
 }

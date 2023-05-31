@@ -1,6 +1,8 @@
 package pi.enset.services;
 
 import lombok.AllArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import pi.enset.entities.Filiere;
 import pi.enset.repository.FiliereRepository;
@@ -44,5 +46,15 @@ public class IFiliereServiceImpl implements IFiliereService {
     public Filiere updateFiliere(Long id, Filiere filiere) {
         filiere.setId(id);
         return filiereRepository.save(filiere);
+    }
+
+    @Override
+    public Page<Filiere> getFilieres(Pageable pageable) {
+        return filiereRepository.findAll(pageable);
+    }
+
+    @Override
+    public Page<Filiere> searchFilieres(String keyword, Pageable pageable) {
+        return filiereRepository.searchFilieres(keyword, pageable);
     }
 }

@@ -1,0 +1,14 @@
+.btn-square-md {
+    width: 100px !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
+    height: 120px !important;
+    text-align: center;
+    padding: 0px;
+    font-size: 12px;
+    margin-left: 2.5em;
+}
+i{
+    font-size: 30px;
+    margin: 10px;
+}

@@ -27,7 +27,7 @@ export class ProfServiceService {
   public getProf(id: number):Observable<Prof>{
     return this.http.get<Prof>(environment.backendHost+"/enseignants/"+id);
   }
-  public deleteProf(id: number){
+  public deleteProf(id: number): Observable<any>{
     return this.http.delete(environment.backendHost+"/enseignants/"+id);
   }
 }

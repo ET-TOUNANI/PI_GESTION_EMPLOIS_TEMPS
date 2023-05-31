@@ -1,6 +1,8 @@
 package pi.enset.services;
 
 import lombok.AllArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import pi.enset.entities.Classe;
 import pi.enset.entities.Filiere;
@@ -52,6 +54,16 @@ public class IClasseServiceImpl implements IClasseService {
         System.out.println("........id filiere updateClasse .......");
         System.out.println(classe.getFiliere().getId());
         return classeRepository.save(classe);
+    }
+
+    @Override
+    public Page<Classe> getClasses(Pageable pageable) {
+        return classeRepository.findAll(pageable);
+    }
+
+    @Override
+    public Page<Classe> searchClasses(String keyword, Pageable pageable) {
+        return classeRepository.searchClasses(keyword, pageable);
     }
 
 }
