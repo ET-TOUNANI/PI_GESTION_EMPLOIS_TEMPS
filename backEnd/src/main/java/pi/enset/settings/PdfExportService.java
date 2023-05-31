@@ -12,6 +12,10 @@ import org.springframework.stereotype.Service;
 import pi.enset.entities.*;
 import pi.enset.repository.*;
 import pi.enset.entities.enums.*;
+import pi.enset.services.IClasseService;
+import pi.enset.services.IDepartementService;
+import pi.enset.services.IEnseignantService;
+
 import java.awt.*;
 import java.io.IOException;
 import java.time.DayOfWeek;
@@ -25,14 +29,18 @@ public class PdfExportService {
     private final DataFromDb dataFromDb;
 
     private ElementModuleRepository elementModuleRepository;
-    private ClasseRepository classeRepository;
+    private final IClasseService classeService;
+
+    private final IEnseignantService enseignantService;
+
+    private final IDepartementService departementService;
 
 
 
     Periode[] timeslots;
     List<DayOfWeek> days;
 
-    public void ProfPDF(HttpServletResponse response, int id) throws IOException {
+    public void ProfPDF(HttpServletResponse response, Long id) throws IOException {
         dataFromDb.loadDataFromDatabase();
 
         Document myPDFDoc = new Document(PageSize.A4,
@@ -43,7 +51,7 @@ public class PdfExportService {
 
         final PdfWriter pdfWriter = PdfWriter.getInstance(myPDFDoc, response.getOutputStream());
         myPDFDoc.open();  // Open the Document
-        Enseignant enseignant = DataFromDb.professors.get(id);
+        Enseignant enseignant = enseignantService.getEnseignantById(id);
 
         AddPageProf(myPDFDoc,enseignant);
 
@@ -75,7 +83,7 @@ public class PdfExportService {
 
 
 
-    public void DepartementsPDF(HttpServletResponse response, int id) throws IOException {
+    public void DepartementsPDF(HttpServletResponse response, Long id) throws IOException {
         dataFromDb.loadDataFromDatabase();
 
 
@@ -86,7 +94,7 @@ public class PdfExportService {
                 70f); // down
 
         final PdfWriter pdfWriter = PdfWriter.getInstance(myPDFDoc, response.getOutputStream());
-        Departement departement = DataFromDb.departements.get(id);
+        Departement departement = departementService.getDepartementById(id);
         myPDFDoc.open();  // Open the Document
         for(Filiere filiere:departement.getFilieres()){
             for(Classe classe:filiere.getClasses()){
@@ -106,12 +114,12 @@ public class PdfExportService {
 
 
 
-    public void OneClassePDF(HttpServletResponse response, int id) throws IOException {
+    public void OneClassePDF(HttpServletResponse response, Long id) throws IOException {
         dataFromDb.loadDataFromDatabase();
         // Retrieve all classes
 
 
-        Classe classe = DataFromDb.classes.get(id);
+        Classe classe = classeService.getClasseById(id);
 
         Document myPDFDoc = new Document(PageSize.A4,
                 40f,   // left
@@ -359,8 +367,8 @@ public class PdfExportService {
         Paragraph paragraph6 = new Paragraph(text6,font6);
         paragraph6.setAlignment(Element.ALIGN_CENTER);
 
-        Image headerImage = Image.getInstance("src/main/resources/header.jpg");
-        Image footerImage = Image.getInstance("src/main/resources/footer.jpg");
+        Image headerImage = Image.getInstance("backEnd/src/main/resources/header.jpg");
+        Image footerImage = Image.getInstance("backEnd/src/main/resources/header.jpg");
         float headerWidth = PageSize.A4.getWidth();
         float headerHeight = 50f;  // Adjust the height as needed
         float footerWidth = PageSize.A4.getWidth();
@@ -569,8 +577,8 @@ public class PdfExportService {
         Paragraph paragraph6 = new Paragraph(text6,font6);
         paragraph6.setAlignment(Element.ALIGN_CENTER);
 
-        Image headerImage = Image.getInstance("src/main/resources/header.jpg");
-        Image footerImage = Image.getInstance("src/main/resources/footer.jpg");
+        Image headerImage = Image.getInstance("backEnd/src/main/resources/header.jpg");
+        Image footerImage = Image.getInstance("backEnd/src/main/resources/footer.jpg");
         float headerWidth = PageSize.A4.getWidth();
         float headerHeight = 50f;  // Adjust the height as needed
         float footerWidth = PageSize.A4.getWidth();
