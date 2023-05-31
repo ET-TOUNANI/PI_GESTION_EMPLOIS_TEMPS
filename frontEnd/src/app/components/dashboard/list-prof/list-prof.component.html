@@ -1,11 +1,6 @@
 <div class="card flex-fill student-space comman-shadow">
   <div class="card-header d-flex align-items-center">
     <h5 class="card-title">Raccourcis de Tâches</h5>
-    <ul class="chart-list-out student-ellips">
-      <li class="star-menus">
-        <a href="javascript:;"><i class="fas fa-ellipsis-v"></i></a>
-      </li>
-    </ul>
   </div>
   <div class="card-body">
     <section>
@@ -14,15 +9,27 @@
       <!--export emplois du temps en PDF-->
       <!--vider la base de données-->
       <div class="container justify-content-between">
-        <button type="button" class="btn btn-primary btn-square-md">
+        <button
+          (click)="handleImport()"
+          type="button"
+          class="btn btn-primary btn-square-md"
+        >
           <i class="fas fa-file-import"></i><br />
           Importer les données à partir d'un fichier Excel
         </button>
-        <button type="button" class="btn btn-primary btn-square-md">
+        <button
+          (click)="handleGenerate()"
+          type="button"
+          class="btn btn-primary btn-square-md"
+        >
           <i class="fas fa-random"></i><br />
           Générer les emplois du temps
         </button>
-        <button type="button" class="btn btn-primary btn-square-md">
+        <button
+          (click)="handleExport()"
+          type="button"
+          class="btn btn-primary btn-square-md"
+        >
           <i class="fas fa-file-export"></i><br />
           Exporter les emplois du temps en PDF
         </button>

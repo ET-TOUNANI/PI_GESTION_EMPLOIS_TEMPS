@@ -6,24 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="30497bce-640a-4049-9739-312b719d2809" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pi/enset/PiApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pi/enset/PiApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pi/enset/repository/ClasseRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pi/enset/repository/ClasseRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pi/enset/repository/FiliereRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pi/enset/repository/FiliereRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pi/enset/repository/SalleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pi/enset/repository/SalleRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pi/enset/services/IClasseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pi/enset/services/IClasseService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pi/enset/services/IClasseServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pi/enset/services/IClasseServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pi/enset/services/IFiliereService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pi/enset/services/IFiliereService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pi/enset/services/IFiliereServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pi/enset/services/IFiliereServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pi/enset/services/ISalleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pi/enset/services/ISalleService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pi/enset/services/ISalleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pi/enset/services/ISalleServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pi/enset/web/ClasseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pi/enset/web/ClasseController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pi/enset/web/FiliereController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pi/enset/web/FiliereController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pi/enset/web/SalleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pi/enset/web/SalleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/PiApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/PiApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/repository/SalleRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/repository/SalleRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/services/ISalleService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/services/ISalleService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/services/ISalleServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/services/ISalleServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/web/SalleController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/web/SalleController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontEnd/src/app/components/dashboard/list-departements/list-departements.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontEnd/src/app/components/dashboard/list-departements/list-departements.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontEnd/src/app/components/dashboard/list-prof/list-prof.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontEnd/src/app/components/dashboard/list-prof/list-prof.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontEnd/src/app/components/dashboard/list-prof/list-prof.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontEnd/src/app/components/dashboard/list-prof/list-prof.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,7 +109,7 @@
       <workItem from="1685276005671" duration="3755000" />
       <workItem from="1685309418829" duration="586000" />
       <workItem from="1685472492225" duration="477000" />
-      <workItem from="1685473008239" duration="9333000" />
+      <workItem from="1685473008239" duration="10238000" />
     </task>
     <servers />
   </component>
