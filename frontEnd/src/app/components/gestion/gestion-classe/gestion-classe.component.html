@@ -4,7 +4,7 @@
   [prev]="'Classes'"
   [current]="'Home'"
 ></app-page-header>
-
+<form [formGroup]="searchFormGroup" (ngSubmit)="handleSearchClasses()">
 <div class="student-group-form">
   <div class="row">
     <div class="col-lg-3 col-md-6">
@@ -23,6 +23,8 @@
       </div>
     </div>
   </div>
+</div>
+</form>
 
 <div class="row">
   <div class="col-sm-12">
@@ -125,5 +127,4 @@
       </div>
     </div>
   </div>
-</div>
 </div>
