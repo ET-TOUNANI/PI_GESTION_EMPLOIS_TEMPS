@@ -6,6 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="30497bce-640a-4049-9739-312b719d2809" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pi/enset/PiApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pi/enset/PiApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontEnd/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontEnd/src/app/app-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontEnd/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontEnd/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontEnd/src/app/components/dashboard/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontEnd/src/app/components/dashboard/app.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontEnd/src/app/components/dashboard/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontEnd/src/app/components/dashboard/app.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontEnd/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontEnd/src/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,6 +79,13 @@
       <recent name="pi.enset.settings" />
     </key>
   </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
   <component name="RunManager" selected="Spring Boot.PiApplication">
     <configuration name="PiApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="pi" />
@@ -112,7 +125,8 @@
       <workItem from="1685634816346" duration="142000" />
       <workItem from="1685695429971" duration="1988000" />
       <workItem from="1685700536108" duration="11000" />
-      <workItem from="1686235720764" duration="310000" />
+      <workItem from="1686235720764" duration="2861000" />
+      <workItem from="1686252367082" duration="715000" />
     </task>
     <servers />
   </component>

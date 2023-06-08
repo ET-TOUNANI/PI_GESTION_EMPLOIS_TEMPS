@@ -1,0 +1,551 @@
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+:root {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Open Sans", sans-serif;
+    color: #444444;
+}
+
+a {
+    color: #4154f1;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #717ff5;
+    text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Nunito", sans-serif;
+}
+
+/*--------------------------------------------------------------
+# Sections
+--------------------------------------------------------------*/
+section {
+    padding: 60px 0;
+    overflow: hidden;
+}
+
+.section-header {
+    text-align: center;
+    padding-bottom: 40px;
+}
+
+.section-header h2 {
+    font-size: 13px;
+    letter-spacing: 1px;
+    font-weight: 700;
+    margin: 0;
+    color: #4154f1;
+    text-transform: uppercase;
+}
+
+.section-header p {
+    margin: 10px 0 0 0;
+    padding: 0;
+    font-size: 38px;
+    line-height: 42px;
+    font-weight: 700;
+    color: #012970;
+}
+
+@media (max-width: 768px) {
+    .section-header p {
+        font-size: 28px;
+        line-height: 32px;
+    }
+}
+
+/*--------------------------------------------------------------
+# Breadcrumbs
+--------------------------------------------------------------*/
+.breadcrumbs {
+    padding: 15px 0;
+    background: #012970;
+    min-height: 40px;
+    margin-top: 82px;
+    color: #fff;
+}
+
+@media (max-width: 992px) {
+    .breadcrumbs {
+        margin-top: 57px;
+    }
+}
+
+.breadcrumbs h2 {
+    font-size: 28px;
+    font-weight: 500;
+}
+
+.breadcrumbs ol {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0 0 10px 0;
+    margin: 0;
+    font-size: 14px;
+}
+
+.breadcrumbs ol a {
+    color: #fff;
+    transition: 0.3s;
+}
+
+.breadcrumbs ol a:hover {
+    text-decoration: underline;
+}
+
+.breadcrumbs ol li+li {
+    padding-left: 10px;
+}
+
+.breadcrumbs ol li+li::before {
+    display: inline-block;
+    padding-right: 10px;
+    color: #8894f6;
+    content: "/";
+}
+
+/*--------------------------------------------------------------
+# Back to top button
+--------------------------------------------------------------*/
+.back-to-top {
+    position: fixed;
+    visibility: hidden;
+    opacity: 0;
+    right: 15px;
+    bottom: 15px;
+    z-index: 99999;
+    background: #4154f1;
+    width: 40px;
+    height: 40px;
+    border-radius: 4px;
+    transition: all 0.4s;
+}
+
+.back-to-top i {
+    font-size: 24px;
+    color: #fff;
+    line-height: 0;
+}
+
+.back-to-top:hover {
+    background: #6776f4;
+    color: #fff;
+}
+
+.back-to-top.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+/*--------------------------------------------------------------
+# Disable aos animation delay on mobile devices
+--------------------------------------------------------------*/
+@media screen and (max-width: 768px) {
+    [data-aos-delay] {
+        transition-delay: 0 !important;
+    }
+}
+
+
+
+/*--------------------------------------------------------------
+# Hero Section
+--------------------------------------------------------------*/
+.hero {
+    width: 100%;
+    height: 100vh;
+    background: url(/assets/img/hero-bg.png) top center no-repeat;
+    background-size: cover;
+}
+
+.hero h1 {
+    margin: 0;
+    font-size: 48px;
+    font-weight: 700;
+    color: #012970;
+}
+
+.hero h2 {
+    color: #444444;
+    margin: 15px 0 0 0;
+    font-size: 26px;
+}
+
+.hero .btn-get-started {
+    margin-top: 30px;
+    line-height: 0;
+    padding: 15px 40px;
+    border-radius: 4px;
+    transition: 0.5s;
+    color: #fff;
+    background: #4154f1;
+    box-shadow: 0px 5px 30px rgba(65, 84, 241, 0.4);
+}
+
+.hero .btn-get-started span {
+    font-family: "Nunito", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+
+.hero .btn-get-started i {
+    margin-left: 5px;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.hero .btn-get-started:hover i {
+    transform: translateX(5px);
+}
+
+.hero .hero-img {
+    text-align: right;
+}
+
+@media (min-width: 1024px) {
+    .hero {
+        background-attachment: fixed;
+    }
+}
+
+@media (max-width: 991px) {
+    .hero {
+        height: auto;
+        padding: 120px 0 60px 0;
+    }
+
+    .hero .hero-img {
+        text-align: center;
+        margin-top: 80px;
+    }
+
+    .hero .hero-img img {
+        width: 80%;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .hero h2 {
+        font-size: 24px;
+    }
+
+    .hero .hero-img img {
+        width: 100%;
+    }
+}
+
+/*--------------------------------------------------------------
+# Index Page
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+# About
+--------------------------------------------------------------*/
+.about .content {
+    background-color: #f6f9ff;
+    padding: 40px;
+}
+
+.about h3 {
+    font-size: 14px;
+    font-weight: 700;
+    color: #4154f1;
+    text-transform: uppercase;
+}
+
+.about h2 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #012970;
+}
+
+.about p {
+    margin: 15px 0 30px 0;
+    line-height: 24px;
+}
+
+.about .btn-read-more {
+    line-height: 0;
+    padding: 15px 40px;
+    border-radius: 4px;
+    transition: 0.5s;
+    color: #fff;
+    background: #4154f1;
+    box-shadow: 0px 5px 25px rgba(65, 84, 241, 0.3);
+}
+
+.about .btn-read-more span {
+    font-family: "Nunito", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+
+.about .btn-read-more i {
+    margin-left: 5px;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.about .btn-read-more:hover i {
+    transform: translateX(5px);
+}
+
+
+/*******************************************************/
+body {
+    margin-top: 20px;
+}
+
+.schedule-table table thead tr {
+    background: #0e4d85;
+}
+
+.schedule-table table thead th {
+    padding: 25px 50px;
+    color: #fff;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 800;
+    position: relative;
+    border: 0;
+}
+
+.schedule-table table thead th:before {
+    content: "";
+    width: 3px;
+    height: 35px;
+    background: rgba(255, 255, 255, 0.2);
+    position: absolute;
+    right: -1px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.schedule-table table thead th.last:before {
+    content: none;
+}
+
+.schedule-table table tbody td {
+    vertical-align: middle;
+    border: 1px solid #e2edf8;
+    font-weight: 500;
+    padding: 30px;
+    text-align: center;
+}
+
+.schedule-table table tbody td.day {
+    font-size: 22px;
+    font-weight: 600;
+    background: #f0f1f3;
+    border: 1px solid #e4e4e4;
+    position: relative;
+    transition: all 0.3s linear 0s;
+    min-width: 165px;
+}
+
+.schedule-table table tbody td.active {
+    position: relative;
+    z-index: 10;
+    transition: all 0.3s linear 0s;
+    min-width: 165px;
+}
+
+.schedule-table table tbody td.active h4 {
+    font-weight: 700;
+    color: #000;
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.schedule-table table tbody td.active p {
+    font-size: 16px;
+    line-height: normal;
+    margin-bottom: 0;
+}
+
+.schedule-table table tbody td .hover h4 {
+    font-weight: 700;
+    font-size: 20px;
+    color: #ffffff;
+    margin-bottom: 5px;
+}
+
+.schedule-table table tbody td .hover p {
+    font-size: 16px;
+    margin-bottom: 5px;
+    color: #ffffff;
+    line-height: normal;
+}
+
+.schedule-table table tbody td .hover span {
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.schedule-table table tbody td.active::before {
+    position: absolute;
+    content: "";
+    min-width: 100%;
+    min-height: 100%;
+    transform: scale(0);
+    top: 0;
+    left: 0;
+    z-index: -1;
+    border-radius: 0.25rem;
+    transition: all 0.3s linear 0s;
+}
+
+.schedule-table table tbody td .hover {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 120%;
+    height: 120%;
+    transform: translate(-50%, -50%) scale(0.8);
+    z-index: 99;
+    background: #86d4f5;
+    border-radius: 0.25rem;
+    padding: 25px 0;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s linear 0s;
+}
+
+.schedule-table table tbody td.active:hover .hover {
+    transform: translate(-50%, -50%) scale(1);
+    visibility: visible;
+    opacity: 1;
+}
+
+.schedule-table table tbody td.day:hover {
+    background: #86d4f5;
+    color: #fff;
+    border: 1px solid #86d4f5;
+}
+
+@media screen and (max-width: 1199px) {
+    .schedule-table {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+    }
+
+    .schedule-table table thead th {
+        padding: 25px 40px;
+    }
+
+    .schedule-table table tbody td {
+        padding: 20px;
+    }
+
+    .schedule-table table tbody td.active h4 {
+        font-size: 18px;
+    }
+
+    .schedule-table table tbody td.active p {
+        font-size: 15px;
+    }
+
+    .schedule-table table tbody td.day {
+        font-size: 20px;
+    }
+
+    .schedule-table table tbody td .hover {
+        padding: 15px 0;
+    }
+
+    .schedule-table table tbody td .hover span {
+        font-size: 17px;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .schedule-table table thead th {
+        font-size: 18px;
+        padding: 20px;
+    }
+
+    .schedule-table table tbody td.day {
+        font-size: 18px;
+    }
+
+    .schedule-table table tbody td.active h4 {
+        font-size: 17px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .schedule-table table thead th {
+        padding: 15px;
+    }
+
+    .schedule-table table tbody td {
+        padding: 15px;
+    }
+
+    .schedule-table table tbody td.active h4 {
+        font-size: 16px;
+    }
+
+    .schedule-table table tbody td.active p {
+        font-size: 14px;
+    }
+
+    .schedule-table table tbody td .hover {
+        padding: 10px 0;
+    }
+
+    .schedule-table table tbody td.day {
+        font-size: 18px;
+    }
+
+    .schedule-table table tbody td .hover span {
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .schedule-table table tbody td.day {
+        min-width: 135px;
+    }
+}
+
+.form-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.col {
+    margin-right: 10px;
+}
+
+.fa-building,
+.fa-clipboard,
+.fa-calendar {
+    color: #0e4d85;
+}
