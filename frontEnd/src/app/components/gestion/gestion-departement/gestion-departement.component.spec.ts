@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { GestionDepartementComponent } from './gestion-departement.component';
+import { GestionDepartmentComponent } from './gestion-departement.component';
 
 describe('GestionDepartementComponent', () => {
-  let component: GestionDepartementComponent;
-  let fixture: ComponentFixture<GestionDepartementComponent>;
+  let component: GestionDepartmentComponent;
+  let fixture: ComponentFixture<GestionDepartmentComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [GestionDepartementComponent]
+      declarations: [GestionDepartmentComponent]
     });
-    fixture = TestBed.createComponent(GestionDepartementComponent);
+    fixture = TestBed.createComponent(GestionDepartmentComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -6,6 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="30497bce-640a-4049-9739-312b719d2809" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pi/enset/web/ClasseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pi/enset/web/ClasseController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontEnd/src/app/components/gestion/gestion-classe/gestion-classe.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontEnd/src/app/components/gestion/gestion-classe/gestion-classe.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontEnd/src/app/components/gestion/gestion-classe/gestion-classe.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontEnd/src/app/components/gestion/gestion-classe/gestion-classe.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontEnd/src/app/components/gestion/gestion-departement/gestion-departement.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontEnd/src/app/components/gestion/gestion-departement/gestion-departement.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontEnd/src/app/components/gestion/gestion-filiere/gestion-filiere.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontEnd/src/app/components/gestion/gestion-filiere/gestion-filiere.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontEnd/src/app/components/timetable/timetable.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../frontEnd/src/app/components/timetable/timetable.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontEnd/src/app/components/timetable/timetable.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontEnd/src/app/components/timetable/timetable.component.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,25 +49,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Github/PI_GESTION_EMPLOIS_TEMPS/backEnd&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;b43fdd98b1fd705ae4c3a10cf25aad8a&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/PI_GESTION_EMPLOI_DU_TEMPS/PI_GESTION_EMPLOIS_TEMPS_1/frontEnd",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "spring.configuration.checksum": "72ab8af56bddab33b269c5964b26620a",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="pi.enset.services" />
@@ -82,8 +89,7 @@
       </method>
     </configuration>
     <configuration name="PiApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <option name="ACTIVE_PROFILES" />
-      <module name="backend" />
+      <module name="pi" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="pi.enset.PiApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -113,6 +119,7 @@
       <workItem from="1685695429971" duration="1988000" />
       <workItem from="1685700536108" duration="11000" />
       <workItem from="1686235720764" duration="310000" />
+      <workItem from="1686251942147" duration="4285000" />
     </task>
     <servers />
   </component>

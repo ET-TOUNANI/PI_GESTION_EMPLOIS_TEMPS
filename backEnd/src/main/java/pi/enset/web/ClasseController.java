@@ -15,10 +15,7 @@ import pi.enset.services.IClasseService;
 @RequestMapping("/api/classes")
 @AllArgsConstructor
 public class ClasseController {
-
     private final IClasseService classeService;
-
-
     @GetMapping
     public Page<Classe> getAllClasses(
             @RequestParam(defaultValue = "0") int page,
