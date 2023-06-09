@@ -14,17 +14,21 @@
   </head>
 
   <body>
-    <div class="main-wrapper">
-      <app-navbar></app-navbar>
-
-      <app-sidebar></app-sidebar>
-
-      <div class="page-wrapper">
-        <div class="content container-fluid mb-4">
-          <router-outlet> </router-outlet>
+    <ng-container *ngIf="isAuthenticated; else indexPage">
+      <div class="main-wrapper">
+        <app-navbar></app-navbar>
+        <app-sidebar></app-sidebar>
+        <div class="page-wrapper">
+          <div class="content container-fluid mb-4">
+            <router-outlet></router-outlet>
+          </div>
+          <app-footer></app-footer>
         </div>
-        <app-footer></app-footer>
       </div>
-    </div>
+    </ng-container>
+
+    <ng-template #indexPage>
+      <app-index-page></app-index-page>
+    </ng-template>
   </body>
 </html>

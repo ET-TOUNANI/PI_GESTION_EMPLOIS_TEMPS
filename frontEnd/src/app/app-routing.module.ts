@@ -16,11 +16,13 @@ import { NotFoundComponent } from './components/widgets/not-found/not-found.comp
 import { GestionDepartmentComponent } from './components/gestion/gestion-departement/gestion-departement.component';
 import { EditDepartementComponent } from './components/edit/edit-departement/edit-departement.component';
 import { EditSalleComponent } from './components/edit/edit-salle/edit-salle.component';
+import { IndexPageComponent } from './components/index-page/index-page.component';
 import {EditFiliereComponent} from "./components/edit/edit-filiere/edit-filiere.component";
 import {EditClasseComponent} from "./components/edit/edit-classe/edit-classe.component";
 
 const routes: Routes = [
   { path :'' , component: HomeComponent},
+  { path :'index' , component: IndexPageComponent},
     { path :'home' , component: HomeComponent},
     { path :'profs' , component: GestionProfComponent},
     { path :'profs/add' , component: AddNewProfComponent},
@@ -40,8 +42,6 @@ const routes: Routes = [
     { path :'classes/edit' , component: EditClasseComponent},
     // not-found
     { path :'**' , component: NotFoundComponent},
-
-
 ];
 
 @NgModule({
