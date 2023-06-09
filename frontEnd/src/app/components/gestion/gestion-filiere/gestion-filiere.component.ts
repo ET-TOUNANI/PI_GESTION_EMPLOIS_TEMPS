@@ -37,7 +37,6 @@ export class GestionFiliereComponent implements OnInit{
   handleEditeFiliere(filiereEdit: Filiere) {
     this.router.navigateByUrl('/filieres/edit',{state :filiereEdit});
   }
-
   handleChangeSize($event: Event) {
     this.size = parseInt((<HTMLInputElement>$event.target).value);
     this.handleSearchFilieres();

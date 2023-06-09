@@ -16,6 +16,8 @@ import { NotFoundComponent } from './components/widgets/not-found/not-found.comp
 import { GestionDepartmentComponent } from './components/gestion/gestion-departement/gestion-departement.component';
 import { EditDepartementComponent } from './components/edit/edit-departement/edit-departement.component';
 import { EditSalleComponent } from './components/edit/edit-salle/edit-salle.component';
+import {EditFiliereComponent} from "./components/edit/edit-filiere/edit-filiere.component";
+import {EditClasseComponent} from "./components/edit/edit-classe/edit-classe.component";
 
 const routes: Routes = [
   { path :'' , component: HomeComponent},
@@ -34,9 +36,11 @@ const routes: Routes = [
     {path:'profs/edit',component:EditProfComponent},
     { path :'departements/edit' , component: EditDepartementComponent},
     { path :'salles/edit' , component: EditSalleComponent},
+    { path :'filieres/edit' , component: EditFiliereComponent},
+    { path :'classes/edit' , component: EditClasseComponent},
     // not-found
     { path :'**' , component: NotFoundComponent},
-    
+
 
 ];
 

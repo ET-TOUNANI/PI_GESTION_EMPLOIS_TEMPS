@@ -22,7 +22,7 @@ public class PiApplication {
     public static void main(String[] args) {
         SpringApplication.run(PiApplication.class, args);
     }
-/*
+
     @Bean
     CommandLineRunner lineRunner(EnseignantRepository enseignantRepository,
                                  DepartementRepostitory departementRepostitory,
@@ -45,7 +45,7 @@ public class PiApplication {
             departementRepostitory.save(departement2);
             // Create the Filiere with the Departement
             Filiere filiere = new Filiere();
-            filiere.setLibelle("IIBDCC");
+            filiere.setLibelle("II-BDCC");
             filiere.setNombreSem(6);
             filiere.setChefFiliere("Azedine elkhiyat");
             filiere.setDepartement(departement1);
@@ -67,7 +67,7 @@ public class PiApplication {
 
             // Create the Classe with the Filiere
             Classe classe = new Classe();
-            classe.setLibelle("IIBDCC 1");
+            classe.setLibelle("II-BDCC 1");
             classe.setNbrEleves(40);
             classe.setFiliere(filiere);
             classeRepository.save(classe);
@@ -238,5 +238,5 @@ public class PiApplication {
         };
 
     }
-*/
+
 }

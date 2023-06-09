@@ -1,8 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {Departement} from "../../../models/departement.models";
 import {FormBuilder, FormGroup} from "@angular/forms";
 import {Classe} from "../../../models/classes.models";
-import {DepartmentService} from "../../../services/department.service";
 import {Router} from "@angular/router";
 import Swal from "sweetalert2";
 import {ClasseService} from "../../../services/classe.service";
@@ -71,7 +69,7 @@ export class GestionClasseComponent implements OnInit {
     }).then((result) => {
       if (result.isConfirmed) {
         this.classeService.deleteClasse(classe.id).subscribe();
-        this.classes= this.classes.filter((d) => d.id !== classe.id);
+        this.classes= this.classes.filter((c) => c.id !== classe.id);
 
       }
     });

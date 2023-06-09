@@ -4,14 +4,13 @@ import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Filiere } from '../models/filieres.models';
 import { PageFiliere } from '../models/profPage.models';
+import {ConsoleLogger} from "@angular/compiler-cli";
 
 @Injectable({
   providedIn: 'root'
 })
 export class FiliereService {
-
    constructor(private http:HttpClient) { }
-
    public getFilieres(page: number, size: number): Observable<PageFiliere> {
     return this.http.get<PageFiliere>(environment.backendHost + "/filieres?page=" + page + "&size=" + size);
   }
@@ -22,6 +21,7 @@ export class FiliereService {
     return this.http.post<Filiere>(environment.backendHost+"/filieres",Filiere);
   }
   public updateFiliere(id: number,Filiere: Filiere):Observable<Filiere>{
+     console.log("Update f");
     return this.http.put<Filiere>(environment.backendHost+"/filieres/"+id,Filiere);
   }
   public getFiliere(id: number):Observable<Filiere>{

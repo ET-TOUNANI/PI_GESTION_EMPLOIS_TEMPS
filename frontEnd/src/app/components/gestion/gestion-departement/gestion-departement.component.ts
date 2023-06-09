@@ -1,4 +1,3 @@
-
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -40,7 +39,7 @@ export class GestionDepartmentComponent implements OnInit {
  handleChangeSize($event: Event) {
       this.size = parseInt((<HTMLInputElement>$event.target).value);
       this.handleSearchDepartments();
-    }  
+    }
   handleSearchDepartments(): void {
     this.departmentService
       .searchDepartments(this.searchFormGroup.value.keyword, this.page, this.size)
@@ -71,7 +70,7 @@ export class GestionDepartmentComponent implements OnInit {
       if (result.isConfirmed) {
         this.departmentService.deleteDepartment(department.id).subscribe();
          this.departments = this.departments.filter((d) => d.id !== department.id);
-         
+
       }
     });
   }
