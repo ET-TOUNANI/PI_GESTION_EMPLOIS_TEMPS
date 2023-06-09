@@ -8,6 +8,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pi/enset/PiApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pi/enset/PiApplication.java" afterDir="false" />
 <<<<<<< HEAD
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/src/main/java/pi/enset/repository/ClasseRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pi/enset/repository/ClasseRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pi/enset/repository/FiliereRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pi/enset/repository/FiliereRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/PiApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/PiApplication.class" afterDir="false" />
@@ -29,12 +30,17 @@
       <change beforePath="$PROJECT_DIR$/../frontEnd/src/app/services/filiere.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontEnd/src/app/services/filiere.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontEnd/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/../frontEnd/tsconfig.json" afterDir="false" />
 =======
+=======
+>>>>>>> 13795d897e5fec94264dc3b8c11bd47b2681aa68
       <change beforePath="$PROJECT_DIR$/../frontEnd/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontEnd/src/app/app-routing.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontEnd/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontEnd/src/app/app.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontEnd/src/app/components/dashboard/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontEnd/src/app/components/dashboard/app.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontEnd/src/app/components/dashboard/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontEnd/src/app/components/dashboard/app.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontEnd/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontEnd/src/index.html" afterDir="false" />
+<<<<<<< HEAD
 >>>>>>> origin/main
+=======
+>>>>>>> 13795d897e5fec94264dc3b8c11bd47b2681aa68
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,20 +87,28 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
 <<<<<<< HEAD
+<<<<<<< HEAD
     &quot;last_opened_file_path&quot;: &quot;D:/PI_GESTION_EMPLOI_DU_TEMPS/PI_GESTION_EMPLOIS_TEMPS_1/frontEnd&quot;,
 =======
     &quot;last_opened_file_path&quot;: &quot;D:/Github/PI_GESTION_EMPLOIS_TEMPS/backEnd&quot;,
 >>>>>>> origin/main
+=======
+    &quot;last_opened_file_path&quot;: &quot;D:/Github/PI_GESTION_EMPLOIS_TEMPS/backEnd&quot;,
+>>>>>>> 13795d897e5fec94264dc3b8c11bd47b2681aa68
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
 <<<<<<< HEAD
+<<<<<<< HEAD
     &quot;spring.configuration.checksum&quot;: &quot;72ab8af56bddab33b269c5964b26620a&quot;,
 =======
     &quot;spring.configuration.checksum&quot;: &quot;b43fdd98b1fd705ae4c3a10cf25aad8a&quot;,
 >>>>>>> origin/main
+=======
+    &quot;spring.configuration.checksum&quot;: &quot;b43fdd98b1fd705ae4c3a10cf25aad8a&quot;,
+>>>>>>> 13795d897e5fec94264dc3b8c11bd47b2681aa68
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -157,6 +171,7 @@
       <workItem from="1685695429971" duration="1988000" />
       <workItem from="1685700536108" duration="11000" />
 <<<<<<< HEAD
+<<<<<<< HEAD
       <workItem from="1686235720764" duration="310000" />
       <workItem from="1686251942147" duration="11217000" />
       <workItem from="1686337931413" duration="2125000" />
@@ -164,6 +179,10 @@
       <workItem from="1686235720764" duration="2861000" />
       <workItem from="1686252367082" duration="715000" />
 >>>>>>> origin/main
+=======
+      <workItem from="1686235720764" duration="2861000" />
+      <workItem from="1686252367082" duration="715000" />
+>>>>>>> 13795d897e5fec94264dc3b8c11bd47b2681aa68
     </task>
     <servers />
   </component>
