@@ -22,7 +22,7 @@ export class ClasseService {
     return this.http.post<Classe>(environment.backendHost+"/classes",Classe);
   }
   public updateClasse(id: number,Classe: Classe):Observable<Classe>{
-    return this.http.put<Classe>(environment.backendHost+"/classes/"+id,Classe);
+    return this.http.put<Classe>(`${environment.backendHost}/classes/${id}`,Classe);
   }
   public getClasse(id: number):Observable<Classe>{
     return this.http.get<Classe>(environment.backendHost+"/classes/"+id);

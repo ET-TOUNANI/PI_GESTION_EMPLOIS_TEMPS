@@ -1,10 +1,10 @@
 <app-page-header
   [name]="'Admin'"
-  [link]="'profs'"
+  [link]="'filieres'"
   [prev]="'filières'"
   [current]="'Home'"
 ></app-page-header>
-
+<form [formGroup]="searchFormGroup" (ngSubmit)="handleSearchFilieres()">
 <div class="student-group-form">
   <div class="row">
     <div class="col-lg-3 col-md-6">
@@ -19,11 +19,12 @@
 
     <div class="col-lg-2">
       <div class="search-student-btn">
-        <button type="btn" class="btn btn-primary">Chercher</button>
+        <button type="button" class="btn btn-primary">Chercher</button>
       </div>
     </div>
   </div>
 </div>
+</form>
 <div class="row">
   <div class="col-sm-12">
     <div class="card card-table">
@@ -33,11 +34,7 @@
             <div class="col">
               <h3 class="page-title">Filière</h3>
             </div>
-
             <div class="col-auto text-end float-end ms-auto download-grp">
-              <a href="#" class="btn btn-outline-primary me-2"
-                ><i class="fas fa-download"></i> Télécharger
-              </a>
               <a routerLink="/filieres/add" class="btn btn-primary"
                 ><i class="fas fa-plus"></i
               ></a>
@@ -60,7 +57,7 @@
         <table
           class="table border-0 star-student table-hover table-center mb-0 datatable table-striped"
         >
-          <thead class="student-thread">
+          <thead class="student-thread" >
             <tr>
               <th>
                 <div class="form-check check-tables">
@@ -72,8 +69,8 @@
                 </div>
               </th>
               <th>ID</th>
-              <th>Libillé</th>
-              <th>Semstre</th>
+              <th>Libelle</th>
+              <th>Semestre</th>
               <th>Chef de Filière</th>
               <th>Département</th>
 
@@ -81,7 +78,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let i of [1, 1, 1, 1]">
+            <tr *ngFor="let filiere of filieres ">
               <td>
                 <div class="form-check check-tables">
                   <input
@@ -91,23 +88,20 @@
                   />
                 </div>
               </td>
-              <td>123</td>
-              <td>
-                <h2>
-                  <a>bdcc</a>
-                </h2>
-              </td>
-              <td>6</td>
-              <td>el khiat</td>
-              <td>mathématiques informatiques</td>
-
+              <td>{{ filiere.id}}</td>
+              <td>{{ filiere.libelle}}</td>
+              <td>{{ filiere.nombreSem}}</td>
+              <td>{{ filiere.chefFiliere}}</td>
+              <td>{{ filiere.departement.libelle}}</td>
               <td class="text-end">
                 <div class="actions">
-                  <a class="btn btn-sm bg-success-light me-2">
-                    <i class="fas fa-edit"></i>
+                  <a
+                    class="btn btn-sm bg-success-light me-2"
+                    (click)="handleEditeFiliere(filiere)"
+                  > <i class="fas fa-edit"></i>
                   </a>
                   <a
-                    href="edit-department.html"
+                    (click)="handleDeleteFiliere(filiere)"
                     class="btn btn-sm bg-danger-light"
                   >
                     <i class="fas fa-trash"></i>
@@ -118,14 +112,28 @@
           </tbody>
         </table>
         <ul class="pagination justify-content-end mt-4">
-          <li class="page-item disabled">
-            <a class="page-link" href="#" tabindex="-1">Previous</a>
+          <li class="page-item " [ngClass]="{ disabled: currentPage === 0 }">
+            <a class="page-link" tabindex="-1" (click)="goToPreviousSet()">Précédent </a>
           </li>
-          <li class="page-item"><a class="page-link" href="#">1</a></li>
-          <li class="page-item"><a class="page-link" href="#">2</a></li>
-          <li class="page-item"><a class="page-link" href="#">3</a></li>
-          <li class="page-item">
-            <a class="page-link" href="#">Next</a>
+          <li
+            class="page-item"
+            *ngFor="let page of displayedPages"
+            [class.selected]="currentPage === page"
+          >
+            <a class="page-link" (click)="gotoPage(page)">{{ page + 1 }}</a>
+          </li>
+          <li
+            class="page-item"
+            [ngClass]="{ disabled: currentPage >= totalPages - 1 }"
+          >
+            <!-- Add the following code to disable the "Suivant" button when there are no more pages to show -->
+            <button
+              class="page-link"
+              [disabled]="currentPage >= totalPages - 1"
+              (click)="goToNextSet()"
+            >
+              Suivant
+            </button>
           </li>
         </ul>
       </div>

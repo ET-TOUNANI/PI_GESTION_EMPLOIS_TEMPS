@@ -1,0 +1,68 @@
+<app-page-header
+  [name]="'Admin'"
+  [link]="'classes'"
+  [prev]="'Classes'"
+  [current]="'Ajouter une Classe'"
+></app-page-header>
+
+<div class="row">
+  <div class="col-sm-12">
+    <div class="card comman-shadow">
+      <div class="card-body">
+        <form [formGroup]="editClasseFormGroup" (submit)="handleUpdateClasse()">
+          <div class="row">
+            <div class="col-12">
+              <h5 class="form-title student-info">
+                Informations sur la classe<span
+              ><a href="javascript:;"
+              ><i class="feather-more-vertical"></i></a
+              ></span>
+              </h5>
+            </div>
+            <div class="col-12 col-sm-4">
+              <div class="form-group local-forms">
+                <label>Libellé <span class="login-danger">*</span></label>
+                <input
+                  class="form-control"
+                  type="text"
+                  formControlName="libelle"
+                />
+              </div>
+            </div>
+            <div class="col-12 col-sm-4">
+              <div class="form-group local-forms">
+                <label
+                >Nombre éléves <span class="login-danger">*</span></label
+                >
+                <input
+                  class="form-control"
+                  type="number"
+                  formControlName="nbrEleves"
+                />
+              </div>
+            </div>
+            <div class="col-12 col-sm-4">
+              <div class="form-group local-forms">
+                <label
+                >Filiére<span class="login-danger">*</span></label
+                >
+                <input
+                  class="form-control"
+                  type="text"
+                  formControlName="filiere"
+                />
+              </div>
+            </div>
+            <div
+              class="col-12 d-flex align-items-center justify-content-center"
+            >
+              <div class="student-submit">
+                <button type="submit" class="btn btn-primary">Confirmer</button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
