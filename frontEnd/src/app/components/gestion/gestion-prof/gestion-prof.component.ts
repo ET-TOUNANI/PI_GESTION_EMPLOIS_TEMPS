@@ -39,7 +39,7 @@ export class GestionProfComponent implements OnInit {
     });
     this.handleSearchCustomers();
     
-  }
+  } 
 
   handleEditeProf(profedit: Prof) {
     this.router.navigateByUrl('/profs/edit',{state :profedit});

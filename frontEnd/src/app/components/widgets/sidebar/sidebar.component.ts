@@ -61,7 +61,7 @@ sidebarProfItems = [
   },
   {
     link: "/nonDesponibles",
-    title: "Non Disponibles",
+    title: "Non Disponibilités",
     icon: "fas fa-clipboard-list"
   },
 

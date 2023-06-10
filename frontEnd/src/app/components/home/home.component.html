@@ -1,4 +1,6 @@
-<ng-container *ngIf="prof; else page"> prof page </ng-container>
+<ng-container *ngIf="prof; else page">
+  <app-profile></app-profile>
+</ng-container>
 
 <ng-template #page>
   <app-page-header

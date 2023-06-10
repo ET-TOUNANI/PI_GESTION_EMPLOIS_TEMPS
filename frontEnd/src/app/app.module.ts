@@ -32,6 +32,8 @@ import { EditFiliereComponent } from './components/edit/edit-filiere/edit-filier
 import { EditClasseComponent } from './components/edit/edit-classe/edit-classe.component';
 import { IndexPageComponent } from './components/index-page/index-page.component';
 import { LoginComponent } from './components/widgets/login/login.component';
+import { ProfileComponent } from './components/widgets/profile/profile.component';
+import { EditProfileComponent } from './components/edit/edit-profile/edit-profile.component';
 
 @NgModule({
   declarations: [
@@ -62,7 +64,9 @@ import { LoginComponent } from './components/widgets/login/login.component';
     EditFiliereComponent,
     EditClasseComponent,
     IndexPageComponent,
-    LoginComponent
+    LoginComponent,
+    ProfileComponent,
+    EditProfileComponent
   ],
   imports: [
     BrowserModule,

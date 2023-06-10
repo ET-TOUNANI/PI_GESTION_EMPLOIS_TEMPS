@@ -7,7 +7,7 @@
 <div class="card report-card">
   <div class="card-body pb-0">
     <div class="form-row row align-items-center">
-      <div class="col">
+      <div *ngIf="!prof" class="col">
         <div class="form-group">
           <label for="department-select">
             <i class="fa fa-building"></i> Départements
@@ -29,7 +29,7 @@
           </select>
         </div>
       </div>
-      <div class="col">
+      <div *ngIf="!prof" class="col">
         <div class="form-group">
           <label for="field-select">
             <i class="fa fa-clipboard"></i> Filiéres
@@ -69,7 +69,8 @@
           </select>
         </div>
       </div>
-      <div class="col">
+
+      <div *ngIf="!prof" class="col">
         <div class="form-group">
           <label for="semester-select">
             <i class="fa fa-calendar"></i> Semestre
@@ -89,7 +90,10 @@
           </select>
         </div>
       </div>
-      <div class="col-auto text-end float-end ms-auto download-grp">
+      <div
+        *ngIf="prof"
+        class="col-auto text-end float-end ms-auto download-grp pb-2"
+      >
         <a href="#" class="btn btn-outline-primary me-2"
           ><i class="fas fa-download"></i> Télécharger
         </a>

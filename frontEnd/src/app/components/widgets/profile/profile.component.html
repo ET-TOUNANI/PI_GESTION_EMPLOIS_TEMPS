@@ -1,0 +1,138 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="profile-header">
+      <div class="row align-items-center">
+        <div class="col-auto profile-image">
+          <a href="#">
+            <img
+              class="rounded-circle"
+              alt="Image utilisateur"
+              src="/assets/img/profs/1.png"
+            />
+          </a>
+        </div>
+        <div class="col ms-md-n2 profile-user-info">
+          <h4 class="user-name mb-0">
+            Professeur {{ prof.nom }} {{ prof.prenom }}
+          </h4>
+          <h6 class="text-muted">{{ prof.specialite }}</h6>
+          <div class="user-Location">
+            <i class="fas fa-envelope"></i> {{ prof.email }}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="profile-menu">
+      <ul class="nav nav-tabs nav-tabs-solid">
+        <li class="nav-item">
+          <a
+            class="nav-link active"
+            data-bs-toggle="tab"
+            href="#per_details_tab"
+            >À propos</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-bs-toggle="tab" href="#password_tab"
+            >Mot de passe</a
+          >
+        </li>
+      </ul>
+    </div>
+    <div class="tab-content profile-tab-cont">
+      <div class="tab-pane fade show active" id="per_details_tab">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title d-flex justify-content-between">
+                  <span>Informations personnelles</span>
+                  <a
+                    class="edit-link"
+                    data-bs-toggle="modal"
+                    (click)="handleEditeProf(prof)"
+                    ><i class="far fa-edit me-1"></i>Modifier</a
+                  >
+                </h5>
+                <div class="row">
+                  <p class="col-sm-3 text-muted text-sm-end mb-0 mb-sm-3">
+                    Nom
+                  </p>
+                  <p class="col-sm-9">{{ prof.nom }}</p>
+                </div>
+                <div class="row">
+                  <p class="col-sm-3 text-muted text-sm-end mb-0 mb-sm-3">
+                    Prénom
+                  </p>
+                  <p class="col-sm-9">{{ prof.prenom }}</p>
+                  <div class="row">
+                    <p class="col-sm-3 text-muted text-sm-end mb-0 mb-sm-3">
+                      Adresse e-mail
+                    </p>
+                    <p class="col-sm-9">
+                      {{ prof.email }}
+                    </p>
+                  </div>
+                  <div class="row">
+                    <p class="col-sm-3 text-muted text-sm-end mb-0 mb-sm-3">
+                      Mobile
+                    </p>
+                    <p class="col-sm-9">{{ prof.tel }}</p>
+                  </div>
+                  <div class="row">
+                    <p class="col-sm-3 text-muted text-sm-end mb-0">CIN</p>
+                    <p class="col-sm-9 mb-0">{{ prof.cne }}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="password_tab" class="tab-pane fade">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Changer le mot de passe</h5>
+            <div class="row">
+              <div class="col-md-10 col-lg-6">
+                <form
+                  [formGroup]="updatePasswordFormGroup"
+                  (ngSubmit)="handleUpdatePassword()"
+                >
+                  <div class="form-group">
+                    <label>Ancien mot de passe</label>
+                    <input
+                      type="password"
+                      formControlName="oldPassword"
+                      class="form-control"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label>Nouveau mot de passe</label>
+                    <input
+                      type="password"
+                      formControlName="newPassword"
+                      class="form-control"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label>Confirmer le mot de passe</label>
+                    <input
+                      type="password"
+                      formControlName="confirmPassword"
+                      class="form-control"
+                    />
+                  </div>
+                  <button class="btn btn-primary" type="submit">
+                    Enregistrer les modifications
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
