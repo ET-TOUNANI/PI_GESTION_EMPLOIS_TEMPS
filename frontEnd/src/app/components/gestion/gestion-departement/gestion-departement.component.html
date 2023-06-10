@@ -21,7 +21,7 @@
 
       <div class="col-lg-2">
         <div class="search-student-btn">
-          <button type="btn" class="btn btn-primary">Chercher</button>
+          <button type="button" class="btn btn-primary">Chercher</button>
         </div>
       </div>
     </div>
@@ -40,7 +40,19 @@
             <div class="col-auto text-end float-end ms-auto download-grp">
               <a routerLink="/departements/add" class="btn btn-primary">
                 <i class="fas fa-plus"></i>
-              </a>
+                </a>
+            </div>
+          </div>
+          <div class="row align-items-center">
+            <div class="col">
+              <span class="m-2">Afficher</span>
+              <select class="form-select form-select-sm w-auto">
+                <option selected="" value="10">10</option>
+                <option value="25">25</option>
+                <option value="50">50</option>
+                <option value="100">100</option>
+              </select>
+              <span class="m-2">Entrées</span>
             </div>
           </div>
         </div>

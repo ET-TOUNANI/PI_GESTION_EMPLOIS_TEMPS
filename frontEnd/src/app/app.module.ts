@@ -28,6 +28,8 @@ import { GestionDepartmentComponent } from './components/gestion/gestion-departe
 import { EditDepartementComponent } from './components/edit/edit-departement/edit-departement.component';
 import { EditSalleComponent } from './components/edit/edit-salle/edit-salle.component';
 import { ActionsComponent } from './components/dashboard/actions/actions.component';
+import { EditFiliereComponent } from './components/edit/edit-filiere/edit-filiere.component';
+import { EditClasseComponent } from './components/edit/edit-classe/edit-classe.component';
 import { IndexPageComponent } from './components/index-page/index-page.component';
 
 @NgModule({
@@ -56,6 +58,8 @@ import { IndexPageComponent } from './components/index-page/index-page.component
     EditDepartementComponent,
     EditSalleComponent,
     ActionsComponent,
+    EditFiliereComponent,
+    EditClasseComponent,
     IndexPageComponent
   ],
   imports: [

@@ -15,6 +15,6 @@ public interface ClasseRepository extends JpaRepository<Classe, Long> {
 
     @Query("select e from Classe e where e.id = ?1")
     Classe getClassesByID(Long Id);
-    @Query("select e from Classe e where e.libelle = ?1 ")
+    @Query("select e from Classe e where e.libelle LIKE %?1% ")
     Page<Classe> searchClasses(String keyword, Pageable pageable);
 }
