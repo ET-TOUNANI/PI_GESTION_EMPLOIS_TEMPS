@@ -5,18 +5,19 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import pi.enset.entities.enums.TypeAdmin;
 
 import java.util.ArrayList;
 import java.util.Collection;
 
 
-@Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@DiscriminatorValue("PROF")
-public class Enseignant extends Person {
-    private String specialite;
+@DiscriminatorValue("ADMIN")
+public class Admin extends Person {
+    @Enumerated(EnumType.STRING)
+    private TypeAdmin admin_type;
     @OneToMany(mappedBy = "enseignant", fetch = FetchType.EAGER)
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private Collection<NonDisponibilite> nonDisponibilites = new ArrayList<>();

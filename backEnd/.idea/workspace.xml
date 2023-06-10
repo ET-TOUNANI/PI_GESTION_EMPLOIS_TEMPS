@@ -5,80 +5,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="30497bce-640a-4049-9739-312b719d2809" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/pi/enset/entities/Person.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pi/enset/repository/UserRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pi/enset/PiApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pi/enset/PiApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pi/enset/entities/Enseignant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pi/enset/entities/Enseignant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pi/enset/entities/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pi/enset/repository/EnseignantRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pi/enset/services/IEnseignantService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pi/enset/services/IEnseignantService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pi/enset/services/IEnseignantServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pi/enset/services/IEnseignantServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/GAlgo/Criterias.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/GAlgo/Criterias.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/GAlgo/GaAlgorithm.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/GAlgo/GaAlgorithm.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/GAlgo/SchoolTimetable.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/GAlgo/SchoolTimetable.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/PiApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/PiApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/entities/Classe$ClasseBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/entities/Classe$ClasseBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/entities/Classe.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/entities/Classe.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/entities/Departement$DepartementBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/entities/Departement$DepartementBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/entities/Departement.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/entities/Departement.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/entities/ElementDeModule$ElementDeModuleBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/entities/ElementDeModule$ElementDeModuleBuilder.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/entities/ElementDeModule.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/entities/ElementDeModule.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/entities/Enseignant$EnseignantBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/entities/Enseignant$EnseignantBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/entities/Enseignant$EnseignantBuilder.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/entities/Enseignant.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/entities/Enseignant.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/entities/Filiere$FiliereBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/entities/Filiere$FiliereBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/entities/Filiere.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/entities/Filiere.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/entities/Module$ModuleBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/entities/Module$ModuleBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/entities/Module.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/entities/Module.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/entities/NonDisponibilite$NonDisponibiliteBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/entities/NonDisponibilite$NonDisponibiliteBuilder.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/entities/NonDisponibilite.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/entities/NonDisponibilite.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/entities/Salle$SalleBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/entities/Salle$SalleBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/entities/Salle.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/entities/Salle.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/entities/Semestre$SemestreBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/entities/Semestre$SemestreBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/entities/Semestre.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/entities/Semestre.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/entities/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/entities/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/entities/enums/NumeroSemester.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/entities/enums/NumeroSemester.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/entities/enums/Periode.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/entities/enums/Periode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/entities/enums/Role.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/entities/enums/Role.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/entities/enums/TypeSalle.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/entities/enums/TypeSalle.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/repository/ClasseRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/repository/ClasseRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/repository/DepartementRepostitory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/repository/DepartementRepostitory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/repository/ElementModuleRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/repository/ElementModuleRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/repository/EnseignantRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/repository/EnseignantRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/repository/EnseignantRepository.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/repository/FiliereRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/repository/FiliereRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/repository/ModuleRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/repository/ModuleRepository.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/repository/NonDisponibiliteRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/repository/NonDisponibiliteRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/repository/SalleRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/repository/SalleRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/repository/SemestreRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/repository/SemestreRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/services/IClasseService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/services/IClasseService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/services/IClasseServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/services/IClasseServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/services/IDepartemenServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/services/IDepartemenServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/services/IDepartementService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/services/IDepartementService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/services/IElementDeModuleService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/services/IElementDeModuleService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/services/IElementDeModuleServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/services/IElementDeModuleServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/services/IEnseignantService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/services/IEnseignantService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/services/IEnseignantServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/services/IEnseignantServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/services/IFiliereService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/services/IFiliereService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/services/IFiliereServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/services/IFiliereServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/services/IModuleService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/services/IModuleService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/services/IModuleServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/services/IModuleServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/services/INonDisponibiliteService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/services/INonDisponibiliteService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/services/INonDisponibiliteServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/services/INonDisponibiliteServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/services/ISalleService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/services/ISalleService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/services/ISalleServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/services/ISalleServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/services/ISemestreService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/services/ISemestreService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/services/ISemestreServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/services/ISemestreServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/settings/CorsConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/settings/CorsConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/settings/DataFromDb.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/settings/DataFromDb.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/web/ClasseController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/web/ClasseController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/web/DepartementController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/web/DepartementController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/web/ElementDeModuleController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/web/ElementDeModuleController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/web/EmploisDeTemps.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/web/EmploisDeTemps.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/web/EnseignantController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/web/EnseignantController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/web/FiliereController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/web/FiliereController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/web/ModuleController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/web/ModuleController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/web/NonDisponibilitiesController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/web/NonDisponibilitiesController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/web/SalleController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/web/SalleController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/web/SemseterController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/web/SemseterController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontEnd/src/app/components/home/home.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontEnd/src/app/components/home/home.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontEnd/src/app/components/index-page/index-page.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../frontEnd/src/app/components/index-page/index-page.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontEnd/src/app/components/index-page/index-page.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontEnd/src/app/components/index-page/index-page.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontEnd/src/app/components/widgets/footer/footer.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontEnd/src/app/components/widgets/footer/footer.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontEnd/src/app/components/widgets/navbar/navbar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontEnd/src/app/components/widgets/navbar/navbar.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontEnd/src/app/components/widgets/sidebar/sidebar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontEnd/src/app/components/widgets/sidebar/sidebar.component.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -143,6 +98,8 @@
       <recent name="C:\Users\Hamid\Documents\GitHub\ProjetInnovation\PI_GESTION_EMPLOIS_TEMPS\backEnd\src\main\resources" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="pi.enset.entities.enums" />
+      <recent name="pi.enset.entities" />
       <recent name="pi.enset.settings" />
     </key>
   </component>
@@ -197,6 +154,7 @@
       <workItem from="1686260803316" duration="863000" />
       <workItem from="1686327359420" duration="791000" />
       <workItem from="1686349844447" duration="513000" />
+      <workItem from="1686410091194" duration="5832000" />
     </task>
     <servers />
   </component>

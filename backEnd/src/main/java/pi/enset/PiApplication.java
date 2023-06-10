@@ -24,7 +24,7 @@ public class PiApplication {
     }
 
     @Bean
-    CommandLineRunner lineRunner(EnseignantRepository enseignantRepository,
+    CommandLineRunner lineRunner(UserRepository userRepository,
                                  DepartementRepostitory departementRepostitory,
                                  ClasseRepository classeRepository,
                                  ElementModuleRepository elementModuleRepository,
@@ -115,7 +115,7 @@ public class PiApplication {
                         enseignant.setLogin(o);
                         enseignant.setPassword("password");
                         enseignant.setSpecialite("Java Programming");
-                        enseignantRepository.save(enseignant);
+                        userRepository.save(enseignant);
                         enseignants.add(enseignant);
                     });
             int[] moduleIndices = {0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6};
@@ -192,7 +192,7 @@ public class PiApplication {
                         enseignant.setLogin(o);
                         enseignant.setPassword("password");
                         enseignant.setSpecialite("Gil Programming");
-                        enseignantRepository.save(enseignant);
+                        userRepository.save(enseignant);
                         enseignants2.add(enseignant);
                     });
             enseignants2.add(enseignants.get(4));

@@ -5,28 +5,25 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import pi.enset.entities.Enseignant;
-import pi.enset.repository.EnseignantRepository;
+import pi.enset.repository.UserRepository;
 
 import java.util.List;
 
 @Service
 @AllArgsConstructor
 public class IEnseignantServiceImpl implements IEnseignantService {
-    private EnseignantRepository enseignantRepository;
+    private UserRepository userRepository;
 
     @Override
     public Enseignant addEnseignant(Enseignant enseignant) {
-        return enseignantRepository.save(enseignant);
+        return (Enseignant) userRepository.save(enseignant);
     }
-    @Override
-    public  List<Enseignant> findEnseignantByNom(String nom){
-        return  enseignantRepository.findEnseignantByNom(nom);
-    }
+
     @Override
     public String deleteEnseignant(Long id) {
         try {
             getEnseignantById(id);
-            enseignantRepository.deleteById(id);
+            userRepository.deleteById(id);
             return "L'operation est bien effectuée";
         } catch (Exception e) {
             return e.getMessage();
@@ -35,28 +32,33 @@ public class IEnseignantServiceImpl implements IEnseignantService {
 
     @Override
     public Enseignant getEnseignantById(Long id) {
-        return enseignantRepository.findById(id).orElseThrow(() -> new RuntimeException("L'enseignant avec l'id " + id + " n'existe pas!"));
+        return (Enseignant) userRepository.findById(id).orElseThrow(() -> new RuntimeException("L'enseignant avec l'id " + id + " n'existe pas!"));
     }
 
     @Override
     public Enseignant updateEnseignant(Long id, Enseignant enseignant) {
         enseignant.setId(id);
-        return enseignantRepository.save(enseignant);
+        return (Enseignant) userRepository.save(enseignant);
 
     }
     @Override
     public Page<Enseignant> getEnseignants(Pageable pageable) {
-        return enseignantRepository.findAll(pageable);
+        return  userRepository.findUsersByRole("PROF",pageable);
     }
 
 
     @Override
     public Page<Enseignant> searchEnseignants(String keyword, Pageable pageable) {
-        return enseignantRepository.searchWithPagination(keyword, pageable);
+        return  userRepository.searchWithPagination(keyword, pageable);
     }
     @Override
     public List<Enseignant> getAllEnseignants() {
-        return enseignantRepository.findAll();
+        return  userRepository.findAllByRole("PROF");
+    }
+
+    @Override
+    public List<Enseignant> findEnseignantByNom(String nom) {
+        return  userRepository.findEnseignantByNom(nom);
     }
 
 }
