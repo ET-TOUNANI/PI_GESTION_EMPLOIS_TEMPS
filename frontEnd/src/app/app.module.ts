@@ -31,6 +31,7 @@ import { ActionsComponent } from './components/dashboard/actions/actions.compone
 import { EditFiliereComponent } from './components/edit/edit-filiere/edit-filiere.component';
 import { EditClasseComponent } from './components/edit/edit-classe/edit-classe.component';
 import { IndexPageComponent } from './components/index-page/index-page.component';
+import { LoginComponent } from './components/widgets/login/login.component';
 
 @NgModule({
   declarations: [
@@ -60,7 +61,8 @@ import { IndexPageComponent } from './components/index-page/index-page.component
     ActionsComponent,
     EditFiliereComponent,
     EditClasseComponent,
-    IndexPageComponent
+    IndexPageComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

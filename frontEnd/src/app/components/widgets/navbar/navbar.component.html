@@ -73,16 +73,16 @@
             class="rounded-circle"
             src="/assets/img/profs/1.png"
             width="31"
-            alt="Soeng Souy"
+            alt="{{ username }}"
           />
           <div class="user-text">
-            <h6>M. Aziz Daiif</h6>
-            <p class="text-muted mb-0">Administrateur</p>
+            <h6>{{ username }}</h6>
+            <p class="text-muted mb-0">{{ role }}</p>
           </div>
         </span>
       </a>
       <div class="dropdown-menu">
-        <a class="dropdown-item" href="login.html"
+        <a class="dropdown-item" (click)="handleLogout()"
           >Logout <i class="fas fa-sign-out-alt m-2"></i
         ></a>
       </div>

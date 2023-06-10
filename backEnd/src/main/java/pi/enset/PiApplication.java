@@ -36,8 +36,8 @@ public class PiApplication {
         return args -> {
             // Create the Admin
             Admin admin = new Admin();
-            admin.setNom("Admin");
-            admin.setPrenom("Admin");
+            admin.setNom("Daiif");
+            admin.setPrenom("Aziz");
             admin.setEmail("admin@admin.com");
             admin.setPassword("admin");
             admin.setTel("0600000000");
@@ -114,7 +114,7 @@ public class PiApplication {
                         modules.add(module);
                     });
             List<Enseignant> enseignants = new ArrayList<>();
-            Stream.of("Tadlawi mohamed", "Akif", "illosammen", "Mestari", "9bado", "Benmoussa", "Rebani", "Gemaat", "Elfalhi", "elkabssi", "youssfi", "safrawi", "Sellami", "Bouzidi", "Charfawat", "Berrada")
+            Stream.of("Tadlawi", "Akif", "illosammen", "Mestari", "kbado", "Benmoussa", "Rebani", "Gemaat", "Elfalhi", "elkabssi", "youssfi", "safrawi", "Sellami", "Bouzidi", "Charfawat", "Berrada")
                     .forEach(o -> {
                         // Create the Enseignant
                         Enseignant enseignant = new Enseignant();

@@ -24,5 +24,9 @@ public interface UserRepository extends JpaRepository<Person, Long> {
     List<Enseignant> findAllByRole(String role);
     @Query("SELECT u FROM Person u WHERE u.Role = 'PROF' AND (u.nom LIKE %?1% OR u.prenom LIKE %?1%)")
     List<Enseignant> findEnseignantByNom(String nom);
+
+
+    @Query("SELECT u FROM Person u WHERE u.login = ?1 AND u.password = ?2")
+    Person findByLoginAndPassword(String login, String password);
 }
 

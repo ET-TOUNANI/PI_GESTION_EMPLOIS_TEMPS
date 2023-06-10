@@ -19,6 +19,7 @@ import { EditSalleComponent } from './components/edit/edit-salle/edit-salle.comp
 import { IndexPageComponent } from './components/index-page/index-page.component';
 import {EditFiliereComponent} from "./components/edit/edit-filiere/edit-filiere.component";
 import {EditClasseComponent} from "./components/edit/edit-classe/edit-classe.component";
+import { LoginComponent } from './components/widgets/login/login.component';
 
 const routes: Routes = [
   { path :'' , component: HomeComponent},

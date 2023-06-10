@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./index-page.component.css']
 })
 export class IndexPageComponent {
+  login:boolean = false;
 
+  constructor() { }
+  handleConnected() {
+    this.login = true;
+  }
 }

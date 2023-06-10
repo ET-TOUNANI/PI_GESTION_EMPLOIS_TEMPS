@@ -1,8 +1,11 @@
-<app-page-header
-  [name]="'Admin'"
-  [link]="'home'"
-  [prev]="'Accueil'"
-  [current]="'Admin'"
-></app-page-header>
-<app-statistique></app-statistique>
-<app-actions></app-actions>
+<ng-container *ngIf="prof; else page"> prof page </ng-container>
+
+<ng-template #page>
+  <app-page-header
+    [link]="'home'"
+    [prev]="'Accueil'"
+    [current]="'Admin'"
+  ></app-page-header>
+  <app-statistique></app-statistique>
+  <app-actions></app-actions>
+</ng-template>

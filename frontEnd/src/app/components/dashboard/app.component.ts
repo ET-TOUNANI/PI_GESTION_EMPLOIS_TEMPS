@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CookieService } from 'ngx-cookie-service';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -10,10 +11,10 @@ export class AppComponent implements OnInit{
   title = 'Gestion Emploi du temps';
   isAuthenticated!: boolean;
 
-  constructor(private authService: AuthService) {
+  constructor(private cookieService: CookieService) {
   }
 
   ngOnInit() {
-   this.isAuthenticated = this.authService.isAuthenticated();
+    this.isAuthenticated = this.cookieService.check('username');
   }
 }

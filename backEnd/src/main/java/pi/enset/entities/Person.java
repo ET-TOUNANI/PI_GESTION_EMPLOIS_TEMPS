@@ -27,5 +27,7 @@ public class Person {
     @Column(unique = true)
     private String login;
     private String password;
-
+    // default value = false
+    @Column(columnDefinition = "boolean default false")
+    private boolean isAuthentificated;
 }

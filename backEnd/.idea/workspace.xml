@@ -7,7 +7,14 @@
     <list default="true" id="30497bce-640a-4049-9739-312b719d2809" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pi/enset/PiApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pi/enset/PiApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pi/enset/entities/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pi/enset/entities/Admin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pi/enset/entities/Enseignant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pi/enset/entities/Enseignant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pi/enset/entities/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pi/enset/entities/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pi/enset/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pi/enset/repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/PiApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/PiApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/entities/Enseignant.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/entities/Enseignant.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontEnd/src/app/components/home/home.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontEnd/src/app/components/home/home.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontEnd/src/app/components/index-page/index-page.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontEnd/src/app/components/index-page/index-page.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontEnd/src/app/components/widgets/navbar/navbar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontEnd/src/app/components/widgets/navbar/navbar.component.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,6 +79,8 @@
       <recent name="C:\Users\Hamid\Documents\GitHub\ProjetInnovation\PI_GESTION_EMPLOIS_TEMPS\backEnd\src\main\resources" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="pi.enset.services" />
+      <recent name="pi.enset.web" />
       <recent name="pi.enset.entities.enums" />
       <recent name="pi.enset.entities" />
       <recent name="pi.enset.settings" />
@@ -128,7 +137,7 @@
       <workItem from="1686260803316" duration="863000" />
       <workItem from="1686327359420" duration="791000" />
       <workItem from="1686349844447" duration="513000" />
-      <workItem from="1686410091194" duration="6207000" />
+      <workItem from="1686410091194" duration="16713000" />
     </task>
     <servers />
   </component>

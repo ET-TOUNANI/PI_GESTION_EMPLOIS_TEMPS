@@ -1,13 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.css']
 })
-export class SidebarComponent {
+export class SidebarComponent implements OnInit{
   active:number=0;
-  sidebarItems = [
+   sidebarItems:any[] = [];
+
+  sidebarAdminItems = [
   {
     link: "/home",
     title: "Home",
@@ -44,9 +47,37 @@ export class SidebarComponent {
     icon: "fas fa-clipboard"
   }
 ];
-  constructor() { }
+
+sidebarProfItems = [
+  {
+    link: "/home",
+    title: "Home",
+    icon: "fas fa-home"
+  },
+  {
+    link: "/emploitemps",
+    title: "Emploi du temps",
+    icon: "fas fa-clipboard-list"
+  },
+  {
+    link: "/nonDesponibles",
+    title: "Non Disponibles",
+    icon: "fas fa-clipboard-list"
+  },
+
+]
+  constructor(private cookieService: CookieService) { }
+
   handleChangeBars(index: number): void {
   this.active = index;
 }
+  ngOnInit(): void {
 
+    if(this.cookieService.get('role') == "Administrateur"){
+     this.sidebarItems= this.sidebarAdminItems;
+    }else {
+     this.sidebarItems= this.sidebarProfItems;
+    }
+
+}
 }
