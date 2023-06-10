@@ -5,35 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="30497bce-640a-4049-9739-312b719d2809" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/pi/enset/entities/Person.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pi/enset/repository/UserRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pi/enset/PiApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pi/enset/PiApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pi/enset/entities/Enseignant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pi/enset/entities/Enseignant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pi/enset/entities/User.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pi/enset/repository/EnseignantRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pi/enset/services/IEnseignantService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pi/enset/services/IEnseignantService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pi/enset/services/IEnseignantServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pi/enset/services/IEnseignantServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/GAlgo/Criterias.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/GAlgo/Criterias.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/GAlgo/GaAlgorithm.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/GAlgo/GaAlgorithm.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/GAlgo/SchoolTimetable.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/GAlgo/SchoolTimetable.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/PiApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/PiApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/entities/ElementDeModule$ElementDeModuleBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/entities/ElementDeModule$ElementDeModuleBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/entities/ElementDeModule.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/entities/ElementDeModule.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/entities/Enseignant$EnseignantBuilder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/entities/Enseignant.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/entities/Enseignant.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/entities/NonDisponibilite$NonDisponibiliteBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/entities/NonDisponibilite$NonDisponibiliteBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/entities/NonDisponibilite.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/entities/NonDisponibilite.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/entities/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/entities/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/repository/ClasseRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/repository/ClasseRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/repository/EnseignantRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/repository/FiliereRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/repository/FiliereRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/repository/NonDisponibiliteRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/repository/NonDisponibiliteRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/services/IEnseignantService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/services/IEnseignantService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/services/IEnseignantServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/services/IEnseignantServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/services/INonDisponibiliteService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/services/INonDisponibiliteService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/services/INonDisponibiliteServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/services/INonDisponibiliteServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pi/enset/web/NonDisponibilitiesController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pi/enset/web/NonDisponibilitiesController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pi/enset/entities/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pi/enset/entities/Admin.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -154,7 +128,7 @@
       <workItem from="1686260803316" duration="863000" />
       <workItem from="1686327359420" duration="791000" />
       <workItem from="1686349844447" duration="513000" />
-      <workItem from="1686410091194" duration="5832000" />
+      <workItem from="1686410091194" duration="6207000" />
     </task>
     <servers />
   </component>

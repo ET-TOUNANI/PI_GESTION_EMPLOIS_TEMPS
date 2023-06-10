@@ -8,6 +8,7 @@ import pi.enset.entities.Module;
 import pi.enset.entities.*;
 import pi.enset.entities.enums.NumeroSemester;
 import pi.enset.entities.enums.Periode;
+import pi.enset.entities.enums.TypeAdmin;
 import pi.enset.entities.enums.TypeSalle;
 import pi.enset.repository.*;
 
@@ -33,6 +34,17 @@ public class PiApplication {
                                  FiliereRepository filiereRepository, ModuleRepository moduleRepository,
                                  NonDisponibiliteRepository nonDisponibiliteRepository) {
         return args -> {
+            // Create the Admin
+            Admin admin = new Admin();
+            admin.setNom("Admin");
+            admin.setPrenom("Admin");
+            admin.setEmail("admin@admin.com");
+            admin.setPassword("admin");
+            admin.setTel("0600000000");
+            admin.setLogin("admin");
+            admin.setCne("555");
+            admin.setAdmin_type(TypeAdmin.SUPER_ADMIN);
+            userRepository.save(admin);
             // Create the Departement
             Departement departement1 = new Departement();
             departement1.setLibelle("Math Info");
