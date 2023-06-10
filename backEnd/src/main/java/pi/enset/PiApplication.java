@@ -22,7 +22,7 @@ public class PiApplication {
     public static void main(String[] args) {
         SpringApplication.run(PiApplication.class, args);
     }
-/*
+
     @Bean
     CommandLineRunner lineRunner(EnseignantRepository enseignantRepository,
                                  DepartementRepostitory departementRepostitory,
@@ -210,14 +210,11 @@ public class PiApplication {
             for (int i = 0; i < moduleIndices.length; i++) {
                 // Create a new ElementDeModule
                 ElementDeModule elementDeModule = new ElementDeModule();
-
                 // Set the properties of the ElementDeModule
                 elementDeModule.setLibelle(libelles2[i]);
                 elementDeModule.setVolumeHoraire(32);
                 elementDeModule.setModule(modules2.get(moduleIndices2[i]));
                 elementDeModule.setEnseignant(enseignants2.get(enseignantIndices2[i]));
-
-
                 // Save the ElementDeModule
                 elementModuleRepository.save(elementDeModule);
             }
@@ -238,6 +235,6 @@ public class PiApplication {
         };
 
     }
-*/
+
 
 }
