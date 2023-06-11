@@ -8,6 +8,7 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class EmploiDeTempsService {
+ 
   
 
   constructor(private http:HttpClient) { }
@@ -17,5 +18,8 @@ export class EmploiDeTempsService {
   }
   getEmploiByProf(idProf: number) {
     return this.http.get<ElementDeModule[]>(environment.backendHost + "/emploisDeTemps/prof/" + idProf);
+  }
+   getEmploisByClasse(classeId: number) {
+    return this.http.get<ElementDeModule[]>(environment.backendHost + "/emploisDeTemps/" + classeId);
   }
 }

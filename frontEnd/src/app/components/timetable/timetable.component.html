@@ -84,7 +84,6 @@
         </div>
       </div>
     </div>
-    {{ elementDeModule | json }}
     <div class="container">
       <div class="row">
         <div class="col-md-12">
@@ -100,105 +99,69 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td class="day">Lundi</td>
-                  <td class="active">
-                    <h4>Architecture distribuée J2EE</h4>
-                    <p>Salle : Amphi 2</p>
-                    <span>Mohammed EL Youssfi</span>
-                  </td>
-                  <td class="active">
-                    <h4>Middlewares</h4>
-                    <p>Salle : Amphi 2</p>
-                    <span>Mohammed EL Youssfi</span>
-                  </td>
-                  <td class="active">
-                    <h4>Fondements du Big data</h4>
-                    <p>Salle : Info 1</p>
-                    <span>Abdelmajid Bousselham</span>
-                  </td>
-                  <td class="active">
-                    <h4>Mise en œuvre des Architectures orientées stockage</h4>
-                    <p>Salle : Info 1</p>
-                    <span>Abdelmajid Bousselham</span>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="day">Mardi</td>
-                  <td class="active">
-                    <h4>Initiation à l’entreprenariat</h4>
-                    <p>Salle : Amphi 2</p>
-                    <span>Naoual Zaki</span>
-                  </td>
-                  <td class="active">
-                    <h4>Statistiques en grande dimension et apprentissage</h4>
-                    <p>Salle : Amphi 2</p>
-                    <span>Zakaria ENNAIMANI</span>
-                  </td>
-                  <td class="active">
-                    <h4>Internet des objets</h4>
-                    <p>Salle : Info 1</p>
-                    <span>Ahmed REBBANI</span>
-                  </td>
-                  <td class="active">
-                    <h4>Droit de l’entreprise et des TIC</h4>
-                    <p>Salle : Amphi 2</p>
-                    <span>Abderrahim NASSEF</span>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="day">Mercredi</td>
-                  <td class="active">
-                    <h4>Base de l'Intelligence Artificielle</h4>
-                    <p>Salle : Amphi 2</p>
-                    <span>Mohammed MESTARI</span>
-                  </td>
-                  <td class="active">
-                    <h4>Optimisation statistique</h4>
-                    <p>Salle : Amphi 2</p>
-                    <span>Mohammed MESTARI</span>
-                  </td>
-                  <td class="active" colspan="2">
-                    <h4>Projet Personnel 2</h4>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="day">Jeudi</td>
-                  <td class="active">
-                    <h4>Anglais 4</h4>
-                    <span>Abderrahim CHALFAOUAT</span>
-                    <p>Salle : Amphi 2</p>
-                  </td>
-                  <td class="active">
-                    <h4>Ethique et responsabilité sociétale des entreprises</h4>
-                    <p>Salle : Amphi 2</p>
-                    <span>Maha SOULAMI</span>
-                  </td>
-                  <td></td>
-                  <td class="active">
-                    <h4>Développement Mobile</h4>
-                    <p>Salle : Amphi 2</p>
-                    <span>Bouchra BOUIHI</span>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="day">Vendredi</td>
-                  <td></td>
-                  <td class="active">
-                    <h4>Systèmes Multi-Agents</h4>
-                    <p>Salle : Amphi 2</p>
-                    <span>Abdelmajid Bousselham</span>
-                  </td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td class="day">Samedi</td>
-                  <td class="active" colspan="2">
-                    <h4>Contrôles et rattrapages</h4>
-                  </td>
-                  <td></td>
-                  <td></td>
+                <tr
+                  style="height: 100px"
+                  *ngFor="
+                    let day of [
+                      'Lundi',
+                      'Mardi',
+                      'Mercredi',
+                      'Jeudi',
+                      'Vendredi',
+                      'Samedi'
+                    ]
+                  "
+                >
+                  <td class="day">{{ day }}</td>
+                  <ng-container *ngIf="ready">
+                    <ng-container *ngIf="day !== 'Samedi'">
+                      <ng-container *ngIf="hasModule(day, '8h30-10h30')">
+                        <td class="active">
+                          <h4>{{ getModuleTitle(day, "8h30-10h30") }}</h4>
+                          <p>{{ getModuleRoom(day, "8h30-10h30") }}</p>
+                          <span>{{ getModuleTeacher(day, "8h30-10h30") }}</span>
+                        </td>
+                      </ng-container>
+                      <ng-container *ngIf="!hasModule(day, '8h30-10h30')">
+                        <td></td>
+                      </ng-container>
+                      <ng-container *ngIf="hasModule(day, '10h30-12h30')">
+                        <td class="active">
+                          <h4>{{ getModuleTitle(day, "10h30-12h30") }}</h4>
+                          <p>{{ getModuleRoom(day, "10h30-12h30") }}</p>
+                          <span>{{
+                            getModuleTeacher(day, "10h30-12h30")
+                          }}</span>
+                        </td>
+                      </ng-container>
+                      <ng-container *ngIf="!hasModule(day, '10h30-12h30')">
+                        <td></td>
+                      </ng-container>
+                      <ng-container *ngIf="hasModule(day, '14h-16h')">
+                        <td class="active">
+                          <h4>{{ getModuleTitle(day, "14h-16h") }}</h4>
+                          <p>{{ getModuleRoom(day, "14h-16h") }}</p>
+                          <span>{{ getModuleTeacher(day, "14h-16h") }}</span>
+                        </td>
+                      </ng-container>
+                      <ng-container *ngIf="!hasModule(day, '14h-16h')">
+                        <td></td>
+                      </ng-container>
+                      <ng-container *ngIf="hasModule(day, '16h-18h')">
+                        <td class="active">
+                          <h4>{{ getModuleTitle(day, "16h-18h") }}</h4>
+                          <p>{{ getModuleRoom(day, "16h-18h") }}</p>
+                          <span>{{ getModuleTeacher(day, "16h-18h") }}</span>
+                        </td>
+                      </ng-container>
+                      <ng-container *ngIf="!hasModule(day, '16h-18h')">
+                        <td></td>
+                      </ng-container>
+                    </ng-container>
+                    <td class="active" colspan="4" *ngIf="day === 'Samedi'">
+                      <h4>Controle et Rattrapage</h4>
+                    </td>
+                  </ng-container>
                 </tr>
               </tbody>
             </table>

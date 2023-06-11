@@ -1,10 +1,12 @@
 import { ElementDeModule } from './../../models/elementModule.models';
 import { Component, OnInit } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
+import { Classe } from 'src/app/models/classes.models';
 import { Departement } from 'src/app/models/departement.models';
 import { Filiere } from 'src/app/models/filieres.models';
 import { Semestre } from 'src/app/models/semestre.models';
 import { ActionsService } from 'src/app/services/actions.service';
+import { ClasseService } from 'src/app/services/classe.service';
 import { DepartmentService } from 'src/app/services/department.service';
 import { EmploiDeTempsService } from 'src/app/services/emploi-de-temps.service';
 import { FiliereService } from 'src/app/services/filiere.service';
@@ -25,10 +27,11 @@ export class TimetableComponent implements OnInit {
   selectedDepartement: Departement|undefined;
   selectedFiliere: Filiere|undefined;
    selectedSemster: Semestre|undefined;
+   classes:Classe[] = [];
   spinnerExport:boolean=false;
   ready = false;
   admin:boolean = false;
-  constructor(private actons:ActionsService,private cookieService: CookieService,private departmentService: DepartmentService,private filiereService: FiliereService,private emploiService:EmploiDeTempsService) {
+  constructor(private actons:ActionsService,private cookieService: CookieService,private departmentService: DepartmentService,private filiereService: FiliereService,private emploiService:EmploiDeTempsService,private classeService:ClasseService) {
 
   }
   ngOnInit() {
@@ -46,9 +49,91 @@ export class TimetableComponent implements OnInit {
 
     }
     else{this.getDepartements();
-    this.admin = this.cookieService.check('role');}
+    this.admin = this.cookieService.check('role');
+
+
+  }
     
   }
+
+hasModule(days: string, timeSlot: string): boolean {
+
+  let prd= this.getPeriode(timeSlot );
+let day = this.changeDay(days).toUpperCase();
+
+  return this.elementDeModule.some(module => module.jour === day && module.periode === prd);
+}
+getPeriode(timeSlot: string): string {
+  let prd = "";
+  switch (timeSlot) {
+    case "8h30-10h30":
+      prd = "P1";
+      break;
+    case "10h30-12h30":
+      prd = "P2";
+      break;
+    case "14h-16h":
+      prd = "P3";
+      break;
+    case "16h-18h":
+      prd = "P4";
+      break;
+    default:
+      break;
+  }
+  return prd;
+}
+changeDay(day:string){
+  let prd = "";
+  switch (day) {
+    case "Lundi":
+      prd = "Monday";
+      break;
+    case "Mardi":
+      prd = "Tuesday";
+      break;
+    case "Mercredi":
+      prd = "Wednesday";
+      break;
+    case "Jeudi":
+      prd = "Thursday";
+      break;
+    case "Vendredi":
+      prd = "Friday";
+      break;
+    default:
+      break;
+}
+return prd;
+}
+
+getModuleTitle(days: string, timeSlot: string): string {
+
+  let day = this.changeDay(days).toUpperCase();
+  let prd= this.getPeriode(timeSlot );
+  const module = this.elementDeModule.find(module => module.jour === day && module.periode === prd);
+  return module ? module.libelle : '';
+}
+
+getModuleRoom(days: string, timeSlot: string): string {
+  let day = this.changeDay(days).toUpperCase();
+  let prd= this.getPeriode(timeSlot );
+  const module = this.elementDeModule.find(module => module.jour === day && module.periode === prd);
+  return module ? module.salle.typeSalle+" "+module.salle.numSalle : '';
+}
+
+getModuleTeacher(days: string, timeSlot: string): string {
+ let day = this.changeDay(days).toUpperCase();
+  let prd= this.getPeriode(timeSlot );
+  const module = this.elementDeModule.find(module => module.jour === day && module.periode === prd);
+  if(!this.prof)
+  {
+  return module ? module.enseignant.civilite+". "+module.enseignant.prenom+" "+module.enseignant.nom : '';
+
+}else{
+return module ? module.module.classe.libelle : '';
+}
+}
   handleDownloadEmploi(){
      
     Swal.fire({
@@ -173,9 +258,27 @@ handleSemsterChange(target: EventTarget | null) {
 }
 
   getEmplois(semsterId: number, idFiliere: number , idDepartement: number ) {
+ 
+    this.classeService.searchClasses(this.selectedFiliere!.libelle,0,10).subscribe(
+      (data) => {
+        this.classes = data.content;
+         let classeId = 0;
+    if(semsterId==0 || semsterId==1)
+    classeId=this.classes[0].id;
+    else if (semsterId==2 || semsterId==3)
+    classeId=this.classes[1].id;
+    else 
+    classeId=this.classes[2].id;
     
-
-
+  this.emploiService.getEmploisByClasse(classeId).subscribe(
+          data=>{
+            this.elementDeModule = data;
+            console.log(data);
+          }
+        )
+      }
+    );
+   
   }
 
 

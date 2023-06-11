@@ -15,7 +15,7 @@ public class GaAlgorithm {
     private static final int POPULATION_SIZE = 10;
     private static final double MUTATION_RATE = 0.2;
     private static final double CROSSOVER_RATE = 0.9;
-    private static final int MAX_GENERATIONS = 10000;
+    private static final int MAX_GENERATIONS = 2000;
     Periode[] timeslots;
     List<DayOfWeek> days;
 
