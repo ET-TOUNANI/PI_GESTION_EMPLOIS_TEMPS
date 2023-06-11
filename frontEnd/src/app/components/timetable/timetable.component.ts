@@ -24,12 +24,13 @@ export class TimetableComponent implements OnInit {
    selectedSemster: Semestre|undefined;
   spinnerExport:boolean=false;
   ready = false;
-
+  admin:boolean = false;
   constructor(private actons:ActionsService,private cookieService: CookieService,private departmentService: DepartmentService,private filiereService: FiliereService) {
   }
   ngOnInit() {
     this.prof = (this.cookieService.get('role') == 'Ensignant')? true : false; 
     this.getDepartements();
+    this.admin = this.cookieService.check('role');
   }
   handleDownloadEmploi(){
      

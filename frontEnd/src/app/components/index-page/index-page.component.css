@@ -265,7 +265,7 @@ section {
 --------------------------------------------------------------*/
 .about .content {
     background-color: #f6f9ff;
-    padding: 40px;
+   /* padding: 40px;*/
 }
 
 .about h3 {

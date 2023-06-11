@@ -1,8 +1,10 @@
-<app-page-header
-  [link]="'emploitemps'"
-  [prev]="'Emploi du temps'"
-  [current]="'Home'"
-></app-page-header>
+<div *ngIf="admin">
+  <app-page-header
+    [link]="'emploitemps'"
+    [prev]="'Emploi du temps'"
+    [current]="'Home'"
+  ></app-page-header>
+</div>
 <meta charset="utf-8" />
 <div class="card report-card">
   <div class="card-body pb-0">
