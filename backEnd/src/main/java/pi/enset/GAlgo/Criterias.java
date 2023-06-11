@@ -43,8 +43,13 @@ public class Criterias {
                     boolean isSatisfied = elements.stream()
                             .noneMatch(elementCompar ->
                                     element.getJour() == elementCompar.getJour() &&
-                                            elementCompar.getPeriode() == element.getPeriode() && elementCompar.getId() != element.getId()
-                            );
+                                            element.getModule().getClasse().getSemestre().getNum().ordinal()%2==elementCompar.getModule().getClasse().getSemestre().getNum().ordinal()%2 &&
+                                            elementCompar.getPeriode() == element.getPeriode() &&
+                                            elementCompar.getId() != element.getId()/* &&
+                                            elementCompar.getModule().isMetuale()==false &&
+                                            elementCompar.getModule().getClasse() != element.getModule().getClasse()&&
+                                            elementCompar.getModule().getClasse().getFiliere()== element.getModule().getClasse().getFiliere()
+                           */ );
                     if (!isSatisfied) {
                         return false;
                     }
@@ -70,7 +75,13 @@ public class Criterias {
                                 boolean isSatisfied = elements1.stream()
                                         .noneMatch(elementCompar ->
                                                 element.getJour() == elementCompar.getJour() &&
-                                                        elementCompar.getPeriode() == element.getPeriode() && elementCompar.getId() != element.getId()
+                                                        elementCompar.getPeriode() == element.getPeriode() &&
+                                                        elementCompar.getId() != element.getId() &&
+                                                        element.getModule().getClasse().getSemestre().getNum().ordinal()%2==elementCompar.getModule().getClasse().getSemestre().getNum().ordinal()%2/*&&
+                                                        elementCompar.getModule().isMetuale()==false &&
+                                                        elementCompar.getModule().getClasse() != element.getModule().getClasse()&&
+                                                        elementCompar.getModule().getClasse().getFiliere()== element.getModule().getClasse().getFiliere()
+*/
                                         );
                                 if (!isSatisfied) {
                                     return false;
@@ -97,7 +108,11 @@ public class Criterias {
                                 .anyMatch(sc ->
                                         sc.getJour() == element.getJour() &&
                                                 sc.getPeriode() == element.getPeriode()
-                                                && element.getId() != sc.getId()
+                                                && element.getId() != sc.getId() &&
+                                                sc.getModule().isMetuale()==false &&
+                                                element.getModule().getClasse().getSemestre().getNum().ordinal()%2==sc.getModule().getClasse().getSemestre().getNum().ordinal()%2 &&
+                                                sc.getModule().getClasse().getFiliere().getDepartement()== element.getModule().getClasse().getFiliere().getDepartement()
+
                                 );
                         if (isOccupied) {
                             return false;
@@ -120,6 +135,70 @@ public class Criterias {
 
                 if (!hasAfternoonFreeDay) {
                     return false;
+                }
+            }
+        }
+        return true;
+    }
+
+    public boolean areElementsAdjacent() {
+        List<Module> modules = schoolTimetable.getModules();
+        for (Module module : modules) {
+            if (!module.isSeperated()) {
+                List<ElementDeModule> elements = (List<ElementDeModule>) module.getElementDeModules();
+                if (elements != null) {
+                    ElementDeModule currentElement = elements.get(0);
+                    ElementDeModule nextElement = elements.get(1);
+                    // Check if the elements are not adjacent in the timetable
+                    if ((currentElement.getJour() != nextElement.getJour() &&
+                    currentElement.getPeriode().ordinal() != nextElement.getPeriode().ordinal() - 1)|| (currentElement.getJour() != nextElement.getJour() &&
+                            currentElement.getPeriode().ordinal() != nextElement.getPeriode().ordinal() + 1)) {
+
+                        return false;
+
+                    }
+                }
+            }
+        }
+        return true;
+    }
+
+    public boolean areElementsInSamePeriod() {
+        List<Classe> classes = schoolTimetable.getClasses();
+        for (Classe classe : classes) {
+            List<Module> modules = (List<Module>) classe.getModules();
+            if (modules != null) {
+                for (Module module : modules) {
+                    if (module.isMetuale()) {
+                        List<ElementDeModule> elements = (List<ElementDeModule>) module.getElementDeModules();
+                        if (elements != null) {
+                            for (ElementDeModule element : elements) {
+                                // Check if there is an element in another class within the same department
+                                // with the same module name that is in the same period
+                                for (Classe otherClasse : classes) {
+                                    if (otherClasse != classe && otherClasse.getFiliere().equals(classe.getFiliere())) {
+                                        List<Module> otherModules = (List<Module>) otherClasse.getModules();
+                                        if (otherModules != null) {
+                                            for (Module otherModule : otherModules) {
+                                                if (otherModule.getLibelle().equals(module.getLibelle())) {
+                                                    List<ElementDeModule> otherElements = (List<ElementDeModule>) otherModule.getElementDeModules();
+                                                    if (otherElements != null) {
+                                                        boolean isSatisfied = otherElements.stream()
+                                                                .noneMatch(otherElement ->
+                                                                        otherElement.getPeriode() == element.getPeriode()
+                                                                );
+                                                        if (!isSatisfied) {
+                                                            return false;
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }

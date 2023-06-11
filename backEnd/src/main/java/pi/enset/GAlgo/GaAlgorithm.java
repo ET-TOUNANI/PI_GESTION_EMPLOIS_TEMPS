@@ -15,7 +15,7 @@ public class GaAlgorithm {
     private static final int POPULATION_SIZE = 10;
     private static final double MUTATION_RATE = 0.2;
     private static final double CROSSOVER_RATE = 0.9;
-    private static final int MAX_GENERATIONS = 1000;
+    private static final int MAX_GENERATIONS = 10000;
     Periode[] timeslots;
     List<DayOfWeek> days;
 
@@ -156,7 +156,7 @@ public class GaAlgorithm {
             }
 
             // Termination condition based on fitness threshold or lack of improvement
-            if (/* Add termination condition based on fitness or convergence */ getBestTimetable().getFitness() >= 80) {
+            if (/* Add termination condition based on fitness or convergence */ getBestTimetable().getFitness() == 100) {
                 isTerminated = true;
                 break;
             }

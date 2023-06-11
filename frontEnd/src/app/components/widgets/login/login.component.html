@@ -1,38 +1,67 @@
-<div class="login-form">
-  <h2>Login</h2>
-  <form [formGroup]="formGroup" (ngSubmit)="login()">
-    <div class="form-group">
-      <label for="username">Username:</label>
-      <input
-        type="text"
-        id="username"
-        formControlName="username"
-        class="form-control"
-      />
-      <div *ngIf="username?.touched && username?.invalid" class="error-message">
-        Username is required
+<div class="main-wrapper login-body">
+  <div class="login-wrapper">
+    <div class="container">
+      <div class="loginbox">
+        <div class="login-left">
+          <img class="img-fluid" src="/assets/img/hero-img.png" alt="Logo" />
+        </div>
+        <div class="login-right">
+          <div class="login-right-wrap">
+            <h1>Bienvenue à l'ENSET</h1>
+            <p class="account-subtitle">
+              Accédez à votre compte pour consulter les emplois du temps.
+            </p>
+            <h2>Connexion</h2>
+
+            <form [formGroup]="formGroup" (ngSubmit)="login()">
+              <div class="form-group">
+                <label
+                  >Nom d'utilisateur <span class="login-danger">*</span></label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  formControlName="username"
+                />
+                <span class="profile-views"
+                  ><i class="fas fa-user-circle"></i
+                ></span>
+                <div
+                  *ngIf="username?.touched && username?.invalid"
+                  class="error-message text-danger"
+                >
+                  Nom d'utilisateur requis
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Mot de passe <span class="login-danger">*</span></label>
+                <input
+                  type="password"
+                  class="form-control pass-input"
+                  formControlName="password"
+                />
+                <span class="profile-views feather-eye toggle-password"></span>
+                <div
+                  *ngIf="password?.touched && password?.invalid"
+                  class="error-message text-danger"
+                >
+                  Mot de passe requis
+                </div>
+              </div>
+
+              <div class="form-group">
+                <button
+                  type="submit"
+                  class="btn btn-primary btn-block"
+                  [disabled]="formGroup.invalid"
+                >
+                  Connexion
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
       </div>
     </div>
-
-    <div class="form-group">
-      <label for="password">Password:</label>
-      <input
-        type="password"
-        id="password"
-        formControlName="password"
-        class="form-control"
-      />
-      <div *ngIf="password?.touched && password?.invalid" class="error-message">
-        Password is required
-      </div>
-    </div>
-
-    <div class="form-group">
-      <button type="submit" [disabled]="formGroup.invalid">Login</button>
-    </div>
-
-    <div *ngIf="errorMessage" class="error-message">
-      {{ errorMessage }}
-    </div>
-  </form>
+  </div>
 </div>
