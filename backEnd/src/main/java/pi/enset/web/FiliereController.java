@@ -7,7 +7,10 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
 import pi.enset.entities.Filiere;
+import pi.enset.entities.Semestre;
 import pi.enset.services.IFiliereService;
+
+import java.util.List;
 
 @Slf4j
 @CrossOrigin("*")
@@ -56,4 +59,9 @@ public class FiliereController {
         Pageable pageable = PageRequest.of(page, size);
         return filiereService.searchFilieres(keyword, pageable);
     }
+    @GetMapping("/{id}/semesters")
+    public List<Semestre> getSemestersByFiliere(@PathVariable Long id) {
+        return filiereService.getSemestersByFiliere(id);
+    }
+
 }

@@ -34,6 +34,7 @@ import { IndexPageComponent } from './components/index-page/index-page.component
 import { LoginComponent } from './components/widgets/login/login.component';
 import { ProfileComponent } from './components/widgets/profile/profile.component';
 import { EditProfileComponent } from './components/edit/edit-profile/edit-profile.component';
+import { NonDisponibleComponent } from './components/gestion/non-disponible/non-disponible.component';
 
 @NgModule({
   declarations: [
@@ -66,7 +67,8 @@ import { EditProfileComponent } from './components/edit/edit-profile/edit-profil
     IndexPageComponent,
     LoginComponent,
     ProfileComponent,
-    EditProfileComponent
+    EditProfileComponent,
+    NonDisponibleComponent
   ],
   imports: [
     BrowserModule,

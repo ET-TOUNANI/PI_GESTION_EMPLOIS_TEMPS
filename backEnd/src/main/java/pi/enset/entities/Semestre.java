@@ -30,6 +30,6 @@ public class Semestre {
     private String anneeUniv;//2022-2023
     @OneToMany(mappedBy = "semestre")
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
-    private Collection<Module> modules = new ArrayList<>();
+    private Collection<Classe> classes = new ArrayList<>();
 
 }

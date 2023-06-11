@@ -1,0 +1,121 @@
+<app-page-header
+  [link]="'Non Disponibilités'"
+  [prev]="'Prod'"
+  [current]="'Home'"
+></app-page-header>
+<form>
+  <div class="student-group-form">
+    <div class="row">
+      <div class="col-lg-3 col-md-6">
+        <div class="form-group">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Recherche par jour..."
+          />
+        </div>
+      </div>
+
+      <div class="col-lg-2">
+        <div class="search-student-btn">
+          <button type="button" class="btn btn-primary">Chercher</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+<div class="row">
+  <div class="col-sm-12">
+    <div class="card card-table">
+      <div class="card-body">
+        <div class="page-header">
+          <div class="row align-items-center">
+            <div class="col">
+              <h3 class="page-title">Non disponibilités</h3>
+            </div>
+            <div class="col-auto text-end float-end ms-auto download-grp">
+              <a routerLink="/filieres/add" class="btn btn-primary"
+                ><i class="fas fa-plus"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+
+        <table
+          class="table border-0 star-student table-hover table-center mb-0 datatable table-striped"
+        >
+          <thead class="student-thread">
+            <tr>
+              <th>
+                <div class="form-check check-tables">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    value="something"
+                  />
+                </div>
+              </th>
+              <th>ID</th>
+              <th>Jour</th>
+              <th>Enseignant</th>
+              <th>Periode</th>
+
+              <th class="text-end">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let nondispo of nonDispos">
+              <td>
+                <div class="form-check check-tables">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    value="something"
+                  />
+                </div>
+              </td>
+              <td>{{ nondispo.id }}</td>
+              <td>{{ nondispo.jour }}</td>
+              <td>{{ nondispo.enseignant.nom }}</td>
+              <td>{{ nondispo.periode }}</td>
+              <td class="text-end">
+                <div class="actions">
+                  <a class="btn btn-sm bg-success-light me-2">
+                    <i class="fas fa-edit"></i>
+                  </a>
+                  <a class="btn btn-sm bg-danger-light">
+                    <i class="fas fa-trash"></i>
+                  </a>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <ul class="pagination justify-content-end mt-4">
+          <li class="page-item" [ngClass]="{ disabled: 0 === 0 }">
+            <a class="page-link" tabindex="-1" (click)="goToPreviousSet()"
+              >Précédent
+            </a>
+          </li>
+          <li
+            class="page-item"
+            *ngFor="let page of [3, 2, 4]"
+            [class.selected]="2 === page"
+          >
+            <a class="page-link" (click)="gotoPage(page)">{{ page + 1 }}</a>
+          </li>
+          <li class="page-item" [ngClass]="{ disabled: 3 >= 6 - 1 }">
+            <!-- Add the following code to disable the "Suivant" button when there are no more pages to show -->
+            <button
+              class="page-link"
+              [disabled]="4 >= 6 - 1"
+              (click)="goToNextSet()"
+            >
+              Suivant
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

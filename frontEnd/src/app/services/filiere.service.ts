@@ -10,6 +10,7 @@ import {ConsoleLogger} from "@angular/compiler-cli";
   providedIn: 'root'
 })
 export class FiliereService {
+
    constructor(private http:HttpClient) { }
    public getFilieres(page: number, size: number): Observable<PageFiliere> {
     return this.http.get<PageFiliere>(environment.backendHost + "/filieres?page=" + page + "&size=" + size);
@@ -29,5 +30,8 @@ export class FiliereService {
   }
   public deleteFiliere(id: number): Observable<any>{
     return this.http.delete(environment.backendHost+"/filieres/"+id);
+  }
+  public getSemsterByFiliere(id: number):Observable<any>{
+    return this.http.get(environment.backendHost+"/filieres/"+id+"/semesters");
   }
 }

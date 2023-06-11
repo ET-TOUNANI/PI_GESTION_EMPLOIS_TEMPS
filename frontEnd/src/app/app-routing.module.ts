@@ -21,6 +21,7 @@ import {EditFiliereComponent} from "./components/edit/edit-filiere/edit-filiere.
 import {EditClasseComponent} from "./components/edit/edit-classe/edit-classe.component";
 import { LoginComponent } from './components/widgets/login/login.component';
 import { EditProfileComponent } from './components/edit/edit-profile/edit-profile.component';
+import { NonDisponibleComponent } from './components/gestion/non-disponible/non-disponible.component';
 
 const routes: Routes = [
   { path :'' , component: HomeComponent},
@@ -43,6 +44,7 @@ const routes: Routes = [
     { path :'filieres/edit' , component: EditFiliereComponent},
     { path :'classes/edit' , component: EditClasseComponent},
     { path :'profile/edit' , component: EditProfileComponent},
+    { path :'nonDesponibles' , component: NonDisponibleComponent},
     // not-found
     { path :'**' , component: NotFoundComponent},
 ];

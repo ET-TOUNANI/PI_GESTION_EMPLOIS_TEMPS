@@ -5,6 +5,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import pi.enset.entities.Departement;
+import pi.enset.entities.Filiere;
 import pi.enset.repository.DepartementRepostitory;
 
 import java.util.List;
@@ -55,5 +56,10 @@ public class IDepartemenServiceImpl implements IDepartementService {
     @Override
     public Page<Departement> searchDepartements(String keyword, Pageable pageable) {
         return departementRepostitory.searchWithPagination(keyword, pageable);
+    }
+
+    @Override
+    public List<Filiere> getFilieresByDepartmentId(Long id) {
+        return departementRepostitory.getFilieresByDepartmentId(id);
     }
 }

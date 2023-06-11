@@ -82,12 +82,14 @@ public class PiApplication {
             classe.setLibelle("IIBDCC 1");
             classe.setNbrEleves(40);
             classe.setFiliere(filiere);
+            classe.setSemestre(semestre);
             classeRepository.save(classe);
             // Create the Classe with the Filiere
             Classe classe2 = new Classe();
             classe2.setLibelle("GIL 1");
             classe2.setNbrEleves(40);
             classe2.setFiliere(filiere2);
+            classe2.setSemestre(semestre);
             classeRepository.save(classe2);
             List<Classe> classes = new ArrayList<>();
             classes.add(classe);
@@ -107,7 +109,6 @@ public class PiApplication {
                         module.setLibelle(libelle);
                         module.setVolumeHoraire(50);
                         module.setSeperated(true);
-                        module.setSemestre(semestre);
                         module.setMetuale(false);
                         module.setClasse(classe);
                         moduleRepository.save(module);
@@ -184,7 +185,6 @@ public class PiApplication {
                         module.setLibelle(libelle);
                         module.setVolumeHoraire(50);
                         module.setSeperated(true);
-                        module.setSemestre(semestre);
                         module.setMetuale(false);
                         module.setClasse(classe2);
                         moduleRepository.save(module);

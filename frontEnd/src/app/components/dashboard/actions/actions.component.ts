@@ -163,7 +163,7 @@ export class ActionsComponent implements OnInit{
   
 
 }
-function downloadFile(data: Blob, arg1: string) {
+ function downloadFile(data: Blob, arg1: string) {
   const blob = new Blob([data], { type: arg1 });
   const url = window.URL.createObjectURL(blob);
   window.open(url);

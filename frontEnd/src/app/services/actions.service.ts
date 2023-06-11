@@ -25,5 +25,12 @@ export class ActionsService {
   public generateEmploi(): Observable<any> {
     return this.http.get(environment.backendHost + "/emploisDeTemps/generate");
   }
-
+public exportFileProf(id:number): Observable<Blob> {
+    // Set the response type to 'blob' to receive binary data
+    return this.http.get(environment.backendHost + "/pdf/enseignants/"+id, { responseType: 'blob' });
+  }
+  public exportFileClasse(id:number): Observable<Blob> {
+    // Set the response type to 'blob' to receive binary data
+    return this.http.get(environment.backendHost + "/pdf/classes/"+id, { responseType: 'blob' });
+  }
 }

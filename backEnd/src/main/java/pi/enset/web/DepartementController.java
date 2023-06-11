@@ -7,6 +7,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
 import pi.enset.entities.Departement;
+import pi.enset.entities.Filiere;
 import pi.enset.services.IDepartementService;
 
 import java.util.List;
@@ -19,7 +20,6 @@ import java.util.List;
 public class DepartementController {
 
     private final IDepartementService departementService;
-
 
     @GetMapping
     public List<Departement> getAllDepartements() {
@@ -53,5 +53,9 @@ public class DepartementController {
     @DeleteMapping("/{id}")
     public String deleteDepartement(@PathVariable Long id) {
         return departementService.deleteDepartement(id);
+    }
+    @GetMapping("/{id}/filieres")
+    public List<Filiere> getFilieresByDepartmentId(@PathVariable Long id) {
+        return departementService.getFilieresByDepartmentId(id);
     }
 }

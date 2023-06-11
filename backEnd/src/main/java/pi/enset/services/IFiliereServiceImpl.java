@@ -1,12 +1,15 @@
 package pi.enset.services;
 
 import lombok.AllArgsConstructor;
+import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import pi.enset.entities.Filiere;
+import pi.enset.entities.Semestre;
 import pi.enset.repository.FiliereRepository;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -57,4 +60,16 @@ public class IFiliereServiceImpl implements IFiliereService {
     public Page<Filiere> searchFilieres(String keyword, Pageable pageable) {
         return filiereRepository.searchFilieres(keyword, pageable);
     }
+
+    @Override
+    public List<Semestre> getSemestersByFiliere(Long filiereId) {
+        Filiere filiere = getFiliereById(filiereId);
+        List <Semestre> semestres = new ArrayList<>();
+        filiere.getClasses().forEach(classe -> {
+            semestres.add(classe.getSemestre());
+        });
+
+        return semestres;
+    }
+
 }

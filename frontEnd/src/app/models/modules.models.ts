@@ -5,7 +5,6 @@ export interface Module {
     id:        number;
     volumeHoraire:  number;
     libelle:   string;
-    semestre: Semestre;
      isSeperated : boolean;
      isMetuale: boolean;
      classe:Classe;

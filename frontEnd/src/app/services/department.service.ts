@@ -4,11 +4,13 @@ import { Observable } from 'rxjs';
 import { environment } from "../../environments/environment";
 import { PageDepartment } from '../models/profPage.models';
 import { Departement } from '../models/departement.models';
+import { Filiere } from '../models/filieres.models';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DepartmentService {
+  
   constructor(private http: HttpClient) { }
 
   public searchDepartments(keyword: string, page: number, size: number): Observable<PageDepartment> {
@@ -29,5 +31,9 @@ export class DepartmentService {
 
   public deleteDepartment(id: number): Observable<any> {
     return this.http.delete(`${environment.backendHost}/departements/${id}`);
+  }
+  
+  public getFilieres(id: number): Observable<Filiere[]> {
+    return this.http.get<Filiere[]>(`${environment.backendHost}/departements/${id}/filieres`);
   }
 }

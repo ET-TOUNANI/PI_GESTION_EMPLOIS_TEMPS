@@ -28,6 +28,4 @@ public class Module {
     private Collection<ElementDeModule> elementDeModules = new ArrayList<>();
     @ManyToOne
     private Classe classe;
-    @ManyToOne
-    private Semestre semestre;
 }

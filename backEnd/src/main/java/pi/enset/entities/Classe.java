@@ -26,4 +26,6 @@ public class Classe {
     @OneToMany(mappedBy = "classe", fetch = FetchType.EAGER)
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private Collection<Module> modules = new ArrayList<>();
+    @ManyToOne
+    private Semestre semestre;
 }

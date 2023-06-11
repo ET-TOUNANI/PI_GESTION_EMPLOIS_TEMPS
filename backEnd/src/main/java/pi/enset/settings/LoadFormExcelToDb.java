@@ -167,7 +167,7 @@ public class LoadFormExcelToDb {
                                         module = new Module();
                                         module.setElementDeModules(new ArrayList<>());
                                         module.setLibelle(cell.getStringCellValue());
-                                        module.setSemestre(semestre);
+                                        //module.setSemestre(semestre);
                                         assert classe != null;
                                         classe.getModules().add(module);
                                     }

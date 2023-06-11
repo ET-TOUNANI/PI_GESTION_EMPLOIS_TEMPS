@@ -21,7 +21,7 @@ public class Departement {
     private Long id;
     private String libelle;
     private String chefDepartement;
-    @OneToMany(mappedBy = "departement")
+    @OneToMany(mappedBy = "departement", fetch = FetchType.EAGER)
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private Collection<Filiere> filieres = new ArrayList<>();
 }
