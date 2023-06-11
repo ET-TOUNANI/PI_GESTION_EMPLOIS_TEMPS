@@ -1,3 +1,4 @@
+import { ElementDeModule } from './../../models/elementModule.models';
 import { Component, OnInit } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
 import { Departement } from 'src/app/models/departement.models';
@@ -5,6 +6,7 @@ import { Filiere } from 'src/app/models/filieres.models';
 import { Semestre } from 'src/app/models/semestre.models';
 import { ActionsService } from 'src/app/services/actions.service';
 import { DepartmentService } from 'src/app/services/department.service';
+import { EmploiDeTempsService } from 'src/app/services/emploi-de-temps.service';
 import { FiliereService } from 'src/app/services/filiere.service';
 import Swal from 'sweetalert2';
 
@@ -19,18 +21,33 @@ export class TimetableComponent implements OnInit {
   public departements:Departement[] = [];
   public filieres:Filiere[] = [];
   public semsters:Semestre[] = [];
+  public elementDeModule:ElementDeModule[] = [];
   selectedDepartement: Departement|undefined;
   selectedFiliere: Filiere|undefined;
    selectedSemster: Semestre|undefined;
   spinnerExport:boolean=false;
   ready = false;
   admin:boolean = false;
-  constructor(private actons:ActionsService,private cookieService: CookieService,private departmentService: DepartmentService,private filiereService: FiliereService) {
+  constructor(private actons:ActionsService,private cookieService: CookieService,private departmentService: DepartmentService,private filiereService: FiliereService,private emploiService:EmploiDeTempsService) {
+
   }
   ngOnInit() {
     this.prof = (this.cookieService.get('role') == 'Ensignant')? true : false; 
-    this.getDepartements();
-    this.admin = this.cookieService.check('role');
+    if(this.prof){
+       this.ready = true;
+      this.emploiService.getEmploiByProf(parseFloat(this.cookieService.get("userId"))).subscribe(
+        data=>{
+          console.log(data);
+          
+          this.elementDeModule = data;
+          console.log(data);
+        }
+      )
+
+    }
+    else{this.getDepartements();
+    this.admin = this.cookieService.check('role');}
+    
   }
   handleDownloadEmploi(){
      
@@ -48,7 +65,7 @@ export class TimetableComponent implements OnInit {
          this.spinnerExport=true;
         if(this.prof)
       {
-         this.actons.exportFileProf(parseFloat(this.cookieService.get("idUser"))).subscribe(
+         this.actons.exportFileProf(parseFloat(this.cookieService.get("userId"))).subscribe(
           data=>{
             this.spinnerExport=false;
             console.log(data)

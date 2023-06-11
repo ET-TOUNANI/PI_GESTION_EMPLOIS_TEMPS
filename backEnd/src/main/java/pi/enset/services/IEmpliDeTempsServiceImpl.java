@@ -6,6 +6,7 @@ import pi.enset.GAlgo.GaAlgorithm;
 import pi.enset.GAlgo.SchoolTimetable;
 import pi.enset.entities.Classe;
 import pi.enset.entities.ElementDeModule;
+import pi.enset.entities.Enseignant;
 import pi.enset.settings.DataFromDb;
 
 import java.util.ArrayList;
@@ -17,6 +18,7 @@ import java.util.Map;
 public class IEmpliDeTempsServiceImpl implements IEmpliDeTempsService {
     private final DataFromDb dataFromDb;
     private final IElementDeModuleService elementDeModuleService;
+    private final IEnseignantService enseignantService;
 
     @Override
     public List<Map<Long, List<ElementDeModule>>> getAllEmplois() {
@@ -55,5 +57,11 @@ public class IEmpliDeTempsServiceImpl implements IEmpliDeTempsService {
         }
 
         return emplois;
+    }
+
+    @Override
+    public List<ElementDeModule> getEmploiByProf(Long id) {
+        Enseignant enseignant = enseignantService.getEnseignantById(id);
+        return (List<ElementDeModule>) enseignant.getElementDeModules();
     }
 }

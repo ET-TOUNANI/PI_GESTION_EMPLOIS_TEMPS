@@ -8,11 +8,14 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class EmploiDeTempsService {
+  
 
   constructor(private http:HttpClient) { }
 
   public getEmplois(): Observable<ElementDeModule[]> {
     return this.http.get<ElementDeModule[]>(environment.backendHost + "/elementModules");
   }
-
+  getEmploiByProf(idProf: number) {
+    return this.http.get<ElementDeModule[]>(environment.backendHost + "/emploisDeTemps/prof/" + idProf);
+  }
 }

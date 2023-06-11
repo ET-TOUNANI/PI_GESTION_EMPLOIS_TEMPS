@@ -38,5 +38,10 @@ public class EmploisDeTemps {
     public List<Map<Long, List<ElementDeModule>>> generateEmplois() {
        return empliDeTempsService.generateEmplois();
     }
+    //getEmploiByProf
+    @GetMapping("/prof/{id}")
+    public  List<ElementDeModule>getEmploiByProf(@PathVariable Long id) {
+        return empliDeTempsService.getEmploiByProf(id);
+    }
 
 }

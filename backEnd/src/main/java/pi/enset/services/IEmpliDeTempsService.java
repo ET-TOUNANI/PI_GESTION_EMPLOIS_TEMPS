@@ -10,4 +10,6 @@ public interface IEmpliDeTempsService {
      List<Map<Long, List<ElementDeModule>>> getAllEmplois();
      List<ElementDeModule> getEmploisByClasse(Long id);
     List<Map<Long, List<ElementDeModule>>> generateEmplois();
+
+    List<ElementDeModule> getEmploiByProf(Long id);
 }

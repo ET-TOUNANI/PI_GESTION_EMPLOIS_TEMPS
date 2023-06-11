@@ -61,10 +61,10 @@ export class LoginComponent implements OnInit {
           this.cookieService.set('userId', this.authService.id.toString());
           let role = response.admin ? 'Administrateur' : 'Ensignant';
           this.cookieService.set('role', role);
-
-          this.router.navigateByUrl('/home');
-          // refresh page
+        // refresh page
           window.location.reload();
+          this.router.navigateByUrl('/home');
+          
         },
         error => {
            Swal.fire('Echec', 'Nom d\'utilisateur ou mot de passe incorrect', 'error');});
