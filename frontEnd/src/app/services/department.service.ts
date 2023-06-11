@@ -10,7 +10,7 @@ import { Filiere } from '../models/filieres.models';
   providedIn: 'root'
 })
 export class DepartmentService {
-  
+
   constructor(private http: HttpClient) { }
 
   public searchDepartments(keyword: string, page: number, size: number): Observable<PageDepartment> {
@@ -28,11 +28,14 @@ export class DepartmentService {
   public getDepartment(id: number): Observable<Departement> {
     return this.http.get<Departement>(`${environment.backendHost}/departements/${id}`);
   }
+  public getDepartements(): Observable<Departement[]> {
+    return this.http.get<Departement[]>(`${environment.backendHost}/departements`);
+  }
 
   public deleteDepartment(id: number): Observable<any> {
     return this.http.delete(`${environment.backendHost}/departements/${id}`);
   }
-  
+
   public getFilieres(id: number): Observable<Filiere[]> {
     return this.http.get<Filiere[]>(`${environment.backendHost}/departements/${id}/filieres`);
   }

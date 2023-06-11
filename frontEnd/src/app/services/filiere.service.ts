@@ -12,6 +12,9 @@ import {ConsoleLogger} from "@angular/compiler-cli";
 export class FiliereService {
 
    constructor(private http:HttpClient) { }
+  public getAllFilieres(): Observable<Filiere[]> {
+    return this.http.get<Filiere[]>(`${environment.backendHost}/filieres/all`);
+  }
    public getFilieres(page: number, size: number): Observable<PageFiliere> {
     return this.http.get<PageFiliere>(environment.backendHost + "/filieres?page=" + page + "&size=" + size);
   }

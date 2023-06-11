@@ -5,12 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="30497bce-640a-4049-9739-312b719d2809" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pi/enset/GAlgo/GaAlgorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pi/enset/GAlgo/GaAlgorithm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pi/enset/repository/ClasseRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pi/enset/repository/ClasseRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontEnd/src/app/components/timetable/timetable.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontEnd/src/app/components/timetable/timetable.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontEnd/src/app/components/timetable/timetable.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontEnd/src/app/components/timetable/timetable.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontEnd/src/app/services/emploi-de-temps.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontEnd/src/app/services/emploi-de-temps.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontEnd/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontEnd/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontEnd/src/app/components/add/add-new-classe/add-new-classe.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontEnd/src/app/components/add/add-new-classe/add-new-classe.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontEnd/src/app/components/add/add-new-classe/add-new-classe.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontEnd/src/app/components/add/add-new-classe/add-new-classe.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontEnd/src/app/components/add/add-new-filiere/add-new-filiere.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontEnd/src/app/components/add/add-new-filiere/add-new-filiere.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontEnd/src/app/components/add/add-new-filiere/add-new-filiere.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontEnd/src/app/components/add/add-new-filiere/add-new-filiere.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,7 +133,7 @@
       <workItem from="1686327359420" duration="791000" />
       <workItem from="1686349844447" duration="513000" />
       <workItem from="1686410091194" duration="21215000" />
-      <workItem from="1686485032655" duration="4980000" />
+      <workItem from="1686485032655" duration="5584000" />
     </task>
     <servers />
   </component>

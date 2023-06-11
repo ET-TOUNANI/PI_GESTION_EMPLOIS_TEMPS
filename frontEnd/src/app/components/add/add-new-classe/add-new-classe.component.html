@@ -8,62 +8,59 @@
   <div class="col-sm-12">
     <div class="card comman-shadow">
       <div class="card-body">
-        <form >
+        <form [formGroup]="newClassFormGroup" (ngSubmit)="handleAddClasse()">
           <div class="row">
             <div class="col-12">
               <h5 class="form-title student-info">
                 Informations sur la Classe<span
-                  ><a href="javascript:;"
-                    ><i class="feather-more-vertical"></i></a
-                ></span>
+              ><a href="javascript:;"
+              ><i class="feather-more-vertical"></i></a
+              ></span>
               </h5>
             </div>
             <div class="col-12 col-sm-4">
               <div class="form-group local-forms">
                 <label>libellé <span class="login-danger">*</span></label>
-                <input 
+                <input
                   class="form-control"
                   type="text"
                   placeholder="libellé ...."
+                  formControlName="libelle"
                 />
               </div>
             </div>
             <div class="col-12 col-sm-4">
               <div class="form-group local-forms">
                 <label>nombre d'élèves <span class="login-danger">*</span></label>
-                <input 
+                <input
                   class="form-control"
                   type="number"
                   placeholder="nombre d'élèves...."
+                  formControlName="nbrEleves"
                 />
               </div>
             </div>
             <div class="col-12 col-sm-4">
-                <div class="form-group local-forms">
-                  <label>filière<span class="login-danger">*</span></label>
-                  <input 
-                    class="form-control"
-                    type="text"
-                    placeholder="filière...."
-                  />
-                </div>
+              <div class="form-group local-forms">
+                <label>filière<span class="login-danger">*</span></label>
+                <select class="form-control" formControlName="filiere">
+                  <option value="" disabled selected>Choisir une filière</option>
+                  <option *ngFor="let libelle of filieres" [value]="libelle">{{ libelle }}</option>
+                </select>
               </div>
-           
-               <div
-              class="col-12 d-flex align-items-center justify-content-center"
-            >
+            </div>
+            <div class="col-12 d-flex align-items-center justify-content-center">
               <div class="student-submit">
                 <button type="submit" class="btn btn-primary">Confirmer</button>
               </div>
             </div>
-
+          </div>
+        <div>
             <hr class="mt-4" />
-
             <div class="col-12 col-sm-12">
               <div class="form-group students-up-files">
-                <label
-                  >Vous pouvez également charger une liste de classes
-                  (xlsx, csv, txt)
+                <label>
+                  Vous pouvez également charger une liste de classes (xlsx, csv, txt)
                 </label>
                 <div class="uplod">
                   <label class="file-upload image-upbtn mb-0">
@@ -78,5 +75,3 @@
     </div>
   </div>
 </div>
-
-

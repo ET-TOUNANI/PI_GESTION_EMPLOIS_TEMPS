@@ -8,14 +8,14 @@
   <div class="col-sm-12">
     <div class="card comman-shadow">
       <div class="card-body">
-        <form>
+        <form [formGroup]="newFiliereFormGroup">
           <div class="row">
             <div class="col-12">
               <h5 class="form-title student-info">
                 Informations sur la Filière<span
-                  ><a href="javascript:;"
-                    ><i class="feather-more-vertical"></i></a
-                ></span>
+              ><a href="javascript:;"
+              ><i class="feather-more-vertical"></i></a
+              ></span>
               </h5>
             </div>
             <div class="col-12 col-sm-4">
@@ -25,6 +25,7 @@
                   class="form-control"
                   type="text"
                   placeholder="libellé ...."
+                  formControlName="libelle"
                 />
               </div>
             </div>
@@ -35,44 +36,39 @@
                   class="form-control"
                   type="number"
                   placeholder="nombre de semestres...."
+                  formControlName="nombreSem"
                 />
               </div>
             </div>
             <div class="col-12 col-sm-4">
-                <div class="form-group local-forms">
-                  <label>chef de la filière<span class="login-danger">*</span></label>
-                  <input
-                    class="form-control"
-                    type="text"
-                    placeholder="chef de la filière...."
-                  />
-                </div>
+              <div class="form-group local-forms">
+                <label>filière<span class="login-danger">*</span></label>
+                <input
+                  class="form-control"
+                  type="text"
+                  placeholder="libellé ...."
+                  formControlName="chefFiliere"
+                />
               </div>
-              <div class="col-12 col-sm-4">
-                <div class="form-group local-forms">
-                  <label>département <span class="login-danger">*</span></label>
-                  <input
-                    class="form-control"
-                    type="text"
-                    placeholder="département...."
-                  />
-                </div>
+            </div>
+            <div class="col-12 col-sm-4">
+              <div class="form-group local-forms">
+                <label>département<span class="login-danger">*</span></label>
+                <select class="form-control" formControlName="departement">
+                  <option *ngFor="let dep of departements" [value]="dep.libelle">{{ dep.libelle }}</option>
+                </select>
               </div>
-               <div
-              class="col-12 d-flex align-items-center justify-content-center"
-            >
+            </div>
+            <div class="col-12 d-flex align-items-center justify-content-center">
               <div class="student-submit">
                 <button type="submit" class="btn btn-primary">Confirmer</button>
               </div>
             </div>
-
             <hr class="mt-4" />
-
             <div class="col-12 col-sm-12">
               <div class="form-group students-up-files">
-                <label
-                  >Vous pouvez également charger une liste de filières
-                  (xlsx, csv, txt)
+                <label>
+                  Vous pouvez également charger une liste de filières (xlsx, csv, txt)
                 </label>
                 <div class="uplod">
                   <label class="file-upload image-upbtn mb-0">
@@ -87,4 +83,3 @@
     </div>
   </div>
 </div>
-
