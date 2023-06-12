@@ -46,28 +46,33 @@ export class LoginComponent implements OnInit {
     const username = this.username?.value;
     const password = this.password?.value;
 
-    this.authService.login(username, password).subscribe(response => {  
-      console.log(response);
-      
-          this.authService.loggedIn = response.authenticated;
-          this.authService.isAdmin = response.admin;
-          this.authService.isProf = response.enseignant;
-          this.authService.name = response.nom + " " + response.prenom;
-          this.authService.token = response.token;
-          this.authService.id = response.id;
+    this.authService.login(username, password).subscribe(response => {
+      if(response.authenticated==true){
+        console.log(response);
+
+        this.authService.loggedIn = response.authenticated;
+        this.authService.isAdmin = response.admin;
+        this.authService.isProf = response.enseignant;
+        this.authService.name = response.nom + " " + response.prenom;
+        this.authService.token = response.token;
+        this.authService.id = response.id;
 
 
-           this.cookieService.set('username', this.authService.name);
-          this.cookieService.set('userId', this.authService.id.toString());
-          let role = response.admin ? 'Administrateur' : 'Ensignant';
-          this.cookieService.set('role', role);
+        this.cookieService.set('username', this.authService.name);
+        this.cookieService.set('userId', this.authService.id.toString());
+        let role = response.admin ? 'Administrateur' : 'Ensignant';
+        this.cookieService.set('role', role);
         // refresh page
-          window.location.reload();
-          this.router.navigateByUrl('/home');
-          
+        window.location.reload();
+        this.router.navigateByUrl('/home');
+
+      }else {
+        Swal.fire('Echec', 'Nom d\'utilisateur ou mot de passe incorrect', 'error');
+
+      }
         },
         error => {
            Swal.fire('Echec', 'Nom d\'utilisateur ou mot de passe incorrect', 'error');});
-    
+
   }
 }

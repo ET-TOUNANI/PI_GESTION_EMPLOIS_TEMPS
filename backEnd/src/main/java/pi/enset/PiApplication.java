@@ -45,6 +45,7 @@ public class PiApplication {
             admin.setCne("555");
             admin.setAdmin_type(TypeAdmin.SUPER_ADMIN);
             userRepository.save(admin);
+            /*
             // Create the Departement
             Departement departement1 = new Departement();
             departement1.setLibelle("Math Info");
@@ -242,7 +243,7 @@ public class PiApplication {
             nonDisponibilite4.setJour(DayOfWeek.THURSDAY);
             nonDisponibilite4.setPeriode(Periode.P3);
             nonDisponibilite4.setEnseignant(enseignants2.get(4));
-            nonDisponibiliteRepository.save(nonDisponibilite4);
+            nonDisponibiliteRepository.save(nonDisponibilite4);*/
 
         };
 

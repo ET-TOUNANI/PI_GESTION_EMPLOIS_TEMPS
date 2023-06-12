@@ -143,14 +143,17 @@ public class LoadFormExcelToDb {
                                     if (!cell.getStringCellValue().equals("")) {
                                         semestre = new Semestre();
                                         semestre.setNum(NumeroSemester.valueOf(cell.getStringCellValue()));
-                                        semestre.setAnneeUniv(sheet.getRow(j).getCell(2).getStringCellValue());
-                                        if (!semestres.contains(semestre)) {
-                                            semestres.add(semestre);
-                                        }
-                                        iSemestreService.addSemestre(semestre);
+                                        semestre.setAnneeUniv(sheet.getRow(0).getCell(2).getStringCellValue());
                                         classe = new Classe();
                                         classe.setNbrEleves((int) sheet.getRow(j).getCell(7).getNumericCellValue());
                                         classe.setLibelle(filiere.getLibelle() + " " + semestre.getNum().toString().charAt(1));
+                                        if (iSemestreService.findSemestreByNum(semestre.getNum()).size()==0) {
+                                            iSemestreService.addSemestre(semestre);
+                                            classe.setSemestre(semestre);
+                                        }else {
+                                            classe.setSemestre(iSemestreService.findSemestreByNum(semestre.getNum()).get(0));
+                                        }
+
                                         //(int) cell.getRow().getCell(4).getNumericCellValue();
                                         filiere.getClasses().add(classe);
                                         if (iDepartementService.findDepartementByNom(departement.getLibelle()).size() == 0) {
