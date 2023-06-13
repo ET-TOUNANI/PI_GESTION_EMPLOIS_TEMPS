@@ -3,6 +3,7 @@ package pi.enset.services;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import pi.enset.entities.Semestre;
+import pi.enset.entities.enums.NumeroSemester;
 import pi.enset.repository.SemestreRepository;
 
 import java.util.List;
@@ -42,6 +43,11 @@ public class ISemestreServiceImpl implements ISemestreService {
     public Semestre updateSemestre(Long id, Semestre semestre) {
         semestre.setId(id);
         return semestreRepository.save(semestre);
+    }
+
+    @Override
+    public List<Semestre> findSemestreByNum(NumeroSemester numeroSemester) {
+        return semestreRepository.findSemestreByNum(numeroSemester);
     }
 
 }
