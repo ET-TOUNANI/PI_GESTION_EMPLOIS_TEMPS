@@ -15,7 +15,10 @@ export class ClasseService {
    public getClasses(page: number, size: number): Observable<PageClasse> {
     return this.http.get<PageClasse>(environment.backendHost + "/classes?page=" + page + "&size=" + size);
   }
-  public searchClasses(keyword : string,page: number, size: number):Observable<PageClasse>{
+  public searchClassesSem(keyword : string, sem:number,page: number, size: number):Observable<PageClasse>{
+    return this.http.get<PageClasse>(environment.backendHost+"/classes/searchSem?keyword="+keyword+"&page=" + page + "&size=" + size+"&sem="+sem)
+  }
+  public searchClasses(keyword : string, page: number, size: number):Observable<PageClasse>{
     return this.http.get<PageClasse>(environment.backendHost+"/classes/search?keyword="+keyword+"&page=" + page + "&size=" + size)
   }
   public saveClasse(Classe: Classe):Observable<Classe>{

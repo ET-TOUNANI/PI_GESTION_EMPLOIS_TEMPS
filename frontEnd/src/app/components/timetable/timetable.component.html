@@ -5,7 +5,6 @@
     [current]="'Home'"
   ></app-page-header>
 </div>
-{{elementDeModule|json}}
 <meta charset="utf-8" />
 <div class="card report-card">
   <div class="card-body pb-0">
@@ -101,7 +100,7 @@
               </thead>
               <tbody>
                 <tr
-                  style="height: 100px"
+                  style="text-align: center; width: 100px; height: 150px"
                   *ngFor="
                     let day of [
                       'Lundi',
@@ -117,7 +116,7 @@
                   <ng-container *ngIf="ready">
                     <ng-container *ngIf="day !== 'Samedi'">
                       <ng-container *ngIf="hasModule(day, '8h30-10h30')">
-                        <td class="active">
+                        <td class="active" style="width: 200px">
                           <h4>{{ getModuleTitle(day, "8h30-10h30") }}</h4>
                           <p>{{ getModuleRoom(day, "8h30-10h30") }}</p>
                           <span>{{ getModuleTeacher(day, "8h30-10h30") }}</span>
@@ -127,7 +126,7 @@
                         <td></td>
                       </ng-container>
                       <ng-container *ngIf="hasModule(day, '10h30-12h30')">
-                        <td class="active">
+                        <td class="active" style="width: 200px">
                           <h4>{{ getModuleTitle(day, "10h30-12h30") }}</h4>
                           <p>{{ getModuleRoom(day, "10h30-12h30") }}</p>
                           <span>{{
@@ -139,7 +138,7 @@
                         <td></td>
                       </ng-container>
                       <ng-container *ngIf="hasModule(day, '14h-16h')">
-                        <td class="active">
+                        <td class="active" style="width: 200px">
                           <h4>{{ getModuleTitle(day, "14h-16h") }}</h4>
                           <p>{{ getModuleRoom(day, "14h-16h") }}</p>
                           <span>{{ getModuleTeacher(day, "14h-16h") }}</span>
@@ -149,7 +148,7 @@
                         <td></td>
                       </ng-container>
                       <ng-container *ngIf="hasModule(day, '16h-18h')">
-                        <td class="active">
+                        <td class="active" style="width: 200px">
                           <h4>{{ getModuleTitle(day, "16h-18h") }}</h4>
                           <p>{{ getModuleRoom(day, "16h-18h") }}</p>
                           <span>{{ getModuleTeacher(day, "16h-18h") }}</span>

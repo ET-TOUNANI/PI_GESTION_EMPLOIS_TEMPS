@@ -59,7 +59,8 @@ export class ActionsComponent implements OnInit{
 
         // If done, show a success message
         Swal.fire('Importé !', 'Le fichier a été importé avec succès.', 'success');
-       this.router.navigate(['/home']);
+       this.router.navigateByUrl('/home', { skipLocationChange: true }).then(() => this.router.navigate(["/home"]));
+       window.location.reload();
       },
       (error) => {
         this.spinnerImport = false;

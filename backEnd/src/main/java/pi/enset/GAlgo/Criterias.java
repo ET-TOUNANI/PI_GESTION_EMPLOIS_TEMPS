@@ -14,7 +14,8 @@ public class Criterias {
         this.schoolTimetable = schoolTimetable;
     }
 
-    public boolean isDisponibilitesEnseignantsSatisfied() {
+    public int isDisponibilitesEnseignantsSatisfied() {
+        int couner = 0;
         List<Enseignant> enseignants = schoolTimetable.getEnseignants();
         for (Enseignant enseignant : enseignants) {
             for (ElementDeModule element : enseignant.getElementDeModules()) {
@@ -25,15 +26,16 @@ public class Criterias {
                                         nonDispo.getPeriode() == element.getPeriode()
                         );
                 if (!isAvailable) {
-                    return false;
+                    couner++;
                 }
             }
         }
-        return true;
+        return couner;
     }
 
 
-    public boolean isEnseignantClasseConflictSatisfied() {
+    public int isEnseignantClasseConflictSatisfied() {
+        int couner = 0;
         List<Enseignant> enseignants = schoolTimetable.getEnseignants();
         for (Enseignant enseignant : enseignants) {
             List<ElementDeModule> elements = (List<ElementDeModule>) enseignant.getElementDeModules();
@@ -51,16 +53,17 @@ public class Criterias {
                                             elementCompar.getModule().getClasse().getFiliere()== element.getModule().getClasse().getFiliere()
                            */ );
                     if (!isSatisfied) {
-                        return false;
+                        couner++;
                     }
                 }
             }
         }
-        return true;
+        return couner;
     }
 
 
-    public boolean isClasseSeancesConflictSatisfied() {
+    public int isClasseSeancesConflictSatisfied() {
+        int couner = 0;
         List<Classe> classes = schoolTimetable.getClasses();
         for (Classe classe : classes) {
             List<Module> modules = (List<Module>) classe.getModules();
@@ -84,7 +87,7 @@ public class Criterias {
 */
                                         );
                                 if (!isSatisfied) {
-                                    return false;
+                                    couner++;
                                 }
                             }
                         }
@@ -92,10 +95,11 @@ public class Criterias {
                 }
             }
         }
-        return true;
+        return couner;
     }
 
-    public boolean isSalleOccupancySatisfied() {
+    public int isSalleOccupancySatisfied() {
+        int couner = 0;
         List<Module> modules = schoolTimetable.getModules();
         for (Module module : modules) {
             List<ElementDeModule> elements = (List<ElementDeModule>) module.getElementDeModules();
@@ -115,16 +119,17 @@ public class Criterias {
 
                                 );
                         if (isOccupied) {
-                            return false;
+                            couner++;
                         }
                     }
                 }
             }
         }
-        return true;
+        return couner;
     }
 
-    public boolean isClasseAfternoonFreeDaySatisfied() {
+    public int isClasseAfternoonFreeDaySatisfied() {
+        int couner = 0;
         List<Classe> classes = schoolTimetable.getClasses();
         for (Classe classe : classes) {
             List<Module> modules = (List<Module>) classe.getModules();
@@ -134,14 +139,15 @@ public class Criterias {
                         .noneMatch(el -> el.getPeriode().equals(Periode.P3) && el.getPeriode().equals(Periode.P4) && el.getJour() == DayOfWeek.WEDNESDAY);
 
                 if (!hasAfternoonFreeDay) {
-                    return false;
+                    couner++;
                 }
             }
         }
-        return true;
+        return couner;
     }
 
-    public boolean areElementsAdjacent() {
+    public int areElementsAdjacent() {
+        int couner = 0;
         List<Module> modules = schoolTimetable.getModules();
         for (Module module : modules) {
             if (!module.isSeperated()) {
@@ -154,16 +160,17 @@ public class Criterias {
                     currentElement.getPeriode().ordinal() != nextElement.getPeriode().ordinal() - 1)|| (currentElement.getJour() != nextElement.getJour() &&
                             currentElement.getPeriode().ordinal() != nextElement.getPeriode().ordinal() + 1)) {
 
-                        return false;
+                        couner++;
 
                     }
                 }
             }
         }
-        return true;
+        return couner;
     }
 
-    public boolean areElementsInSamePeriod() {
+    public int areElementsInSamePeriod() {
+        int couner = 0;
         List<Classe> classes = schoolTimetable.getClasses();
         for (Classe classe : classes) {
             List<Module> modules = (List<Module>) classe.getModules();
@@ -188,7 +195,7 @@ public class Criterias {
                                                                         otherElement.getPeriode() == element.getPeriode()
                                                                 );
                                                         if (!isSatisfied) {
-                                                            return false;
+                                                            couner++;
                                                         }
                                                     }
                                                 }
@@ -202,28 +209,7 @@ public class Criterias {
                 }
             }
         }
-        return true;
+        return couner;
     }
 
-/*
-    public boolean isSurchargeEnseignantSatisfied() {
-        List<Enseignant> enseignants = schoolTimetable.getEnseignants();
-        for (Enseignant enseignant : enseignants) {
-            List<ElementDeModule> elements = (List<ElementDeModule>) enseignant.getElementDeModules();
-            if (elements != null) {
-                boolean isSatisfied = elements.stream()
-                        .noneMatch(element ->
-                                element.getJour()
-                        );
-
-                if (!isSatisfied) {
-                    return false;
-                }
-            }
-        }
-        // Add your implementation here
-        return true;
-    }
-
- */
 }

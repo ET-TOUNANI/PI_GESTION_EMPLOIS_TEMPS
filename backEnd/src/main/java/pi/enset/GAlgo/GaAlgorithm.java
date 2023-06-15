@@ -8,18 +8,19 @@ import pi.enset.settings.DataFromDb;
 
 import java.time.DayOfWeek;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
 public class GaAlgorithm {
-    private static final int POPULATION_SIZE = 10;
-    private static final double MUTATION_RATE = 0.2;
-    private static final double CROSSOVER_RATE = 0.9;
-    private static final int MAX_GENERATIONS = 2000;
+    private  final int POPULATION_SIZE = 10;
+    private  final double MUTATION_RATE = 0.2;
+    private  final double CROSSOVER_RATE = 0.9;
+    private  final int MAX_GENERATIONS = 50;
     Periode[] timeslots;
     List<DayOfWeek> days;
 
-    // private  static final double targetFitness = 100.0;
+     private   final int targetFitness = 1;
     Random random = new Random();
     private List<SchoolTimetable> population;
     private boolean isTerminated;
@@ -75,7 +76,7 @@ public class GaAlgorithm {
         }
         return index;
     }
-
+/*
     public void initializePopulation() {
         for (int i = 0; i < POPULATION_SIZE; i++) {
             SchoolTimetable schoolTimetable = new SchoolTimetable(DataFromDb.classes.size());
@@ -98,6 +99,30 @@ public class GaAlgorithm {
             population.add(schoolTimetable);
         }
     }
+*/
+public void initializePopulation() {
+    for (int i = 0; i < POPULATION_SIZE; i++) {
+        SchoolTimetable schoolTimetable = new SchoolTimetable(DataFromDb.classes.size());
+        for (int classIndex = 0; classIndex < DataFromDb.classes.size(); classIndex++) {
+            Classe classe = DataFromDb.classes.get(classIndex);
+            List<ElementDeModule> elements = getElementsForClasse(classe);
+
+            // Shuffle the elements to introduce randomness
+            Collections.shuffle(elements);
+
+            for (ElementDeModule element : elements) {
+                DayOfWeek day = getRandomDay();
+                Periode periode = getRandomPeriode(day);
+                int roomIndex = getRandomRoom(element);
+                element.setJour(day);
+                element.setPeriode(periode);
+                element.setSalle(DataFromDb.rooms.get(roomIndex));
+                schoolTimetable.addElementDeModule(classIndex, element);
+            }
+        }
+        population.add(schoolTimetable);
+    }
+}
 
     public void printTimetable(SchoolTimetable schoolTimetable) {
         System.out.println("SchoolTimetable with fitness : " + schoolTimetable.getFitness() + " %");
@@ -156,7 +181,7 @@ public class GaAlgorithm {
             }
 
             // Termination condition based on fitness threshold or lack of improvement
-            if (/* Add termination condition based on fitness or convergence */ getBestTimetable().getFitness() == 100) {
+            if ( getBestTimetable().getFitness() <= targetFitness) {
                 isTerminated = true;
                 break;
             }
@@ -172,7 +197,7 @@ public class GaAlgorithm {
             SchoolTimetable currentSchoolTimetable = population.get(i);
             double currentFitness = currentSchoolTimetable.calculateFitness();
 
-            if (currentFitness > bestFitness) {
+            if (currentFitness < bestFitness) {
                 bestSchoolTimetable = currentSchoolTimetable;
                 bestFitness = currentFitness;
             }
@@ -185,18 +210,17 @@ public class GaAlgorithm {
     }
 
     private SchoolTimetable selectParent() {
-        // Roulette wheel selection
-        double totalFitness = 0;
+        int totalFitness = 0;
         for (SchoolTimetable schoolTimetable : population) {
             totalFitness += schoolTimetable.calculateFitness();
         }
 
-        double randomFitness = random.nextDouble() * totalFitness;
-        double cumulativeFitness = 0;
+        int randomFitness = random.nextInt(totalFitness);
+        int cumulativeFitness = 0;
 
         for (SchoolTimetable schoolTimetable : population) {
-            cumulativeFitness += schoolTimetable.getFitness();
-            if (cumulativeFitness >= randomFitness) {
+            cumulativeFitness += (totalFitness - schoolTimetable.calculateFitness());
+            if (cumulativeFitness > randomFitness) {
                 return schoolTimetable;
             }
         }
@@ -277,6 +301,7 @@ public class GaAlgorithm {
     public SchoolTimetable generateTimetable() {
         initializePopulation();
         evolve();
+
         return getBestTimetable();
         //System.out.println("****************** individual best *******************");
         //printTimetable(bestSchoolTimetable);

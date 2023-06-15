@@ -64,7 +64,11 @@ public class IClasseServiceImpl implements IClasseService {
     }
 
     @Override
-    public Page<Classe> searchClasses(String keyword, Pageable pageable) {
+    public Page<Classe> searchClasses(String keyword, Long sem,Pageable pageable) {
+        return classeRepository.searchClasses(keyword, sem, pageable);
+    }
+    @Override
+    public Page<Classe> searchClasses(String keyword,Pageable pageable) {
         return classeRepository.searchClasses(keyword, pageable);
     }
 

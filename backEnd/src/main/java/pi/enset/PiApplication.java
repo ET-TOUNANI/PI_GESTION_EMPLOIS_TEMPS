@@ -41,6 +41,7 @@ public class PiApplication {
             admin.setEmail("admin@admin.com");
             admin.setPassword("admin");
             admin.setTel("0600000000");
+            admin.setCivilite("M");
             admin.setLogin("admin");
             admin.setCne("555");
             admin.setAdmin_type(TypeAdmin.SUPER_ADMIN);

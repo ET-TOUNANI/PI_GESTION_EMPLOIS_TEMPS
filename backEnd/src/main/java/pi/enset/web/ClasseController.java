@@ -54,4 +54,14 @@ public class ClasseController {
         Pageable pageable = PageRequest.of(page, size);
         return classeService.searchClasses(keyword, pageable);
     }
+    @GetMapping("/searchSem")
+    public Page<Classe> searchClassesSem(
+            @RequestParam String keyword,
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "10") int size,
+            @RequestParam Long sem
+    ) {
+        Pageable pageable = PageRequest.of(page, size);
+        return classeService.searchClasses(keyword,sem, pageable);
+    }
 }

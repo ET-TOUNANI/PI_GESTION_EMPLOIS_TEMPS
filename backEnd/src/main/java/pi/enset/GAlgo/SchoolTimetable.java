@@ -10,7 +10,7 @@ import java.util.List;
 
 public class SchoolTimetable {
     private List<List<ElementDeModule>> schoolTimetables;
-    private Double fitness;
+    private int fitness;
 
     public SchoolTimetable(int numberOfClasses) {
         this.schoolTimetables = new ArrayList<>(numberOfClasses);
@@ -19,11 +19,11 @@ public class SchoolTimetable {
         }
     }
 
-    public Double getFitness() {
+    public int getFitness() {
         return fitness;
     }
 
-    public void setFitness(Double fitness) {
+    public void setFitness(int fitness) {
         this.fitness = fitness;
     }
 
@@ -59,42 +59,28 @@ public class SchoolTimetable {
         return schoolTimetables.size();
     }
 
-    public Double calculateFitness() {
-        // calculate the fitness of the timetable by calculating the number of criteria satisfied
+    public int calculateFitness() {
+        // calculate the fitness of the timetable by calculating the number of unsatisfied criteria
 
         Criterias criterias = new Criterias(this);
-        Double fitness = 0.0;
+        int unsatisfiedCriteria = 0;
 
         // Criterion: La génération de l’emploi du temps doit prendre en compte les disponibilités des enseignants
-        if (criterias.isDisponibilitesEnseignantsSatisfied()) {
-            fitness++;
-        }
+        unsatisfiedCriteria += criterias.isDisponibilitesEnseignantsSatisfied();
 
         // Criterion: Un enseignant ne doit pas avoir plusieurs classes en même temps
-        if (criterias.isEnseignantClasseConflictSatisfied()) {
-            fitness++;
-        }
+        unsatisfiedCriteria += criterias.isEnseignantClasseConflictSatisfied();
 
         // Criterion: Une classe ne doit avoir deux séances/module au même horaire
-        if (criterias.isClasseSeancesConflictSatisfied()) {
-            fitness++;
-        }
+        unsatisfiedCriteria += criterias.isClasseSeancesConflictSatisfied();
 
         // Criterion: Une salle doit être occupée par une seule classe à la fois
-        if (criterias.isSalleOccupancySatisfied()) {
-            fitness++;
-        }
+        unsatisfiedCriteria += criterias.isSalleOccupancySatisfied();
 
         // Criterion: Chaque classe doit avoir au moins une après-midi de libre (mercredi)
-        if (criterias.isClasseAfternoonFreeDaySatisfied()) {
-            fitness++;
-        }
+        unsatisfiedCriteria += criterias.isClasseAfternoonFreeDaySatisfied();
 
-       /* // Criterion: Éviter une surcharge de travail pour l'enseignant en évitant de planifier ses cours le matin et le soir du même jour
-        if (criterias.isSurchargeEnseignantSatisfied()) {
-            fitness++;
-        }*/
-        this.fitness = (fitness / 5) * 100;
+        this.fitness =  unsatisfiedCriteria;
         return this.fitness;
     }
 

@@ -17,6 +17,6 @@ public interface IClasseService {
 
     Classe updateClasse(Long id, Classe classe);
     Page<Classe> getClasses(Pageable pageable);
-
     Page<Classe> searchClasses(String keyword, Pageable pageable);
+    Page<Classe> searchClasses(String keyword,Long sem, Pageable pageable);
 }

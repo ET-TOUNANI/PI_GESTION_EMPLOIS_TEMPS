@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 import { AuthService } from 'src/app/services/auth.service';
 
@@ -11,7 +12,7 @@ export class NavbarComponent implements OnInit {
   public username: string = "";
   public userId: number = 0;
   public role: string = "";
-  constructor(private cookieService: CookieService,private authService: AuthService) {}
+  constructor(private cookieService: CookieService,private authService: AuthService,private router:Router) {}
 
 ngOnInit() {
    this.username = this.cookieService.get('username');
@@ -22,6 +23,7 @@ ngOnInit() {
 
 handleLogout(){
   this.cookieService.delete('role');
+
   this.authService.logout(this.userId).subscribe(response => {
         this.authService.loggedIn = false;
           this.authService.isAdmin = false;
@@ -30,9 +32,11 @@ handleLogout(){
           this.authService.token = "";
           this.authService.id = 0;
           // refresh page
+          // vhange route 
+          this.router.navigateByUrl('/home');
           window.location.reload();
       }
       )
-  
+      
 }
 }

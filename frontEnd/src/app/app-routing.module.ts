@@ -19,10 +19,8 @@ import { EditSalleComponent } from './components/edit/edit-salle/edit-salle.comp
 import { IndexPageComponent } from './components/index-page/index-page.component';
 import {EditFiliereComponent} from "./components/edit/edit-filiere/edit-filiere.component";
 import {EditClasseComponent} from "./components/edit/edit-classe/edit-classe.component";
-import { LoginComponent } from './components/widgets/login/login.component';
 import { EditProfileComponent } from './components/edit/edit-profile/edit-profile.component';
 import { NonDisponibleComponent } from './components/gestion/non-disponible/non-disponible.component';
-
 const routes: Routes = [
   { path :'' , component: HomeComponent},
   { path :'index' , component: IndexPageComponent},

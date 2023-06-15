@@ -7,6 +7,7 @@ import pi.enset.GAlgo.SchoolTimetable;
 import pi.enset.entities.Classe;
 import pi.enset.entities.ElementDeModule;
 import pi.enset.entities.Enseignant;
+import pi.enset.entities.enums.NumeroSemester;
 import pi.enset.settings.DataFromDb;
 
 import java.util.ArrayList;
@@ -61,7 +62,17 @@ public class IEmpliDeTempsServiceImpl implements IEmpliDeTempsService {
 
     @Override
     public List<ElementDeModule> getEmploiByProf(Long id) {
+
         Enseignant enseignant = enseignantService.getEnseignantById(id);
-        return (List<ElementDeModule>) enseignant.getElementDeModules();
+        // show only  element de module of S1 ou S3 or S5
+
+        List<ElementDeModule> elementDeModules = new ArrayList<>();
+        for (ElementDeModule elementDeModule : enseignant.getElementDeModules()) {
+            if (elementDeModule.getModule().getClasse().getSemestre().getNum()== NumeroSemester.S3 || elementDeModule.getModule().getClasse().getSemestre().getNum()== NumeroSemester.S5 || elementDeModule.getModule().getClasse().getSemestre().getNum()== NumeroSemester.S1) {
+                elementDeModules.add(elementDeModule);
+            }
+        }
+
+        return elementDeModules;
     }
 }

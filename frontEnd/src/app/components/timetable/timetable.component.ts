@@ -1,3 +1,4 @@
+
 import { ElementDeModule } from './../../models/elementModule.models';
 import { Component, OnInit } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
@@ -27,7 +28,7 @@ export class TimetableComponent implements OnInit {
   selectedDepartement: Departement|undefined;
   selectedFiliere: Filiere|undefined;
    selectedSemster: Semestre|undefined;
-   classes:Classe[] = [];
+   classe!:Classe ;
   spinnerExport:boolean=false;
   ready = false;
   admin:boolean = false;
@@ -259,16 +260,13 @@ handleSemsterChange(target: EventTarget | null) {
 
   getEmplois(semsterId: number, idFiliere: number , idDepartement: number ) {
  
-    this.classeService.searchClasses(this.selectedFiliere!.libelle,0,10).subscribe(
+    this.classeService.searchClassesSem(this.selectedFiliere!.libelle,semsterId,0,1).subscribe(
       (data) => {
-        this.classes = data.content;
-         let classeId = 0;
-    if(semsterId==0 || semsterId==1)
-    classeId=this.classes[0].id;
-    else if (semsterId==2 || semsterId==3)
-    classeId=this.classes[1].id;
-    else 
-    classeId=this.classes[2].id;
+        let classeId =1;
+        this.classe = data.content[0];
+    
+        classeId = this.classe.id;
+     
     
   this.emploiService.getEmploisByClasse(classeId).subscribe(
           data=>{
