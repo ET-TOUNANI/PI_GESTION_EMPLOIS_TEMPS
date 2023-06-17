@@ -1,7 +1,8 @@
-# _PI GESTION EMPLOIS TEMPS_
+# _PI GESTION DES EMPLOIS DU TEMPS_
 
 Une application de gestion d’emploi du temps.
 Cette platforme a comme finalité de remplacer la gestion manuelle des plannings au sein de l'ENSET Mohammedia
+
 <img src="Rapport/Pr%C3%A9sentation%20PI.png" width="100%" >
 
 ## Démonstration
